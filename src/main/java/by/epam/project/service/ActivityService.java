@@ -24,19 +24,21 @@ public interface ActivityService {
     Activity findByEventId(int eventId) throws ServiceException;
 
     List<Activity> findEventByLimit(int startIndex, int endIndex) throws ServiceException;
-    List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
 
-    List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException, ConnectionPoolException;
+    List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice,
+                                               int maxPrice, int startIndex, int endIndex) throws ServiceException;
+
+    List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws ServiceException;
 
     List<Activity> findEventsByFilterWithoutSearchParamWithLimit(
-            int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+            int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException;
 
-    List<Activity> findEventsByFilterWithoutSearchParam (int minPrice, int maxPrice) throws DaoException, ConnectionPoolException;
+    List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws ServiceException;
 
-    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws ServiceException;
 
-    int findMinPrice() throws DaoException, ConnectionPoolException;
+    int findMinPrice() throws ServiceException;
 
-    int findMaxPrice() throws DaoException, ConnectionPoolException;
+    int findMaxPrice() throws ServiceException;
 
 }

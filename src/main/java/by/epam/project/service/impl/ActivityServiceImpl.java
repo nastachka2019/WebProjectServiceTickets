@@ -71,37 +71,54 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException {
+        try {
+            if (nameOrWordInName.isEmpty()) {
+                return activityDao.findEventsByFilterWithoutSearchParamWithLimit(minPrice, maxPrice, startIndex, endIndex);
+            } else {
+                return activityDao.findEventsByFilterWithLimit(nameOrWordInName,
+                        minPrice, maxPrice, startIndex, endIndex);
+            }
+        } catch (DaoException | ConnectionPoolException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws ServiceException{
+        try {
+            if (nameOrWordInName.isEmpty()) {
+                return activityDao.findEventsByFilterWithoutSearchParam(minPrice, maxPrice);
+            } else {
+                return activityDao.findEventsByFilter(nameOrWordInName,minPrice, maxPrice);
+            }
+        } catch (DaoException | ConnectionPoolException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException {
         return null;
     }
 
     @Override
-    public List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws ServiceException{
         return null;
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws ServiceException {
         return null;
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
-        return null;
-    }
-
-    @Override
-    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
-        return null;
-    }
-
-    @Override
-    public int findMinPrice() throws DaoException, ConnectionPoolException {
+    public int findMinPrice() throws ServiceException {
         return 0;
     }
 
     @Override
-    public int findMaxPrice() throws DaoException, ConnectionPoolException {
+    public int findMaxPrice() throws ServiceException{
         return 0;
     }
 }
