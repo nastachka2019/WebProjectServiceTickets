@@ -1,0 +1,540 @@
+[INFO ] 2020-02-19 14:33:28.694 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:33:28.973 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:28.977 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:28.982 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:28.988 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:28.992 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:28.996 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.000 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.003 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.007 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.011 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.014 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.017 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.020 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.036 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.039 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.043 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.046 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.050 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.063 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.070 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.073 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.076 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.079 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.081 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.084 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.086 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.089 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.091 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.102 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.105 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.108 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:33:29.111 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:33:29.149 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:33:29.149 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:33:29.149 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:35:45.139 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:35:45.345 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.350 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.355 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.360 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.367 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.370 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.373 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.377 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.380 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.383 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.387 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.391 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.394 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.398 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.401 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.406 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.408 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.411 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.415 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.419 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.424 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.428 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.431 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.434 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.437 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.441 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.445 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.448 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.454 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.459 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.462 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:35:45.466 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:35:45.499 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:35:45.499 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:35:45.499 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:36:14.436 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:36:14.627 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.630 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.633 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.637 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.646 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.650 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.653 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.655 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.658 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.661 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.663 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.666 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.669 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.672 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.675 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.679 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.683 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.687 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.690 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.693 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.697 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.700 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.703 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.706 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.709 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.712 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.716 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.718 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.730 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.734 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.737 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:36:14.740 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:36:14.764 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:36:14.764 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:36:14.764 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:42:43.990 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:42:44.163 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.166 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.169 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.172 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.178 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.181 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.184 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.187 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.190 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.193 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.197 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.201 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.205 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.208 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.212 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.216 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.220 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.224 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.228 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.232 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.236 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.240 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.243 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.246 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.251 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.256 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.261 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.265 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.279 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.283 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.287 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:42:44.292 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:42:44.328 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:42:44.328 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:42:44.328 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:43:32.385 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:43:32.541 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.544 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.548 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.551 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.559 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.562 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.564 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.567 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.569 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.572 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.575 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.578 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.581 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.584 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.587 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.591 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.594 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.599 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.602 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.605 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.608 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.612 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.614 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.617 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.621 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.625 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.629 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.632 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.644 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.649 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.654 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:43:32.657 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:43:32.690 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:43:32.690 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:43:32.690 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:45:09.621 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:45:09.800 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.803 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.805 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.808 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.815 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.818 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.821 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.824 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.827 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.832 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.836 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.844 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.848 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.851 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.855 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.858 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.862 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.865 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.869 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.873 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.876 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.887 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.890 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.894 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.897 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.901 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.904 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.907 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.911 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.917 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.922 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:45:09.930 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:45:09.957 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:45:09.957 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:45:09.957 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:49:58.192 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:49:58.364 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.367 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.371 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.374 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.380 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.383 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.386 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.389 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.392 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.395 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.399 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.403 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.406 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.415 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.417 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.421 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.424 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.428 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.431 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.434 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.437 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.441 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.444 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.447 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.451 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.455 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.460 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.463 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.475 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.479 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.483 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:49:58.485 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:49:58.515 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:49:58.515 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:49:58.515 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:50:51.332 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:50:51.488 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.492 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.495 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.498 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.505 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.508 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.510 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.513 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.516 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.518 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.521 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.524 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.527 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.530 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.533 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.537 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.542 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.546 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.550 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.553 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.557 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.560 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.563 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.567 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.571 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.575 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.578 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.581 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.596 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.601 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.605 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:50:51.612 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:50:51.643 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:50:51.644 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:50:51.644 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:52:18.682 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:52:18.860 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.863 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.868 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.872 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.879 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.881 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.883 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.886 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.889 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.893 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.897 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.899 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.902 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.905 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.909 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.912 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.915 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.917 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.921 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.924 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.927 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.930 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.932 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.935 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.938 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.942 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.945 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.948 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.962 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.966 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.971 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:18.980 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:52:19.013 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:52:19.013 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:52:19.014 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:52:43.331 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:52:43.494 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.496 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.499 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.501 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.507 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.510 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.513 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.515 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.518 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.520 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.523 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.526 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.528 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.530 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.533 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.537 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.541 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.545 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.548 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.551 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.555 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.558 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.561 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.563 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.566 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.570 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.572 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.575 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.587 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.590 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.593 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:43.597 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:52:43.621 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:52:43.621 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:52:43.622 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:52:57.669 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:52:57.905 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.909 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.911 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.914 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.921 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.923 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.926 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.929 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.932 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.934 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.937 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.940 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.942 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.944 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.947 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.950 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.952 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.955 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.958 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.961 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.964 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.966 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.969 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.971 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.974 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.977 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.980 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.982 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.985 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.987 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.990 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:52:57.993 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:53:04.246 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:53:04.246 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:53:04.247 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:53:19.491 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:53:19.923 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.931 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.940 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.948 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.956 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.965 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.973 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.982 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.991 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:19.999 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.008 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.016 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.025 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.033 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.042 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.054 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.065 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.073 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.082 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.090 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.098 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.107 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.115 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.123 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.133 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.142 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.150 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.161 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.171 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.181 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.192 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:20.201 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:53:23.727 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:53:23.727 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:53:23.727 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:53:42.477 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:53:42.637 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.640 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.643 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.646 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.652 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.655 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.657 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.660 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.662 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.665 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.669 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.672 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.674 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.677 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.680 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.685 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.688 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.692 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.694 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.696 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.699 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.703 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.706 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.708 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.711 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.714 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.720 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.727 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.740 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.744 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.752 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:53:42.756 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:53:42.791 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:53:42.792 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:53:42.792 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:57:56.312 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:57:56.479 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.482 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.486 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.489 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.496 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.499 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.501 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.503 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.506 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.508 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.512 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.515 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.518 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.522 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.527 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.532 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.535 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.539 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.542 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.548 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.551 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.554 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.557 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.560 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.564 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.569 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.573 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.576 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.592 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.598 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.602 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:57:56.606 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:57:56.658 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:57:56.658 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:57:56.659 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32
+[INFO ] 2020-02-19 14:59:28.192 [main] by.epam.project.connection.ConnectionPool 51 -  Driver registration was successful
+[INFO ] 2020-02-19 14:59:28.369 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.372 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.375 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.377 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.384 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.387 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.390 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.393 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.396 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.400 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.404 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.407 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.410 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.413 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.417 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.420 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.423 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.426 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.429 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.432 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.435 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.439 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.441 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.444 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.447 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.451 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.457 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.461 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.474 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.477 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.479 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[INFO ] 2020-02-19 14:59:28.483 [main] by.epam.project.connection.ConnectionPool 70 - ProxyConnection was  created and added in connection pool
+[DEBUG] 2020-02-19 14:59:28.524 [main] by.epam.project.connection.ConnectionPool 135 - Available connections = 32
+[DEBUG] 2020-02-19 14:59:28.524 [main] by.epam.project.connection.ConnectionPool 136 - Used connections = 0
+[DEBUG] 2020-02-19 14:59:28.524 [main] by.epam.project.connection.ConnectionPool 137 - MAX_POOL_SIZE = 32

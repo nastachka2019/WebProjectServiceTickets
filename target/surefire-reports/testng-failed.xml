@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="by.epam.project.service.EventServiceTest">
+        <methods>
+          <include name="testServiceFindEventById" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- by.epam.project.service.EventServiceTest -->
+      <class name="by.epam.project.service.UserServiceTest">
+        <methods>
+          <include name="findByUsernameAndPass" invocation-numbers="1 2"/>
+        </methods>
+      </class> <!-- by.epam.project.service.UserServiceTest -->
+      <class name="by.epam.project.service.EventTypeServiceTest">
+        <methods>
+          <include name="findByNameOrWordInName" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- by.epam.project.service.EventTypeServiceTest -->
+      <class name="by.epam.project.service.OrderServiceTest">
+        <methods>
+          <include name="testServiceFindOrderById" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- by.epam.project.service.OrderServiceTest -->
+      <class name="by.epam.project.service.TicketServiceTest">
+        <methods>
+          <include name="testFindOrderById" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- by.epam.project.service.TicketServiceTest -->
+      <class name="by.epam.project.connection.ConnectionPoolTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- by.epam.project.connection.ConnectionPoolTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

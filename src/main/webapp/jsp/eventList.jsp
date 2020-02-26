@@ -1,0 +1,192 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  <%--jstl tag--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="ctg" uri="customtags" %>
+
+<c:set var="locale"
+       value="${not empty locale ? locale : 'en'}"
+       scope="session"/>
+
+<fmt:setLocale value="${locale}" scope="session"/>
+<fmt:setBundle basename="local.ticket"/>
+
+<html>
+<head>
+    <title><fmt:message key="event.event"/></title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/settings.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="${pageContext.request.contextPath}/css/registration.css"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Material Design Bootstrap -->
+    <link href="${pageContext.request.contextPath}/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap-social.css" rel="stylesheet">
+
+</head>
+<body>
+
+<jsp:include page="header.jsp"/>
+
+<div id="page-container">
+    <div id="content-wrap">
+
+        <c:if test="${error != null}">
+            <div class="alert alert-danger block1" role="alert">
+                    ${error}
+            </div>
+        </c:if>
+
+        <div class="container-fluid h-100">
+            <div class="row h-130">
+                <aside class="col-12 col-md-2 p-0">
+                    <nav class="navbar navbar-expand navbar-dark flex-md-column flex-row align-items-start">
+                        <div class="collapse navbar-collapse">
+                            <form method="get" action="event_list">
+
+                                <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                                    <li>
+                                        <h3><fmt:message key="event.filters"/></h3>
+                                        <br>
+                                    </li>
+
+                                    <!--Search-->
+
+                                    <li>
+                                        <label class="font-weight-bold" for="searchId"><fmt:message
+                                                key="header.search_button"/></label>
+                                        <input name="nameOrWordInName" value="${nameOrWordInName}"
+                                               maxlength="100" pattern="^.{0,100}$"
+                                               class="form-control mr-sm-2" id="searchId" type="text"
+                                               placeholder="<fmt:message key="header.search_text"/>">
+                                        <br>
+                                    </li>
+                                    <!--Name event-->
+                                    <li>
+                                        <label class="font-weight-bold" for="evName"><fmt:message
+                                                key="event.name"/></label>
+                                        <div class="form-row" id="evName">
+                                            <div class="form-group col-md-6">
+                                                <label><fmt:message key="event_name.filter"/></label>
+                                                <input name="eventName" value="${activityName}"
+                                                       type="text"
+                                                       class="form-control" placeholder="${activityName}" required>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--Address-->
+                                    <li>
+                                        <label class="font-weight-bold" for="eventAddress"><fmt:message
+                                                key="event.address"/></label>
+                                        <div class="form-row" id="evAddress">
+                                            <div class="form-group col-md-6">
+                                                <label><fmt:message key="event_address.filter"/></label>
+                                                <input name="eventAddress" value="${activityAddress}"
+                                                       type="text"
+                                                       class="form-control"
+                                                       placeholder="${activityAddress}" required>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-success btn-circle text-uppercase" type="submit">
+                                            <fmt:message key="events.filter.apply"/>
+                                        </button>
+                                    </li>
+
+                                </ul>
+                            </form>
+                        </div>
+                    </nav>
+                </aside>
+
+                <main class="col">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="row text-center">
+                                <c:choose>
+                                    <c:when test="${searchError != null}">
+                                        ${searchError}
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:if test="${events.size() > 0}">
+                                            <c:forEach begin="${startIndexOfEventList}"
+                                                       end="${startIndexOfEventList + eventsPerPage - 1}"
+                                                       var="event"
+                                                       items="${events}">
+
+                                                <div class="col-xs-6 col-sm-4 col-lg-3 ex2">
+                                                    <form method="get" action="show_event_details">
+                                                        <input type="hidden" name="eventId"
+                                                               value="${event.eventId}">
+
+
+                                                        <img src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
+                                                             alt=""
+                                                             width="200" height="250">
+
+                                                        <p>${event.name}</p>
+
+                                                        <button type="submit" class="btn btn-primary center-block">
+                                                            <fmt:message key="event.details"/>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </c:forEach>
+                                        </c:if>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <c:if test="${searchError == null}">
+            <ctg:pagination objectsPerPage="${eventsPerPage}"
+                            commandValue="${commandValue}"
+                            indexOfPage="${indexOfPage}"
+                            numberOfObjects="${eventListSize}"
+                            locale="${locale}"
+                            nameOrWordInName="${nameOrWordInName}"
+                            eventAddress="${activityAddress}"
+                            eventName="${activityName}"
+            />
+        </c:if>
+    </div>
+    <jsp:include page="footer.jsp"/>
+
+</div>
+</body>
+</html>

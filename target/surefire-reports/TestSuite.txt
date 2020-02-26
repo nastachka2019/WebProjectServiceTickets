@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 21, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 4.169 s <<< FAILURE! - in TestSuite
+testServiceFindOrderById(by.epam.project.service.OrderServiceTest)  Time elapsed: 0.055 s  <<< FAILURE!
+by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.OrderServiceTest.testServiceFindOrderById(OrderServiceTest.java:27)
+Caused by: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.OrderServiceTest.testServiceFindOrderById(OrderServiceTest.java:27)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.OrderServiceTest.testServiceFindOrderById(OrderServiceTest.java:27)
+
+testFindOrderById(by.epam.project.service.TicketServiceTest)  Time elapsed: 0.021 s  <<< FAILURE!
+by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.TicketServiceTest.testFindOrderById(TicketServiceTest.java:27)
+Caused by: by.epam.project.exception.DaoException: by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.TicketServiceTest.testFindOrderById(TicketServiceTest.java:27)
+Caused by: by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.TicketServiceTest.testFindOrderById(TicketServiceTest.java:27)
+Caused by: by.epam.project.exception.DaoException: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.TicketServiceTest.testFindOrderById(TicketServiceTest.java:27)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order WHERE order_id=1' at line 1
+	at by.epam.project.service.TicketServiceTest.testFindOrderById(TicketServiceTest.java:27)
+
+testServiceFindEventById(by.epam.project.service.EventServiceTest)  Time elapsed: 0.02 s  <<< FAILURE!
+java.lang.AssertionError: expected [1] but found [EventType {eventTypeId= 1, eventName= concert, eventAddress= Minsk, description=concert, imageURL=C:UsersDELLDesktopУчебаHTP14Finalyyy.png}]
+	at by.epam.project.service.EventServiceTest.testServiceFindEventById(EventServiceTest.java:28)
+
+findByNameOrWordInName(by.epam.project.service.EventTypeServiceTest)  Time elapsed: 0.002 s  <<< FAILURE!
+by.epam.project.exception.ServiceException: by.epam.project.exception.DaoException: Error in the requesting to the database.
+	at by.epam.project.service.EventTypeServiceTest.findByNameOrWordInName(EventTypeServiceTest.java:28)
+Caused by: by.epam.project.exception.DaoException: Error in the requesting to the database.
+	at by.epam.project.service.EventTypeServiceTest.findByNameOrWordInName(EventTypeServiceTest.java:28)
+
+findByUsernameAndPass(by.epam.project.service.UserServiceTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at by.epam.project.service.UserServiceTest.findByUsernameAndPass(UserServiceTest.java:46)
+
+findByUsernameAndPass(by.epam.project.service.UserServiceTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at by.epam.project.service.UserServiceTest.findByUsernameAndPass(UserServiceTest.java:46)
+

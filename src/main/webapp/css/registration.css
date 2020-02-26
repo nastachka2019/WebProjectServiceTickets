@@ -1,0 +1,98 @@
+html, body{
+    background: url('../images/registratio.jpg') fixed;
+    background-size: cover;
+    position: relative;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+*[role="form"] h2 {
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.65) !important;
+}
+
+.sign-in-text{
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: #007bff !important;
+    margin-left: 4px !important;
+    padding: 0 !important;
+}
+
+.sign-in-container{
+    height: 100%;
+    align-content: center;
+    padding-left: 0; padding-right: 0;
+}
+
+.card-header h3{
+    color: white;
+}
+
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+input:focus {
+    outline-width: 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}

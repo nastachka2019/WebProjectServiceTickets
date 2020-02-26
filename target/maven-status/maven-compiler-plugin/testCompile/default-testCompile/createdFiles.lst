@@ -1,0 +1,9 @@
+by\epam\project\service\UserServiceTest.class
+by\epam\project\connection\ConnectionPoolTest.class
+by\epam\project\service\TicketServiceTest.class
+by\epam\project\RegistrationTest.class
+by\epam\project\service\UserCommentServiceTest.class
+by\epam\project\service\EventTypeServiceTest.class
+by\epam\project\service\impl\EventServiceImplTest.class
+by\epam\project\service\OrderServiceTest.class
+by\epam\project\service\EventServiceTest.class
