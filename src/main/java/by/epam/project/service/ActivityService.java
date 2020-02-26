@@ -2,6 +2,8 @@ package by.epam.project.service;
 
 import by.epam.project.entity.Activity;
 
+import by.epam.project.exception.ConnectionPoolException;
+import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 
 import java.util.List;
@@ -22,5 +24,19 @@ public interface ActivityService {
     Activity findByEventId(int eventId) throws ServiceException;
 
     List<Activity> findEventByLimit(int startIndex, int endIndex) throws ServiceException;
+    List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+
+    List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException, ConnectionPoolException;
+
+    List<Activity> findEventsByFilterWithoutSearchParamWithLimit(
+            int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+
+    List<Activity> findEventsByFilterWithoutSearchParam (int minPrice, int maxPrice) throws DaoException, ConnectionPoolException;
+
+    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+
+    int findMinPrice() throws DaoException, ConnectionPoolException;
+
+    int findMaxPrice() throws DaoException, ConnectionPoolException;
 
 }

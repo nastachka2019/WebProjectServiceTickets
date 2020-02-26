@@ -41,8 +41,9 @@ public class ActivityDaoImpl implements ActivityDao {
             " FROM activity WHERE (price BETWEEN ? AND ?) LIMIT ?,?";
     private static final String SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
             " FROM activity WHERE (price BETWEEN ? AND ?)";
-    private static final String SQL_FIND_MIN_PRICE = "SELECT MIN(price) FROM acivity";
+    private static final String SQL_FIND_MIN_PRICE = "SELECT MIN(price) FROM activity";
     private static final String SQL_FIND_MAX_PRICE = "SELECT MAX(price) FROM activity";
+
     @Override
     public List<Activity> takeAllEvents() throws DaoException, ConnectionPoolException {
         PreparedStatement preparedStatement = null;
@@ -378,7 +379,7 @@ public class ActivityDaoImpl implements ActivityDao {
         ResultSet resultSet = null;
 
         Connection connection = ConnectionPool.INSTANCE.getConnection();
-        List<Activity> events= new ArrayList<>();
+        List<Activity> events = new ArrayList<>();
 
         try {
             statement = connection.createStatement();
