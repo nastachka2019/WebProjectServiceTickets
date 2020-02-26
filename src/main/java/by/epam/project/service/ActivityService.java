@@ -30,15 +30,17 @@ public interface ActivityService {
 
     List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws ServiceException;
 
-    List<Activity> findEventsByFilterWithoutSearchParamWithLimit(
-            int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException;
-
-    List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws ServiceException;
-
-    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws ServiceException;
+//    List<Activity> findEventsByFilterWithoutSearchParamWithLimit(
+//            int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException;
+//
+//    List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws ServiceException;
+//
+//    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws ServiceException;
 
     int findMinPrice() throws ServiceException;
 
     int findMaxPrice() throws ServiceException;
+
+    int checkPrice(int minPrice) throws ServiceException;
 
 }
