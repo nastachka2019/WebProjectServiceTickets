@@ -33,7 +33,16 @@ public class ActivityDaoImpl implements ActivityDao {
     private static final String SQL_INSERT_EVENT = "INSERT INTO activity (activity_name, image_url, description, activity_address, activity_data, price) VALUES (?,?,?,?,?,?)";
     private static final String SQL_FIND_BY_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
             " FROM activity LIMIT ?, ?";
-
+    private static final String SQL_FIND_BY_FILTER_WITH_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
+            " FROM activiy  WHERE (name LIKE ?  OR name LIKE ?  OR name LIKE ?  OR name LIKE ?)  AND (price BETWEEN ? AND ?)  LIMIT ?,?";
+    private static final String SQL_FIND_BY_FILTER = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
+            " FROM activity WHERE (name LIKE ? OR name LIKE ?  OR name LIKE ?  OR name LIKE ?) AND (price BETWEEN ? AND ?)";
+    private static final String SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM_WITH_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
+            " FROM activity WHERE (price BETWEEN ? AND ?) LIMIT ?,?";
+    private static final String SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
+            " FROM activity WHERE (price BETWEEN ? AND ?)";
+    private static final String SQL_FIND_MIN_PRICE = "SELECT MIN(price) FROM acivity";
+    private static final String SQL_FIND_MAX_PRICE = "SELECT MAX(price) FROM activity";
     @Override
     public List<Activity> takeAllEvents() throws DaoException, ConnectionPoolException {
         PreparedStatement preparedStatement = null;
@@ -178,7 +187,7 @@ public class ActivityDaoImpl implements ActivityDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
-        List<Activity> events= new ArrayList<>();
+        List<Activity> events = new ArrayList<>();
 
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_BY_FILTER_WITH_LIMIT);
@@ -216,32 +225,182 @@ public class ActivityDaoImpl implements ActivityDao {
 
     @Override
     public List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Activity> events = new ArrayList<>();
+
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_BY_FILTER);
+            preparedStatement.setString(1, nameOrWordInName + " %");
+            preparedStatement.setString(2, "% " + nameOrWordInName + " %");
+            preparedStatement.setString(3, "% " + nameOrWordInName);
+            preparedStatement.setString(4, nameOrWordInName);
+            preparedStatement.setInt(5, minPrice);
+            preparedStatement.setInt(6, maxPrice);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                events.add(new Activity.Builder()
+                        .setEventId(resultSet.getInt(1))
+                        .setName(resultSet.getString(2))
+                        .setImageURL(resultSet.getString(3))
+                        .setDescription(resultSet.getString(4))
+                        .setAddress(resultSet.getString(5))
+                        .setDate(resultSet.getDate(6).toLocalDate())
+                        .setPrice(resultSet.getBigDecimal(7))
+                        .build()
+                );
+            }
+            return events;
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(preparedStatement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
     }
 
     @Override
     public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Activity> events = new ArrayList<>();
+
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM_WITH_LIMIT);
+            preparedStatement.setInt(1, minPrice);
+            preparedStatement.setInt(2, maxPrice);
+            preparedStatement.setInt(3, startIndex);
+            preparedStatement.setInt(4, endIndex);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                events.add(new Activity.Builder()
+                        .setEventId(resultSet.getInt(1))
+                        .setName(resultSet.getString(2))
+                        .setImageURL(resultSet.getString(3))
+                        .setDescription(resultSet.getString(4))
+                        .setAddress(resultSet.getString(5))
+                        .setDate(resultSet.getDate(6).toLocalDate())
+                        .setPrice(resultSet.getBigDecimal(7))
+                        .build()
+                );
+            }
+            return events;
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(preparedStatement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
     }
 
     @Override
     public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Activity> events = new ArrayList<>();
+
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM);
+            preparedStatement.setInt(1, minPrice);
+            preparedStatement.setInt(2, maxPrice);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                events.add(new Activity.Builder()
+                        .setEventId(resultSet.getInt(1))
+                        .setName(resultSet.getString(2))
+                        .setImageURL(resultSet.getString(3))
+                        .setDescription(resultSet.getString(4))
+                        .setAddress(resultSet.getString(5))
+                        .setDate(resultSet.getDate(6).toLocalDate())
+                        .setPrice(resultSet.getBigDecimal(7))
+                        .build()
+                );
+            }
+            return events;
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(preparedStatement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
     }
 
     @Override
-    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException {
-        return null;
+    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Activity> events = new ArrayList<>();
+
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_BY_LIMIT);
+            preparedStatement.setInt(1, startIndex);
+            preparedStatement.setInt(2, endIndex);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                events.add(new Activity.Builder()
+                        .setEventId(resultSet.getInt(1))
+                        .setName(resultSet.getString(2))
+                        .setImageURL(resultSet.getString(3))
+                        .setDescription(resultSet.getString(4))
+                        .setAddress(resultSet.getString(5))
+                        .setDate(resultSet.getDate(6).toLocalDate())
+                        .setPrice(resultSet.getBigDecimal(7))
+                        .build()
+                );
+            }
+            return events;
+
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(preparedStatement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
     }
 
     @Override
     public int findMinPrice() throws DaoException, ConnectionPoolException {
-        return 0;
+        return findMinOrMax(SQL_FIND_MIN_PRICE);
+    }
+
+    public int findMinOrMax(String sqlQuery) throws DaoException, ConnectionPoolException {
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Activity> events= new ArrayList<>();
+
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlQuery);
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                throw new DaoException("Impossible to find min or max price");
+            }
+
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(statement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
     }
 
     @Override
     public int findMaxPrice() throws DaoException, ConnectionPoolException {
-        return 0;
+        return findMinOrMax(SQL_FIND_MAX_PRICE);
     }
 
     @Override
@@ -255,7 +414,7 @@ public class ActivityDaoImpl implements ActivityDao {
             preparedStatement.setString(3, event.getDescription());
             preparedStatement.setString(4, event.getAddress());
             preparedStatement.setDate(5, Date.valueOf(event.getDate()));
-            preparedStatement.setString(6, event.getNumberSeat());
+            preparedStatement.setBigDecimal(6, event.getPrice());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -294,7 +453,7 @@ public class ActivityDaoImpl implements ActivityDao {
             preparedStatement.setString(3, event.getDescription());
             preparedStatement.setString(4, event.getAddress());
             preparedStatement.setDate(5, Date.valueOf(event.getDate()));
-            preparedStatement.setString(6, event.getNumberSeat());
+            preparedStatement.setBigDecimal(6, event.getPrice());
             preparedStatement.setInt(7, event.getEventId());
             preparedStatement.executeUpdate();
 
@@ -324,7 +483,7 @@ public class ActivityDaoImpl implements ActivityDao {
                         .setDescription(resultSet.getString(4))
                         .setAddress(resultSet.getString(5))
                         .setDate(resultSet.getDate(6).toLocalDate())
-                        .setNumberSeat(resultSet.getString(7))
+                        .setPrice(resultSet.getBigDecimal(7))
                         .build();
             } else {
                 throw new DaoException("No event with such id");

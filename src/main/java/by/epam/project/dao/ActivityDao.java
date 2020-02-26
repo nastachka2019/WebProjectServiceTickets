@@ -14,7 +14,7 @@ import java.util.List;
 
 public interface ActivityDao extends BasicDao<Activity> {
 
-    List<Activity> takeAllEvents() throws DaoException;
+    List<Activity> takeAllEvents() throws DaoException, ConnectionPoolException;
 
     List<Activity> findByNameOrWordInNameWithLimit(String nameOrWordInName, int startIndex, int endIndex) throws DaoException, ConnectionPoolException; //для поиска события с ограничение показа на странице
 
@@ -31,7 +31,7 @@ public interface ActivityDao extends BasicDao<Activity> {
 
     List<Activity> findEventsByFilterWithoutSearchParam (int minPrice, int maxPrice) throws DaoException, ConnectionPoolException;
 
-    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException;
+    List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
 
     int findMinPrice() throws DaoException, ConnectionPoolException;
 
