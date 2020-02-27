@@ -33,7 +33,8 @@ public class EventListCommand implements Command {
     private static final String EVENT_LIST_COMMAND = "event_list";
     private static final String COMMAND_VALUE = "commandValue";
     private static final String NAME_OR_WORD_IN_NAME = "nameOrWordInName";
-
+    private static final String MAX_PRICE = "maxPrice";
+    private static final String MIN_PRICE = "minPrice";
     private static final String REGEX_INDEX = "^[1-9]\\d{0,5}$";
     private static final String ERROR = "error";
     private static final String STATUS_CODE = "statusCode";
@@ -58,9 +59,8 @@ public class EventListCommand implements Command {
         }
 
         ActivityService eventService = new ActivityServiceImpl();
-
         List<Activity> events;
-        if (request.getAttribute(SEARCH) != null) {            //если мы ищем events по заголовку, ПОИСК - найденные товары
+        if (request.getAttribute(SEARCH) != null) {     //if we search products by header, SEARCH - found products
             events = (List<Activity>) request.getAttribute(SEARCH);
             if (!events.isEmpty()) {
                 attributeSettingWithDataFromDb(request, eventService);
@@ -70,34 +70,42 @@ public class EventListCommand implements Command {
             }
         } else {
             if (request.getParameter(NAME_OR_WORD_IN_NAME) != null
+                    && request.getParameter(ACTIVITY_ADDRESS) != null
                     && request.getParameter(ACTIVITY_NAME) != null
-                    && request.getParameter(ACTIVITY_ADDRESS) != null) {
-
+                    && request.getParameter(MIN_PRICE) != null
+                    && request.getParameter(MAX_PRICE) != null) {
                 String nameOrWordInName = request.getParameter(NAME_OR_WORD_IN_NAME);
-                String strEventName = request.getParameter(ACTIVITY_NAME);
-                String strEventAddress = request.getParameter(ACTIVITY_ADDRESS);
-
+                String strAddress = request.getParameter(ACTIVITY_ADDRESS);
+                String strName = request.getParameter(ACTIVITY_NAME);
+                String strMaxPrice = request.getParameter(MAX_PRICE);
+                String strMinPrice = request.getParameter(MIN_PRICE);
                 EventValidator eventValidator = new EventValidator();
-                if (eventValidator.validateData(nameOrWordInName, strEventName, strEventAddress,price)) {
-                    events = eventService.findByNameOrWordInNameWithLimit(
-                            nameOrWordInName,
-                            (indexOfPage - 1) * NUMBER_EVENTS_PER_PAGE,
-                            indexOfPage * NUMBER_EVENTS_PER_PAGE
-                    );
 
+                if (eventValidator.validateData(nameOrWordInName, strAddress, strName, strMaxPrice,strMinPrice)) {
+                    int minPrice=eventService.checkPrice(Integer.parseInt(strMinPrice));
+                    int maxPrice =eventService.checkPrice(Integer.parseInt(strMaxPrice));
+                    String  eventName= strName;
+                    String eventAddress=strAddress;
+
+                    if (minPrice > maxPrice) {
+                      minPrice=maxPrice;
+                    }
+                    events=eventService.findEventsByFilterWithLimit(nameOrWordInName,minPrice,maxPrice,(indexOfPage - 1) * NUMBER_EVENTS_PER_PAGE,
+                            indexOfPage * NUMBER_EVENTS_PER_PAGE);
                     request.setAttribute(COMMAND_VALUE, EVENT_LIST_COMMAND);
-                    request.setAttribute(EVENT_LIST_SIZE, eventService.findByNameOrWordInNameWithLimit(nameOrWordInName, 0, 9).size());
-
+                    request.setAttribute(EVENT_LIST_SIZE, eventService.findEventsByFilter(nameOrWordInName, maxPrice,minPrice).size());
                     request.setAttribute(NAME_OR_WORD_IN_NAME, nameOrWordInName);
-                    request.setAttribute(ACTIVITY_ADDRESS, strEventAddress);
-                    request.setAttribute(ACTIVITY_NAME, strEventName);
+                    request.setAttribute(MIN_PRICE, minPrice);
+                    request.setAttribute(MAX_PRICE, maxPrice);
+                    request.setAttribute(ACTIVITY_NAME, eventName);
+                    request.setAttribute(ACTIVITY_ADDRESS,eventAddress);
                 } else {
                     request.setAttribute(ERROR, "Error request");
                     request.setAttribute(STATUS_CODE, 404);
                     return PathForJsp.ERROR.getUrl();
                 }
 
-            } else {
+            } else{
                 request.setAttribute(ERROR, "Error request");
                 request.setAttribute(STATUS_CODE, 404);
                 return PathForJsp.ERROR.getUrl();
@@ -105,7 +113,7 @@ public class EventListCommand implements Command {
         }
 
         if (events.isEmpty()) {
-            request.setAttribute(SEARCH_ERROR, "Product not found");
+            request.setAttribute(SEARCH_ERROR, "Events not found");
         } else {
             request.setAttribute(EVENTS, events);
         }
@@ -117,9 +125,11 @@ public class EventListCommand implements Command {
     }
 
     private void attributeSettingWithDataFromDb(HttpServletRequest request, ActivityService eventService) throws ServiceException {
-        request.setAttribute(ACTIVITY_NAME, eventService.findByNameOrWordInName(NAME_OR_WORD_IN_NAME));
-        request.setAttribute(ACTIVITY_ADDRESS, eventService.findByNameOrWordInName(NAME_OR_WORD_IN_NAME));
-
+        Activity activity=new Activity();
+        request.setAttribute(MIN_PRICE, eventService.findMinPrice());
+        request.setAttribute(MAX_PRICE, eventService.findMaxPrice());
+        request.setAttribute(ACTIVITY_NAME,activity.getName() );
+        request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
     }
 }
 

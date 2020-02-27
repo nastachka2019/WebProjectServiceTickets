@@ -45,9 +45,12 @@ public class TestDao {
 //        UserCommentDao userCommentDao=new UserCommentDaoImpl();
 //        System.out.println(userCommentDao.findComments(2,"2020-03-25"));
     // System.out.println(userCommentService.findComments(2,"2020-03-25 00:00:00"));
-        ActivityDaoImpl activityDao= new ActivityDaoImpl();
-        System.out.println(activityDao.findMaxPrice());
-
+//        ActivityDaoImpl activityDao= new ActivityDaoImpl();
+//        System.out.println(activityDao.findMaxPrice());
+//TicketDaoImpl ticketDao=new TicketDaoImpl();
+//TicketServiceImpl ticketService=new TicketServiceImpl();
+//        System.out.println(ticketService.totalPriceByUserId(2));
+    //    System.out.println(ticketDao.totalPriceByUserId(3));
 
 
     }

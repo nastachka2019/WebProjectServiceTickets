@@ -43,7 +43,8 @@ public class TicketDaoImpl implements TicketDao {
             " FROM ticket WHERE user_id=? AND event_id=? AND date=? AND event_type_id=?";
     private static final String SQL_FIND_TICKET_BY_ID = "SELECT ticket_id, user_id, event_id, quantity. event_type_id, date" +
             " FROM ticket WHERE ticket_id=?";
-
+    private static final String SQL_COUNT_TOTAL_PRICE_BY_USER =
+            "SELECT (price * quantity) FROM activity INNER JOIN ticket ON activity.activity_id=ticket.event_id GROUP BY user_id";
 
     @Override
     public void updateQuantity(int ticketId, int quantity) throws DaoException, ConnectionPoolException {
@@ -180,6 +181,33 @@ public class TicketDaoImpl implements TicketDao {
         } catch (SQLException e) {
             throw new DaoException(e);
         } finally {
+            closePreparedStatement(preparedStatement);
+            ConnectionPool.INSTANCE.releaseConnection(connection);
+        }
+    }
+
+    @Override
+    public int totalPriceByUserId(int userId) throws DaoException, ConnectionPoolException {
+        return totalValueByUserId(userId,  SQL_COUNT_TOTAL_PRICE_BY_USER);
+    }
+    private int totalValueByUserId(int userId,  String sqlQuery) throws DaoException, ConnectionPoolException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        try {
+            preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setInt(1, userId);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
             ConnectionPool.INSTANCE.releaseConnection(connection);
         }

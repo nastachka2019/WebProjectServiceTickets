@@ -29,5 +29,7 @@ public interface TicketService {
 
     void deleteTicket(int ticketId) throws ServiceException;
 
+    int totalPriceByUserId(int userId)  throws ServiceException;
+
 
 }

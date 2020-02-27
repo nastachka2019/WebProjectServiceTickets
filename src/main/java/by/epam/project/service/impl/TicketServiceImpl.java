@@ -88,4 +88,13 @@ public class TicketServiceImpl implements TicketService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public int totalPriceByUserId(int userId) throws ServiceException {
+        try {
+            return ticketDao.totalPriceByUserId(userId);
+        } catch (DaoException | ConnectionPoolException e) {
+            throw new ServiceException(e);
+        }
+    }
 }

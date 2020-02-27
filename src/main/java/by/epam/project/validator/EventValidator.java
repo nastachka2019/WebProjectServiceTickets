@@ -16,7 +16,6 @@ public class EventValidator {
     private static final String EVENT_ADDRESS = "^(\\p{IsAlphabetic}+){1,50}$";
     private static final String PRICE = "^(([1-9]\\d{0,5})|(0))$";
 
-
     private static final Pattern patternSearchLine = Pattern.compile(SEARCH_LINE);
     private static final Pattern patternEventName = Pattern.compile(EVENT_NAME);
     private static final Pattern patternEventAddress = Pattern.compile(EVENT_ADDRESS);
@@ -28,15 +27,17 @@ public class EventValidator {
         return searchLineMatcher.matches();
     }
 
-    public boolean validateData(String searchLine, String name, String address, String price) {
+    public boolean validateData(String searchLine, String name, String address, String maxPrice, String minPrice) {
 
         Matcher searchLineMatcher = patternSearchLine.matcher(searchLine);
         Matcher eventNameMatcher = patternEventName.matcher(name);
         Matcher eventAddressMatcher = patternEventAddress.matcher(address);
-        Matcher priceMatcher = patternPrice.matcher(price);
+        Matcher minPriceMatcher = patternPrice.matcher(minPrice);
+        Matcher maxPriceMatcher = patternPrice.matcher(maxPrice);
         return searchLineMatcher.matches()
                 && eventAddressMatcher.matches()
                 && eventNameMatcher.matches()
-                && priceMatcher.matches();
+                && minPriceMatcher.matches()
+                && maxPriceMatcher.matches();
     }
 }

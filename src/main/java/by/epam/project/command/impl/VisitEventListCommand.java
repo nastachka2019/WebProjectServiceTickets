@@ -32,9 +32,11 @@ public class VisitEventListCommand implements Command {
     private static final String REGEX_INDEX = "^[1-9]\\d{0,5}$";
     private static final String ERROR = "error";
     private static final String STATUS_CODE = "statusCode";
+    private static final String MIN_PRICE = "minPrice";
+    private static final String MAX_PRICE = "maxPrice";
 
     @Override
-    public String execute(HttpServletRequest request)  {
+    public String execute(HttpServletRequest request) throws ServiceException {
 
         if (request.getSession().getAttribute(ERROR) != null) {
             request.setAttribute(ERROR, request.getSession().getAttribute(ERROR));
@@ -58,24 +60,24 @@ public class VisitEventListCommand implements Command {
         }
 
       ActivityService eventService = new ActivityServiceImpl();
-        try {
-            List<Activity> events = eventService.findEventByLimit(
-                    (indexOfPage - 1) * NUMBER_EVENTS_PER_PAGE,
-                    indexOfPage * NUMBER_EVENTS_PER_PAGE
-            );
-            if (!events.isEmpty()) {
-                request.setAttribute(ACTIVITY_NAME, eventService.takeAllEvents());
-                request.setAttribute(ACTIVITY_ADDRESS, eventService.takeAllEvents());
-            }
+        Activity activity=new Activity();
+        List<Activity> events = eventService.findEventByLimit(
+                (indexOfPage - 1) * NUMBER_EVENTS_PER_PAGE,
+                indexOfPage * NUMBER_EVENTS_PER_PAGE
+        );
 
-            request.setAttribute(EVENTS, events);
+        if (!events.isEmpty()) {
+            request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
+            request.setAttribute(ACTIVITY_NAME, activity.getName());
+            request.setAttribute(MIN_PRICE,eventService.findMinPrice());
+            request.setAttribute(MAX_PRICE,eventService.findMaxPrice());
+        }
+
+        request.setAttribute(EVENTS, events);
         request.setAttribute(INDEX_OF_PAGE, indexOfPage);
         request.setAttribute(EVENT_LIST_SIZE, eventService.takeAllEvents().size());
         request.setAttribute(COMMAND_VALUE, VISIT_EVENT_LIST_COMMAND);
         request.setAttribute(EVENTS_PER_PAGE, NUMBER_EVENTS_PER_PAGE);
-} catch (ServiceException e) {
-            e.printStackTrace();
-        }
         return PathForJsp.EVENT_LIST.getUrl();
     }
 }
