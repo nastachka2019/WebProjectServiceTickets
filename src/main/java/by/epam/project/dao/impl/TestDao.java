@@ -22,18 +22,18 @@ public class TestDao {
     public static void main(String[] args) throws DaoException, ConnectionPoolException, ServiceException {
 //        UserDaoImpl userDao=new UserDaoImpl();
 //        User user=new User(2,UserRole.USER,"Kate","Smith", "kate123@gmail.com", "Katyaaa", "Katya12345", "375331111111", LocalDate.of(2000,01,01));
-// //       userDao.insert(user);
-////        System.out.println("jr");
+//        userDao.insert(user);
+//        System.out.println("jr");
 //      ActivityDaoImpl eventDao=new ActivityDaoImpl();
 //      Activity activity= new Activity(1, "Queen's concert", null, "Concert of the legendary Queen","Minsk, Pobeditelej str., Prime Hall",LocalDate.of(2020,03,21),"2s-100s" );
-////        System.out.println(eventDao.findById(2));
+//        System.out.println(eventDao.findById(2));
 //        System.out.println(eventDao.findById(2));
 //        UserDaoImpl userDao=new UserDaoImpl();
 //        System.out.println(userDao.findById(2));
 //        TicketDaoImpl ticketDao=new TicketDaoImpl();
 //        System.out.println(ticketDao.findDatesByUserId(2));
-  //      ActivityService activityService=new ActivityServiceImpl();
-   //     System.out.println(activityService.takeAllEvents());
+        //      ActivityService activityService=new ActivityServiceImpl();
+        //     System.out.println(activityService.takeAllEvents());
 //        EventTypeService eventTypeService=new EventTypeServiceImpl();
 //      EventType eventType=new EventType(1, "Concert");
 ////        System.out.println(eventTypeService.findIdByEventType("sport"));
@@ -44,13 +44,13 @@ public class TestDao {
 //        UserCommentService userCommentService=new UserCommentServiceImpl();
 //        UserCommentDao userCommentDao=new UserCommentDaoImpl();
 //        System.out.println(userCommentDao.findComments(2,"2020-03-25"));
-    // System.out.println(userCommentService.findComments(2,"2020-03-25 00:00:00"));
+        // System.out.println(userCommentService.findComments(2,"2020-03-25 00:00:00"));
 //        ActivityDaoImpl activityDao= new ActivityDaoImpl();
 //        System.out.println(activityDao.findMaxPrice());
 //TicketDaoImpl ticketDao=new TicketDaoImpl();
 //TicketServiceImpl ticketService=new TicketServiceImpl();
 //        System.out.println(ticketService.totalPriceByUserId(2));
-    //    System.out.println(ticketDao.totalPriceByUserId(3));
+        //    System.out.println(ticketDao.totalPriceByUserId(3));
 
 
     }

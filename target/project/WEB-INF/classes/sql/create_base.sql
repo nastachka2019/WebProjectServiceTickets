@@ -29,7 +29,7 @@ CREATE TABLE `activity` (
   `description` varchar(100) NOT NULL,
   `activity_address` varchar(100) NOT NULL,
   `activity_data` date NOT NULL,
-  `numberSeat` varchar(100) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`activity_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `activity` (
 
 LOCK TABLES `activity` WRITE;
 /*!40000 ALTER TABLE `activity` DISABLE KEYS */;
-INSERT INTO `activity` VALUES (1,'Queen\'s concert',NULL,'Concert of the legendary Queen','Minsk, Pobeditelej str., \"Prime Hall\"','2020-03-21','2s-100s'),(2,'Hockey championship',NULL,'Hockey championship among professional teams of europe','Minsk, Pobeditelej str., \"Minsk Arena\"','2020-02-26','11nn-34mn'),(3,'Night Movie',NULL,'3 most popular films for one night in the open air','Minsk, Borovaya','2020-07-20','1-100'),(4,'Opera Rigoletto',NULL,'Work of  Giuseppe Verdi in 2 acts','Minsk, Parizhskaya Kommuna sq, \"\"The Bolshoi Theatre of Belarus','2020-04-25','2-85'),(5,'Ballet Swan lake',NULL,'Based on the works of Peter Tchaikovsky. Ballet in 3 acts','Minsk, Parizhskaya Kommuna sq, \"\"The Bolshoi Theatre of Belarus','2020-02-22','5f-89'),(6,'Cinema',NULL,'Tickets to the cinema.  Only in our cinema are the newest and most popular films','Minsk, Lenina st.','2020-01-01','1-100'),(7,'Concert',NULL,'Tickets on popular concerts.','Minsk, Lenina st.','2020-02-02','2-200'),(8,'Exhibition',NULL,'The most popular art exhibitions.','Minsk, Y. Kolasa st.','2020-01-10','3-100'),(9,'Footbal championship',NULL,'Football championship among professional teams of europe','Minsk, stadium \"Dinamo\"','2020-07-07','1-20');
+INSERT INTO `activity` VALUES (1,'Queen\'s concert',NULL,'Concert of the legendary Queen','Minsk, Pobeditelej str., \"Prime Hall\"','2020-03-21',150.00),(2,'Hockey championship',NULL,'Hockey championship among professional teams of europe','Minsk, Pobeditelej str., \"Minsk Arena\"','2020-02-26',75.00),(3,'Night Movie',NULL,'3 most popular films for one night in the open air','Minsk, Borovaya','2020-07-20',55.00),(4,'Opera Rigoletto',NULL,'Work of  Giuseppe Verdi in 2 acts','Minsk, Parizhskaya Kommuna sq, \"\"The Bolshoi Theatre of Belarus','2020-04-25',80.00),(5,'Ballet Swan lake',NULL,'Based on the works of Peter Tchaikovsky. Ballet in 3 acts','Minsk, Parizhskaya Kommuna sq, \"\"The Bolshoi Theatre of Belarus','2020-02-22',30.00),(6,'Cinema',NULL,'Tickets to the cinema.  Only in our cinema are the newest and most popular films','Minsk, Lenina st.','2020-01-01',15.00),(7,'Concert',NULL,'Tickets on popular concerts.','Minsk, Lenina st.','2020-02-02',100.00),(8,'Exhibition',NULL,'The most popular art exhibitions.','Minsk, Y. Kolasa st.','2020-01-10',50.00),(9,'Footbal championship',NULL,'Football championship among professional teams of europe','Minsk, stadium \"Dinamo\"','2020-07-07',35.00);
 /*!40000 ALTER TABLE `activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +114,7 @@ CREATE TABLE `ticket` (
   CONSTRAINT `event_id` FOREIGN KEY (`event_id`) REFERENCES `activity` (`activity_id`),
   CONSTRAINT `event_type_id` FOREIGN KEY (`event_type_id`) REFERENCES `event_type` (`event_type_id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +123,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1,2,1,2,1,'2020-03-19'),(2,2,2,1,5,'2020-02-20'),(3,3,3,1,3,'2020-06-25'),(4,3,4,3,4,'2020-04-21'),(5,7,5,2,2,'2020-02-21'),(6,7,6,3,3,'2019-12-29'),(7,8,7,1,1,'2020-01-18'),(8,8,8,3,7,'2020-01-05'),(9,10,9,3,5,'2020-06-29'),(10,10,2,1,5,'2020-02-23');
+INSERT INTO `ticket` VALUES (1,2,1,2,1,'2020-03-19'),(2,2,2,1,5,'2020-02-20'),(3,3,3,1,3,'2020-06-25'),(4,3,4,3,4,'2020-04-21'),(5,7,5,2,2,'2020-02-21'),(6,7,6,3,3,'2019-12-29'),(7,8,7,1,1,'2020-01-18'),(8,8,8,3,7,'2020-01-05'),(9,10,9,3,5,'2020-06-29'),(10,10,2,1,5,'2020-02-23'),(11,2,1,2,1,'2020-04-19'),(12,2,1,2,1,'2020-04-19');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +167,7 @@ DROP TABLE IF EXISTS `user_comment`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_comment` (
   `comment_id` int NOT NULL AUTO_INCREMENT,
-  ` date_of_comment` timestamp NOT NULL,
+  `dateComment` timestamp NOT NULL,
   `ticketDate` date NOT NULL,
   `user_id` int NOT NULL,
   `comment` varchar(200) NOT NULL,
@@ -195,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-26 15:46:47
+-- Dump completed on 2020-02-26 19:25:53
