@@ -46,7 +46,7 @@ public class TestDao {
 //        System.out.println(userCommentDao.findComments(2,"2020-03-25"));
     // System.out.println(userCommentService.findComments(2,"2020-03-25 00:00:00"));
         ActivityDaoImpl activityDao= new ActivityDaoImpl();
-        System.out.println(activityDao.findMinPrice());
+        System.out.println(activityDao.findMaxPrice());
 
 
 

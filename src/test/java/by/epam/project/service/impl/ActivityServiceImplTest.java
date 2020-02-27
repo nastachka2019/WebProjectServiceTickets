@@ -121,23 +121,29 @@ public class ActivityServiceImplTest {
         //      Actual   :Event {eventId= 6, eventName= Cinema, eventDescription= Tickets to the cinema.  Only in our cinema are the newest and most popular films, eventAddress=Minsk, Lenina st., eventDate= 2020-01-01, price=15.00}
     }
 
-    private ConnectionPool pool;
-    ActivityDaoImpl activityDao;
+
 
     @BeforeMethod
     public void setUp() {
-        pool = ConnectionPool.INSTANCE;
+        ConnectionPool.INSTANCE.getConnection();
     }
 
     @AfterMethod
     public void tearDown() {
-        pool = null;
-        activityDao=null;
     }
     @Test
-    public void findMaxPriceTest() throws ConnectionPoolException, DaoException {
-        int expected = 200;
-        int actual = activityDao.findMinPrice();
+    public void findMinPriceTest() throws ServiceException {        //positive
+        int expected = 15;
+        ActivityServiceImpl activityService = new ActivityServiceImpl();
+        int actual = activityService.findMinPrice();
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void findMaxPriceTest() throws ServiceException {          //positive
+        int expected = 150;
+        ActivityServiceImpl activityService = new ActivityServiceImpl();
+        int actual = activityService.findMaxPrice();
         assertEquals(actual, expected);
     }
 }

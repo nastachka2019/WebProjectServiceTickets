@@ -124,7 +124,7 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public int findMaxPrice() throws ServiceException {
         try {
-            return activityDao.findMinPrice();
+            return activityDao.findMaxPrice();
         } catch (DaoException | ConnectionPoolException e) {
             throw new ServiceException(e);
         }
