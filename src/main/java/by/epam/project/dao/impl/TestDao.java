@@ -1,5 +1,6 @@
 package by.epam.project.dao.impl;
 
+import by.epam.project.dao.ActivityDao;
 import by.epam.project.dao.UserCommentDao;
 import by.epam.project.entity.*;
 import by.epam.project.exception.ConnectionPoolException;
@@ -40,11 +41,12 @@ public class TestDao {
 //        Ticket ticket=new Ticket(11,activity,eventType, user,2,LocalDate.of(2020, 04, 20));
 //
 //        ticketService.insertTicket(ticket);
-        UserCommentService userCommentService=new UserCommentServiceImpl();
-        UserCommentDao userCommentDao=new UserCommentDaoImpl();
-        System.out.println(userCommentDao.findComments(18,"2020-03-25"));
+//        UserCommentService userCommentService=new UserCommentServiceImpl();
+//        UserCommentDao userCommentDao=new UserCommentDaoImpl();
+//        System.out.println(userCommentDao.findComments(2,"2020-03-25"));
     // System.out.println(userCommentService.findComments(2,"2020-03-25 00:00:00"));
-
+        ActivityDaoImpl activityDao= new ActivityDaoImpl();
+        System.out.println(activityDao.findMinPrice());
 
 
 

@@ -7,23 +7,23 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class ConnectionPoolTest {
-
     private ConnectionPool pool;
+
     @BeforeMethod
     public void setUp() {
-       pool= ConnectionPool.INSTANCE;
+        pool = ConnectionPool.INSTANCE;
     }
 
     @AfterMethod
     public void tearDown() {
-        pool=null;
+        pool = null;
     }
 
 
     @Test
     public void testCheckPoolSize() {  //positive
-        int expected=32;
-        int actual =pool.checkPoolSize();
+        int expected = 32;
+        int actual = pool.checkPoolSize();
         assertEquals(actual, expected);
     }
 }

@@ -34,9 +34,9 @@ public class ActivityDaoImpl implements ActivityDao {
     private static final String SQL_FIND_BY_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
             " FROM activity LIMIT ?, ?";
     private static final String SQL_FIND_BY_FILTER_WITH_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
-            " FROM activiy  WHERE (name LIKE ?  OR name LIKE ?  OR name LIKE ?  OR name LIKE ?)  AND (price BETWEEN ? AND ?)  LIMIT ?,?";
+            " FROM activiy  WHERE (activity_name LIKE ?  OR activity_name LIKE ?  OR activity_name LIKE ?  OR activity_name LIKE ?)  AND (price BETWEEN ? AND ?)  LIMIT ?,?";
     private static final String SQL_FIND_BY_FILTER = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
-            " FROM activity WHERE (name LIKE ? OR name LIKE ?  OR name LIKE ?  OR name LIKE ?) AND (price BETWEEN ? AND ?)";
+            " FROM activity WHERE (activity_name LIKE ? OR activity_name LIKE ?  OR activity_name LIKE ?  OR activity_name LIKE ?) AND (price BETWEEN ? AND ?)";
     private static final String SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM_WITH_LIMIT = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
             " FROM activity WHERE (price BETWEEN ? AND ?) LIMIT ?,?";
     private static final String SQL_FIND_BY_FILTER_WITHOUT_SEARCH_PARAM = "SELECT activity_id, activity_name, image_url, description, activity_address, activity_data, price" +
