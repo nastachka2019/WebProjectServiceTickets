@@ -21,14 +21,12 @@ public class EventValidator {
     private static final Pattern patternEventAddress = Pattern.compile(EVENT_ADDRESS);
     private static final Pattern patternPrice = Pattern.compile(PRICE);
 
-
     public boolean validateData(String searchLine) {
         Matcher searchLineMatcher = patternSearchLine.matcher(searchLine);
         return searchLineMatcher.matches();
     }
 
     public boolean validateData(String searchLine, String name, String address, String maxPrice, String minPrice) {
-
         Matcher searchLineMatcher = patternSearchLine.matcher(searchLine);
         Matcher eventNameMatcher = patternEventName.matcher(name);
         Matcher eventAddressMatcher = patternEventAddress.matcher(address);

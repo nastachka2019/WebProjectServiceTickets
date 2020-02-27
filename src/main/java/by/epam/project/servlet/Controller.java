@@ -79,9 +79,7 @@ public class Controller extends HttpServlet {
             request.setAttribute(STATUS_CODE, 404);
             page = PathForJsp.ERROR.getUrl();
         }
-
         if (page != null) {
-
             if (request.getAttribute(RESPONSE) != null && (boolean) request.getAttribute(RESPONSE)) {
                 response.sendRedirect(page);
             } else {
