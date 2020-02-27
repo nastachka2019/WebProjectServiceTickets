@@ -46,6 +46,7 @@ public class ActivityDaoImpl implements ActivityDao {
 
     @Override
     public List<Activity> takeAllEvents() throws DaoException, ConnectionPoolException {
+
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;

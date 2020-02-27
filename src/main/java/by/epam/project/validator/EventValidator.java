@@ -1,5 +1,6 @@
 package by.epam.project.validator;
 
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,14 +11,16 @@ import java.util.regex.Pattern;
  */
 
 public class EventValidator {
-    private static final String REGEX_SEARCH_LINE = "^.{0,100}$";
-    private static final String REGEX_EVENT_NAME = "^(\\p{IsAlphabetic}+){1,50}$";
-    private static final String REGEX_EVENT_ADDRESS = "^(\\p{IsAlphabetic}+){1,50}$";
+    private static final String SEARCH_LINE = "^.{0,100}$";
+    private static final String EVENT_NAME = "^(\\p{IsAlphabetic}+){1,50}$";
+    private static final String EVENT_ADDRESS = "^(\\p{IsAlphabetic}+){1,50}$";
+    private static final String PRICE = "^(([1-9]\\d{0,5})|(0))$";
 
 
-    private static final Pattern patternSearchLine = Pattern.compile(REGEX_SEARCH_LINE);
-    private static final Pattern patternEventName = Pattern.compile(REGEX_EVENT_NAME);
-    private static final Pattern patternEventAddress = Pattern.compile(REGEX_EVENT_ADDRESS);
+    private static final Pattern patternSearchLine = Pattern.compile(SEARCH_LINE);
+    private static final Pattern patternEventName = Pattern.compile(EVENT_NAME);
+    private static final Pattern patternEventAddress = Pattern.compile(EVENT_ADDRESS);
+    private static final Pattern patternPrice = Pattern.compile(PRICE);
 
 
     public boolean validateData(String searchLine) {
@@ -25,13 +28,15 @@ public class EventValidator {
         return searchLineMatcher.matches();
     }
 
-    public boolean validateData(String searchLine, String name, String address) {
+    public boolean validateData(String searchLine, String name, String address, String price) {
 
         Matcher searchLineMatcher = patternSearchLine.matcher(searchLine);
         Matcher eventNameMatcher = patternEventName.matcher(name);
         Matcher eventAddressMatcher = patternEventAddress.matcher(address);
+        Matcher priceMatcher = patternPrice.matcher(price);
         return searchLineMatcher.matches()
                 && eventAddressMatcher.matches()
-                && eventNameMatcher.matches();
+                && eventNameMatcher.matches()
+                && priceMatcher.matches();
     }
 }

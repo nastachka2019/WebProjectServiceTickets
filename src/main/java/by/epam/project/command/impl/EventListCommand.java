@@ -78,7 +78,7 @@ public class EventListCommand implements Command {
                 String strEventAddress = request.getParameter(ACTIVITY_ADDRESS);
 
                 EventValidator eventValidator = new EventValidator();
-                if (eventValidator.validateData(nameOrWordInName, strEventName, strEventAddress)) {
+                if (eventValidator.validateData(nameOrWordInName, strEventName, strEventAddress,price)) {
                     events = eventService.findByNameOrWordInNameWithLimit(
                             nameOrWordInName,
                             (indexOfPage - 1) * NUMBER_EVENTS_PER_PAGE,
