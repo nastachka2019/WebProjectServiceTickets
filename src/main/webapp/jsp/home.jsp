@@ -9,7 +9,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%--@elvariable id="locale" type="by"--%>
+
 <c:set var="locale"
        value="${not empty locale ? locale : 'en'}"
        scope="session"/>

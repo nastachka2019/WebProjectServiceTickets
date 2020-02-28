@@ -21,10 +21,11 @@ public class PaginationTag extends TagSupport {
 
     private String locale;
     private String commandValue;
-
     private String nameOrWordInName;
     private String eventName;
     private String eventAddress;
+    private int minPrice;
+    private int maxPrice;
 
 
     @Override
@@ -53,10 +54,13 @@ public class PaginationTag extends TagSupport {
 
                 if (commandValue.equals("search")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
-                } else if (commandValue.equals("event_list")) {
+                } else if (commandValue.equals("product_list")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
                     out.write("<input type=\"hidden\" name=\"eventName\" value=\"" + eventName + "\">");
-                    out.write("<input type=\"hidden\" name=\"eventAddress\" value=\"" + eventAddress + "\">");
+                    out.write("<input type=\"hidden\" name=\"eventAdress\" value=\"" + eventAddress + "\">");
+                    out.write("<input type=\"hidden\" name=\"minPrice\" value=\"" + minPrice + "\">");
+                    out.write("<input type=\"hidden\" name=\"maxPrice\" value=\"" + maxPrice + "\">");
+
                 }
 
                 out.write("<a class=\"page-link\" onclick=\"document.getElementById('previousPageForm').submit();\">" + rb.getString("pagination.previous") + "</a>");
@@ -73,10 +77,12 @@ public class PaginationTag extends TagSupport {
 
                 if (commandValue.equals("search")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
-                } else if (commandValue.equals("event_list")) {
+                } else if (commandValue.equals("product_list")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
-                    out.write("<input type=\"hidden\" name=\"eventName\" value=\"" + eventName + "\">");
+                    out.write("<input type=\"hidden\" name=\"eventName\" value=\"" + eventName+ "\">");
                     out.write("<input type=\"hidden\" name=\"eventAddress\" value=\"" + eventAddress + "\">");
+                    out.write("<input type=\"hidden\" name=\"minPrice\" value=\"" + minPrice+ "\">");
+                    out.write("<input type=\"hidden\" name=\"maxPrice\" value=\"" + maxPrice + "\">");
                 }
 
                 out.write("<a class=\"page-link\" onclick=\"document.getElementById('nextPageForm').submit();\">" + rb.getString("pagination.next") + "</a>");
@@ -124,12 +130,20 @@ public class PaginationTag extends TagSupport {
         this.nameOrWordInName = nameOrWordInName;
     }
 
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public void setEventAddress(String eventAddress) {
+        this.eventAddress=eventAddress;
     }
 
-    public void setEventAddress(String eventAddress) {
-        this.eventAddress = eventAddress;
+    public void setEventName(String eventName) {
+        this.eventName=eventName;
+    }
+
+    public void setMinPrice(int minPrice) {
+        this.minPrice=minPrice;
+    }
+
+    public void setMaxPrice(int maxPrice) {
+        this.maxPrice=maxPrice;
     }
 }
 

@@ -54,6 +54,16 @@
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
+        <attribute>
+            <name>maxPrice</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>minPrice</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
 
     </tag>
 

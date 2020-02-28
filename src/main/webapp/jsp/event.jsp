@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>${activity.name}</title>
+    <title>${activity.activityName}</title>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -59,24 +59,28 @@
 
                             <div class="preview-pic tab-content">
                                 <div class="tab-pane active" id="pic-1"><img
-                                        src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
-                                        alt=""
+                                        src="${pageContext.request.contextPath}/images/products/${product.imageURL}"
                                         width="200"
                                         height="250"/></div>
                             </div>
 
                         </div>
-                        <div class="details col-md-4" style="padding-left: 80px;">
-                            <h3 class="act-title">${event.name}</h3>
+                        <div class="details col-md-6" style="padding-left: 80px;">
+                            <h3 class="event-title">${activity.activityName}</h3>
 
-                            <p class="act-description">${event.description}</p>
+                            <p class="event-description">${ativity.description}</p>
+                            <h5 class="sizes"><fmt:message key="event.name"/>
+                                <span class="size" data-toggle="tooltip" title="small">${activity.activityName}</span>
+                            </h5>
                             <h5 class="sizes"><fmt:message key="event.address"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.address}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${activity.activityAddress}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.date"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.data}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${activity.data}</span>
                             </h5>
-
+                            <h5 class="sizes"><fmt:message key="event.price"/>
+                                <span class="size" data-toggle="tooltip" title="small">${activity.price}</span>
+                            </h5>
 
 
                             <c:choose>
@@ -86,38 +90,28 @@
 
                                 <c:otherwise>
                                     <form method="post" action="add_ticket" class="form-horizontal">
-                                        <input type="hidden" name="command" value="add_ticket">
-                                        <input type="hidden" name="eventId" value="${event.eventId}">
+                                        <input type="hidden" name="command" value="add_meal">
+                                        <input type="hidden" name="eventId" value="${activity.activityId}">
 
                                         <label>
-                                            <input type="date" name="orderDate" value="${orderDate}" maxlength="20"
+                                            <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"
                                                    id="dateOfBirth"
                                                    class="form-control" required>
                                         </label>
 
                                         <label>
                                             <select class="custom-select" name="eventType" required>
-                                                <option ${eventType=="cinema"?"selected":""} value="cinema">
+                                                <option ${eventType=="concert"?"selected":""} value="concert">
                                                     <fmt:message
-                                                            key="event_type.cinema"/>
+                                                            key="event.concert"/>
                                                 </option>
                                                 <!-- value отправляется на сервер-->
-                                                <option ${eventType=="concert"?"selected":""} value="concert"><fmt:message
-                                                        key="event_type.concert"/>
+                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message
+                                                        key="event_type.ballet"/>
                                                 </option>
                                                 <option ${eventType=="sport"?"selected":""} value="sport"><fmt:message
                                                         key="event_type.sport"/>
                                                 </option>
-                                                <option ${eventType=="theatrePerformance"?"selected":""} value="theatre"><fmt:message
-                                                        key="event_type.theater"/>
-                                                </option>
-                                                <option ${eventType=="opera"?"selected":""} value="opera"><fmt:message
-                                                        key="event_type.opera"/>
-                                                </option>
-                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message
-                                                        key="event_type.ballet"/>
-                                                </option>
-
                                             </select>
                                         </label>
 
@@ -156,6 +150,9 @@
 
     </div>
     <jsp:include page="footer.jsp"/>
+
 </div>
+
+
 </body>
 </html>

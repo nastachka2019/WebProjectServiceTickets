@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%--<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>--%>
-<%--@elvariable id="locale" type="by"--%>
+
 <c:set var="locale"
        value="${not empty locale ? locale : 'en'}"
        scope="session"/>
