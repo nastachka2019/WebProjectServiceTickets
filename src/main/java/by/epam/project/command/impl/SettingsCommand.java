@@ -44,7 +44,7 @@ public class SettingsCommand implements Command {
     private static final String OK = "ok";
 
     @Override
-    public String execute(HttpServletRequest request)  {
+    public String execute(HttpServletRequest request, HttpServletResponse response)  {
 
         boolean fail = false;
         Map<String, String> errorMessages;

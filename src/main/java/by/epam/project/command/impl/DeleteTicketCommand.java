@@ -21,13 +21,13 @@ import java.time.LocalDate;
 public class DeleteTicketCommand implements Command {
     private final static String USER = "User";
     private static final String TICKET_ID = "ticketId";
-    private static final String TOTAL_ACTIVIES = "totalActivities";
+    private static final String TOTAL_ACTIVIES = "totalEvents";
     private static final String SELECTED_DATE = "selected_date";
     private static final String RESPONSE = "response";
     private static final String ORDER_PATH = "/order";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         int ticketId = Integer.parseInt(request.getParameter(TICKET_ID));
         int totalEvents = Integer.parseInt(request.getParameter(TOTAL_ACTIVIES));

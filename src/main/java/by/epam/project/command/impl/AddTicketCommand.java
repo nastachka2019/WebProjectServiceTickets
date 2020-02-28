@@ -39,7 +39,7 @@ public class AddTicketCommand implements Command {
     private static final String OK = "ok";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         User user = (User) request.getSession().getAttribute(USER);
         int eventId = Integer.parseInt(request.getParameter(ACTIVITY_ID));

@@ -45,7 +45,7 @@ public class RegistrationCommand implements Command {
     private static final String EVENT_LIST_PATH = "/visit_event_list";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         boolean fail = false;
         String page = null;
 
@@ -113,9 +113,9 @@ public class RegistrationCommand implements Command {
                         e.printStackTrace();
                     }
                     //sending an e-mail about successful registration
-                    MailSenderCommand mailSenderCommand= new MailSenderCommand("email", "password",
-                            "mailTo", "Test", "MailTest");
-                    mailSenderCommand.start();
+//                    MailSenderCommand mailSenderCommand= new MailSenderCommand("email", "password",
+//                            "mailTo", "Test", "MailTest");
+//                    mailSenderCommand.start();
 
 
                     User user = null;

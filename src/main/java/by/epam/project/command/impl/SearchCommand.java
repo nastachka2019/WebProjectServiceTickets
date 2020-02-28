@@ -36,14 +36,14 @@ public class SearchCommand implements Command {
 
 
     @Override
-    public String execute(HttpServletRequest request) throws ServiceException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         int indexOfPage;
         if (request.getParameter(INDEX_OF_PAGE) != null) {
             Pattern pattern = Pattern.compile(REGEX_INDEX);
             Matcher matcher = pattern.matcher(request.getParameter(INDEX_OF_PAGE));
 
-            if(matcher.matches()){
+            if (matcher.matches()) {
                 indexOfPage = Integer.parseInt(request.getParameter(INDEX_OF_PAGE));
             } else {
                 request.setAttribute(ERROR, "Error request");
@@ -66,20 +66,29 @@ public class SearchCommand implements Command {
                 return PathForJsp.ERROR.getUrl();
 
             } else {
-              ActivityService eventService = new ActivityServiceImpl();
+                ActivityService eventService = new ActivityServiceImpl();
 
-                List<Activity> events;
+                List<Activity> events = null;
                 if (nameOrWordInName.isEmpty()) {
-                    events = eventService.findEventByLimit(
-                            (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
-                            indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
-                    request.setAttribute(PRODUCT_LIST_SIZE, eventService.takeAllEvents().size());
+                    try {
+                        events = eventService.findEventByLimit(
+                                (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
+                                indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
+                        request.setAttribute(PRODUCT_LIST_SIZE, eventService.takeAllEvents().size());
+                    } catch (ServiceException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
-                    events= eventService.findByNameOrWordInNameWithLimit(nameOrWordInName,
-                            (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
-                            indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
-                    request.setAttribute(PRODUCT_LIST_SIZE, eventService.findByNameOrWordInName(nameOrWordInName).size());
+                    try {
+                        events = eventService.findByNameOrWordInNameWithLimit(nameOrWordInName,
+                                (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
+                                indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
+
+                        request.setAttribute(PRODUCT_LIST_SIZE, eventService.findByNameOrWordInName(nameOrWordInName).size());
+                    } catch (ServiceException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 request.setAttribute(SEARCH, events);
@@ -87,12 +96,13 @@ public class SearchCommand implements Command {
                 request.setAttribute(COMMAND_VALUE, SEARCH_COMMAND);
 
             }
+            return new EventListCommand().execute(request, response);
 
-            return new EventListCommand().execute(request);
         } else {
             request.setAttribute(ERROR, "Error request");
             request.setAttribute(STATUS_CODE, 404);
             return PathForJsp.ERROR.getUrl();
+
         }
     }
 }

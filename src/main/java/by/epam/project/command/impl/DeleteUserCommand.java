@@ -25,7 +25,7 @@ public class DeleteUserCommand implements Command {
     private static final String USER_LIST_PATH = "/user_list";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         int userId = Integer.parseInt(request.getParameter(USER_ID));
 

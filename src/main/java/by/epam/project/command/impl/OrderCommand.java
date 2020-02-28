@@ -19,14 +19,14 @@ import java.util.Set;
 
 public class OrderCommand implements Command {
     private final static String USER = "User";
-    private final static String TICKET_DATES = "orderDates";
-    private final static String TICKET_DATE = "orderDate";
+    private final static String TICKET_DATES = "ticketDates";
+    private final static String TICKET_DATE = "ticketDate";
     private final static String SHOW_ORDER = "show_order";
     private final static String SELECTED_DATE = "selected_date";
     private final static String NO_ORDER = "noOrder";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         User user = (User) request.getSession().getAttribute(USER);
         int userId = user.getUserId();

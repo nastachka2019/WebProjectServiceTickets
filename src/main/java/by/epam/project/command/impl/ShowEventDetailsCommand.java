@@ -29,7 +29,7 @@ public class ShowEventDetailsCommand implements Command {
     private static final String REGEX_ID = "^[1-9]\\d*$";
 
     @Override
-    public String execute(HttpServletRequest request)  {
+    public String execute(HttpServletRequest request,HttpServletResponse response)  {
 
         if (request.getSession().getAttribute(OK) != null) {
             request.setAttribute(OK, request.getSession().getAttribute(OK));

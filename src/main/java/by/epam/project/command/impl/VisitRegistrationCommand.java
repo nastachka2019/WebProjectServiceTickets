@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class VisitRegistrationCommand implements Command {
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request,  HttpServletResponse response) {
         return PathForJsp.REGISTRATION.getUrl();
     }
 }

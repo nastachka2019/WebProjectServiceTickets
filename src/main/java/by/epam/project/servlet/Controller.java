@@ -71,7 +71,7 @@ public class Controller extends HttpServlet {
             logger.info("Request. Parameter = " + commandStr);
 
             Command command = commandMap.receiveCommand(commandStr);
-            page = command.execute(request);
+            page = command.execute(request,response);
 
         }  else {
           logger.error("Command not received");

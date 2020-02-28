@@ -47,7 +47,7 @@ public class ShowOrderCommand implements Command {
     private static final String TOTAL_PRICE = "totalPrice";
 
     @Override
-    public String execute(HttpServletRequest request) throws ServiceException {
+    public String execute(HttpServletRequest request,HttpServletResponse response)  {
 
         if (request.getParameter(TICKET_DATE) != null) {
             String ticketDate = request.getParameter(TICKET_DATE);
