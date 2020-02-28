@@ -18,13 +18,13 @@ import java.sql.Statement;
  */
 
 public interface BasicDao<T extends Entity> {
-    void insert(T entity) throws DaoException, ConnectionPoolException;    //вставка по ключу
+    void insert(T entity) throws DaoException;    //вставка по ключу
 
-    void delete(int id) throws DaoException, ConnectionPoolException;  //удаление по ключу
+    void delete(int id) throws DaoException;  //удаление по ключу
 
-    void update(T entity) throws DaoException, ConnectionPoolException; //обновить по ключу
+    void update(T entity) throws DaoException; //обновить по ключу
 
-    T findById(int id) throws DaoException, ConnectionPoolException;
+    T findById(int id) throws DaoException;
 
     default void closeResultSet(ResultSet resultSet) { //метод закрытия экземпляра ResultSet
         if (resultSet != null) {

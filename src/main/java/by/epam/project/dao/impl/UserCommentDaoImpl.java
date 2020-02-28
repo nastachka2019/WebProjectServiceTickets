@@ -210,7 +210,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
                 throw new DaoException("No comment with such id");
             }
 
-        } catch (SQLException e){
+        } catch (SQLException | ServiceException e){
             throw new DaoException(e);
         } finally {
             closeResultSet(resultSet);

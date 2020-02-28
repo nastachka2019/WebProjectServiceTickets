@@ -126,11 +126,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(User user) {
+    public void update(User user) throws ServiceException {
         try {
             userDao.update(user);
         } catch (DaoException  e) {
-            e.printStackTrace();
+            throw new ServiceException(e);
         }
     }
 }

@@ -378,9 +378,8 @@ public class ActivityDaoImpl implements ActivityDao {
     public int findMinOrMax(String sqlQuery) throws DaoException {
         Statement statement = null;
         ResultSet resultSet = null;
-
         Connection connection = ConnectionPool.INSTANCE.getConnection();
-        List<Activity> events = new ArrayList<>();
+       // List<Activity> events = new ArrayList<>();
 
         try {
             statement = connection.createStatement();

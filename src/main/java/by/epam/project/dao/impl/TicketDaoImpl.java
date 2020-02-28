@@ -6,7 +6,6 @@ import by.epam.project.entity.Activity;
 import by.epam.project.entity.EventType;
 import by.epam.project.entity.Ticket;
 import by.epam.project.entity.User;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.ActivityService;
@@ -47,7 +46,7 @@ public class TicketDaoImpl implements TicketDao {
             "SELECT (price * quantity) FROM activity INNER JOIN ticket ON activity.activity_id=ticket.event_id GROUP BY user_id";
 
     @Override
-    public void updateQuantity(int ticketId, int quantity) throws DaoException, ConnectionPoolException {
+    public void updateQuantity(int ticketId, int quantity) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -59,12 +58,12 @@ public class TicketDaoImpl implements TicketDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public Set<String> findDatesByUserId(int userId) throws DaoException, ConnectionPoolException {
+    public Set<String> findDatesByUserId(int userId) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -82,7 +81,7 @@ public class TicketDaoImpl implements TicketDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+          closeConnection(connection);
         }
     }
 
@@ -102,7 +101,7 @@ public class TicketDaoImpl implements TicketDao {
     }
 
     @Override
-    public List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws DaoException, ConnectionPoolException {
+    public List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -130,7 +129,7 @@ public class TicketDaoImpl implements TicketDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
@@ -291,7 +290,7 @@ public class TicketDaoImpl implements TicketDao {
             } else {
                 throw new DaoException("No ticket with such id");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ServiceException e) {
             throw new DaoException(e);
         } finally {
             closeResultSet(resultSet);
