@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class VisitSettingsCommand implements Command {
 
     @Override
-    public String execute(HttpServletRequest request)  {
+    public String execute(HttpServletRequest request,  HttpServletResponse response)  {
         return PathForJsp.SETTINGS.getUrl();
     }
 

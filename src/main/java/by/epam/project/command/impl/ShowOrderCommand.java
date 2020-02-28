@@ -47,7 +47,7 @@ public class ShowOrderCommand implements Command {
     private static final String TOTAL_PRICE = "totalPrice";
 
     @Override
-    public String execute(HttpServletRequest request,HttpServletResponse response)  {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         if (request.getParameter(TICKET_DATE) != null) {
             String ticketDate = request.getParameter(TICKET_DATE);
@@ -57,9 +57,8 @@ public class ShowOrderCommand implements Command {
 
             User user = (User) request.getSession().getAttribute(USER);
             int userId = user.getUserId();
-
+try{
             TicketService ticketService = new TicketServiceImpl();
-
             List<Ticket> concertOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CONCERT);
             List<Ticket> exhibitionOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, EXHIBITION);
             List<Ticket> theatreOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, THEATRE);
@@ -90,22 +89,29 @@ public class ShowOrderCommand implements Command {
                 request.setAttribute(SPORT_ORDER, sportOrder);
             }
 
-            int totalPrice = ticketService.totalPriceByUserId(userId);
+            int totalPrice = 0;
+            try {
+                totalPrice = ticketService.totalPriceByUserId(userId);
+            } catch (ServiceException e) {
+                e.printStackTrace();
+            }
 
             UserCommentService userCommentService = new UserCommentServiceImpl();
-            List<UserComment> userCommentList = userCommentService.findComments(userId, ticketDate);
-            Collections.reverse(userCommentList);
-            request.setAttribute(USER_COMMENT_LIST, userCommentList);
+            List<UserComment> userCommentList = null;
 
+                userCommentList = userCommentService.findComments(userId, ticketDate);
+
+            Collections.reverse(userCommentList);
+
+            request.setAttribute(USER_COMMENT_LIST, userCommentList);
             request.setAttribute(SHOW_ORDER, true);
             request.setAttribute(TICKET_DATE, ticketDate);
-
             request.setAttribute(TOTAL_PRICE, totalPrice);
-
-
             request.setAttribute(TOTAL_ACTIVITIES, concertOrder.size() + operaOrder.size() + sportOrder.size() + theatreOrder.size() + cinemaOrder.size() + balletOrder.size() + exhibitionOrder.size());
-
-            return new OrderCommand().execute(request);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+            return new OrderCommand().execute(request, response);
         } else {
             request.setAttribute(ERROR, "Error request");
             request.setAttribute(STATUS_CODE, 404);

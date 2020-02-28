@@ -31,7 +31,7 @@ public class SignInCommand implements Command {
     private static final String STATUS_CODE = "statusCode";
     private UserService userService = new UserServiceImpl();
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         String page;
         String emailOrUsername = request.getParameter(EMAIL_OR_USERNAME);
         String password = request.getParameter(PASSWORD);

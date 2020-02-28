@@ -20,7 +20,7 @@ public class TranslateCommand implements Command {
     private static final String LOCALE = "locale";
     private static final String RESPONSE = "response";
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         String stringLanguage = request.getParameter(LANGUAGE);
         Locale locale;

@@ -26,7 +26,7 @@ public class UpdateQuantityInOrderCommand implements Command {
     private static final String STATUS_CODE = "statusCode";
 
     @Override
-    public String execute(HttpServletRequest request) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
 
         Pattern pattern = Pattern.compile(REGEX_QUANTITY);
         Matcher matcher = pattern.matcher(request.getParameter(QUANTITY));
