@@ -194,12 +194,12 @@
                                                 <div class="col-xs-6 col-sm-4 col-lg-3 ex2">
                                                     <form method="get" action="show_event_details">
                                                         <input type="hidden" name="eventId"
-                                                               value="${activity.activityId}">
+                                                               value="${event.eventId}">
 
-                                                        <img src="${pageContext.request.contextPath}/images/products/${product.imageURL}"
+                                                        <img src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
                                                              alt=""
                                                              width="200" height="250">
-                                                        <p>${activity.activityName}</p>
+                                                        <p>${event.name}</p>
                                                         <button type="submit" class="btn btn-primary center-block">
                                                             <fmt:message key="event.details"/>
                                                         </button>

@@ -51,7 +51,7 @@ public class TestDao {
 //TicketServiceImpl ticketService=new TicketServiceImpl();
 //        System.out.println(ticketService.totalPriceByUserId(2));
         //    System.out.println(ticketDao.totalPriceByUserId(3));
-
-
+//ActivityService activityService=new ActivityServiceImpl();
+//        System.out.println(activityService.findByEventId(2));
     }
 }

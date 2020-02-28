@@ -59,27 +59,27 @@
 
                             <div class="preview-pic tab-content">
                                 <div class="tab-pane active" id="pic-1"><img
-                                        src="${pageContext.request.contextPath}/images/products/${product.imageURL}"
+                                        src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
                                         width="200"
                                         height="250"/></div>
                             </div>
 
                         </div>
                         <div class="details col-md-6" style="padding-left: 80px;">
-                            <h3 class="event-title">${activity.activityName}</h3>
+                            <h3 class="event-title">${event.name}</h3>
 
-                            <p class="event-description">${ativity.description}</p>
+                            <p class="event-description">${event.description}</p>
                             <h5 class="sizes"><fmt:message key="event.name"/>
-                                <span class="size" data-toggle="tooltip" title="small">${activity.activityName}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.name}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.address"/>
-                                <span class="size" data-toggle="tooltip" title="small">${activity.activityAddress}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.adress}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.date"/>
-                                <span class="size" data-toggle="tooltip" title="small">${activity.data}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.data}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.price"/>
-                                <span class="size" data-toggle="tooltip" title="small">${activity.price}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.price}</span>
                             </h5>
 
 
@@ -91,7 +91,7 @@
                                 <c:otherwise>
                                     <form method="post" action="add_ticket" class="form-horizontal">
                                         <input type="hidden" name="command" value="add_meal">
-                                        <input type="hidden" name="eventId" value="${activity.activityId}">
+                                        <input type="hidden" name="eventId" value="${event.eventId}">
 
                                         <label>
                                             <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"
