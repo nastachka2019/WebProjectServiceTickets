@@ -27,7 +27,7 @@ public class EventTypeServiceImpl implements EventTypeService {
     public int findIdByEventType(String eventType) throws ServiceException {
         try {
             return eventTypeDao.findIdByEventType(eventType);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -36,7 +36,7 @@ public class EventTypeServiceImpl implements EventTypeService {
     public EventType findEventTypeById(int eventTypeId) throws ServiceException {
         try {
             return eventTypeDao.findById(eventTypeId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }

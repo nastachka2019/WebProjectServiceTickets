@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao {
     private static final String SQL_UPDATE_USER_ROLE = "UPDATE user SET user_role=? WHERE user_id=?";
 
     @Override
-    public void insert(User user) throws DaoException, ConnectionPoolException {
+    public void insert(User user) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -65,12 +65,12 @@ public class UserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+        closeConnection(connection);
         }
     }
 
     @Override
-    public void delete(int id) throws DaoException, ConnectionPoolException {
+    public void delete(int id) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -81,12 +81,12 @@ public class UserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void update(User user) throws DaoException, ConnectionPoolException {
+    public void update(User user) throws DaoException{
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -108,12 +108,12 @@ public class UserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public User findById(int id) throws DaoException, ConnectionPoolException {
+    public User findById(int id) throws DaoException{
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -144,17 +144,17 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
         }
 
 
     @Override
-    public boolean containsLogin(String login) throws DaoException, ConnectionPoolException {
+    public boolean containsLogin(String login) throws DaoException {
         return dbContains(login, SQL_FIND_USER_BY_LOGIN);
     }
 
-    private boolean dbContains(String value, String sqlQuery) throws DaoException, ConnectionPoolException { //для команды изменения пользовательских пар-ов
+    private boolean dbContains(String value, String sqlQuery) throws DaoException{ //для команды изменения пользовательских пар-ов
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -168,17 +168,17 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public boolean containsEmail(String email) throws DaoException, ConnectionPoolException {
+    public boolean containsEmail(String email) throws DaoException {
         return dbContains(email, SQL_FIND_USER_BY_EMAIL);
     }
 
     @Override
-    public List<User> takeAllUsers() throws DaoException, ConnectionPoolException {
+    public List<User> takeAllUsers() throws DaoException{
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -209,12 +209,12 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -249,22 +249,22 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<User> findByLoginAndPass(String login, String password) throws DaoException, ConnectionPoolException {    //если забыл логин
+    public List<User> findByLoginAndPass(String login, String password) throws DaoException {    //если забыл логин
         return findParams(login, password, SQL_FIND_USER_BY_LOGIN_AND_PASS, SQL_FIND_BY_LOGIN);
     }
 
     @Override
-    public List<User> findByEmailAndPass(String email, String password) throws DaoException, ConnectionPoolException {
+    public List<User> findByEmailAndPass(String email, String password) throws DaoException {
         return findParams(email, password, SQL_FIND_USER_BY_EMAIL_AND_PASS, SQL_FIND_BY_EMAIl);
     }
 
     @Override
-    public void updateUserRole(int userId, String userRole) throws DaoException, ConnectionPoolException {
+    public void updateUserRole(int userId, String userRole) throws DaoException{
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -276,12 +276,12 @@ public class UserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public UserRole takeUserRole(int userId) throws DaoException, ConnectionPoolException {
+    public UserRole takeUserRole(int userId) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -301,12 +301,12 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
 
-    private String findPassByValue(String value, String dataSql) throws DaoException, ConnectionPoolException {   // скл запрос. т.е можем получить пароль по какому-то параметру.
+    private String findPassByValue(String value, String dataSql) throws DaoException {   // скл запрос. т.е можем получить пароль по какому-то параметру.
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -324,11 +324,11 @@ public class UserDaoImpl implements UserDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
-    private List<User> findParams(String value1, String value2, String dataSql, String dataSql2) throws DaoException, ConnectionPoolException { //по нескольким параметроам можем получить инфу о юзерах(find by email and password)
+    private List<User> findParams(String value1, String value2, String dataSql, String dataSql2) throws DaoException{ //по нескольким параметроам можем получить инфу о юзерах(find by email and password)
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -361,7 +361,7 @@ public class UserDaoImpl implements UserDao {
             } finally {
                 closeResultSet(resultSet);
                 closePreparedStatement(preparedStatement);
-                ConnectionPool.INSTANCE.releaseConnection(connection);
+                closeConnection(connection);
             }
         }
         return users;

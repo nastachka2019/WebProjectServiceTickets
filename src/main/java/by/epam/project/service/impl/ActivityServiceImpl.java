@@ -29,7 +29,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> takeAllEvents() throws ServiceException {
         try {
             return activityDao.takeAllEvents();
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e ) {
             throw new ServiceException(e);
         }
     }
@@ -38,7 +38,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findByNameOrWordInNameWithLimit(String nameOrWordInName, int startIndex, int endIndex) throws ServiceException {
         try {
             return activityDao.findByNameOrWordInNameWithLimit(nameOrWordInName, startIndex, endIndex);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -47,7 +47,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findByNameOrWordInName(String nameOrWordInName) throws ServiceException {
         try {
             return activityDao.findByNameOrWordInName(nameOrWordInName);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -56,7 +56,7 @@ public class ActivityServiceImpl implements ActivityService {
     public Activity findByEventId(int eventId) throws ServiceException {
         try {
             return activityDao.findById(eventId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -65,7 +65,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findEventByLimit(int startIndex, int endIndex) throws ServiceException {
         try {
             return activityDao.findEventByLimit(startIndex, endIndex);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -79,7 +79,7 @@ public class ActivityServiceImpl implements ActivityService {
                 return activityDao.findEventsByFilterWithLimit(nameOrWordInName,
                         minPrice, maxPrice, startIndex, endIndex);
             }
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -92,7 +92,7 @@ public class ActivityServiceImpl implements ActivityService {
             } else {
                 return activityDao.findEventsByFilter(nameOrWordInName, minPrice, maxPrice);
             }
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -116,7 +116,7 @@ public class ActivityServiceImpl implements ActivityService {
     public int findMinPrice() throws ServiceException {
         try {
             return activityDao.findMinPrice();
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -125,7 +125,7 @@ public class ActivityServiceImpl implements ActivityService {
     public int findMaxPrice() throws ServiceException {
         try {
             return activityDao.findMaxPrice();
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -143,7 +143,7 @@ public class ActivityServiceImpl implements ActivityService {
             } else {
                 return minPrice;
             }
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }

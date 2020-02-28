@@ -13,5 +13,5 @@ import by.epam.project.exception.DaoException;
 
 public interface EventTypeDao extends BasicDao<EventType> {
 
-    int findIdByEventType(String eventType) throws DaoException, ConnectionPoolException;
+    int findIdByEventType(String eventType) throws DaoException;
 }

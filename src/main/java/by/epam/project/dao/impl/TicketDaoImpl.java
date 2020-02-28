@@ -171,7 +171,7 @@ public class TicketDaoImpl implements TicketDao {
 //    }
 
     @Override
-    public void deleteTicketByUserId(int userId) throws DaoException, ConnectionPoolException {
+    public void deleteTicketByUserId(int userId) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -182,15 +182,15 @@ public class TicketDaoImpl implements TicketDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public int totalPriceByUserId(int userId) throws DaoException, ConnectionPoolException {
+    public int totalPriceByUserId(int userId) throws DaoException {
         return totalValueByUserId(userId,  SQL_COUNT_TOTAL_PRICE_BY_USER);
     }
-    private int totalValueByUserId(int userId,  String sqlQuery) throws DaoException, ConnectionPoolException {
+    private int totalValueByUserId(int userId,  String sqlQuery) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -209,12 +209,12 @@ public class TicketDaoImpl implements TicketDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void insert(Ticket ticket) throws DaoException, ConnectionPoolException {
+    public void insert(Ticket ticket) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -229,12 +229,12 @@ public class TicketDaoImpl implements TicketDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void delete(int id) throws DaoException, ConnectionPoolException {
+    public void delete(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -245,12 +245,12 @@ public class TicketDaoImpl implements TicketDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void update(Ticket ticket) throws DaoException, ConnectionPoolException {
+    public void update(Ticket ticket) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -266,12 +266,12 @@ public class TicketDaoImpl implements TicketDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public Ticket findById(int id) throws DaoException, ConnectionPoolException {
+    public Ticket findById(int id) throws DaoException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -291,13 +291,12 @@ public class TicketDaoImpl implements TicketDao {
             } else {
                 throw new DaoException("No ticket with such id");
             }
-
-        } catch (SQLException | ServiceException e) {
+        } catch (SQLException e) {
             throw new DaoException(e);
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 }

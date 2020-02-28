@@ -29,7 +29,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public List<UserComment> findComments(int userId, String ticketDate) throws ServiceException {
         try {
             return userCommentDao.findComments(userId, ticketDate);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -38,7 +38,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void deleteCommentsForUser(int userId) throws ServiceException {
         try {
             userCommentDao.deleteCommentsForUser(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -47,7 +47,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void deleteCommentsByCommentator(int commentatorId) throws ServiceException {
         try {
             userCommentDao.deleteCommentsByCommentator(commentatorId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -56,7 +56,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void deleteCommentsForUserByDate(int userId, LocalDate selectedDate) throws ServiceException {
         try {
             userCommentDao.deleteCommentsForUserByDate(userId, selectedDate);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -65,7 +65,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void insertComment(UserComment userComment) throws ServiceException {
         try {
             userCommentDao.insert(userComment);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -74,7 +74,7 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void deleteComment(int commentId) throws ServiceException {
         try {
             userCommentDao.delete(commentId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }

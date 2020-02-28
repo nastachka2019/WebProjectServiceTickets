@@ -65,12 +65,12 @@ public class ConnectionProxy implements Connection {
     }
 
     @Override
-    public void close() throws SQLException {
+    public void close()  {
         try {
           ConnectionPool.INSTANCE.releaseConnection(this);
             logger.info( "Connection taken back");
         } catch (ConnectionPoolException e) {
-            logger.error( "Failed of close pool connections ", e);//TODO
+            logger.error( "Failed of close pool connections ", e);
         }
     }
 
@@ -78,7 +78,7 @@ public class ConnectionProxy implements Connection {
         try {
             connection.close();
         } catch (SQLException e) {
-            logger.error( e.getMessage(), e);//TODO
+            logger.error( e.getMessage(), e);
         }
     }
 

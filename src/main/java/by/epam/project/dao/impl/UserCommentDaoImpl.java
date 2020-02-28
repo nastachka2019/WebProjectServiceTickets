@@ -40,7 +40,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
     private static final String SQL_DELETE_COMMENTS_BY_COMMENTATOR = "DELETE FROM user_comment WHERE commentator_id=?";
 
     @Override
-    public List<UserComment> findComments(int userId, String ticketDate) throws DaoException, ConnectionPoolException {
+    public List<UserComment> findComments(int userId, String ticketDate) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -70,12 +70,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+           closeConnection(connection);
         }
     }
 
     @Override
-    public void deleteCommentsForUser(int userId) throws DaoException, ConnectionPoolException {
+    public void deleteCommentsForUser(int userId) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -86,12 +86,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void deleteCommentsByCommentator(int commentatorId) throws DaoException, ConnectionPoolException {
+    public void deleteCommentsByCommentator(int commentatorId) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -102,12 +102,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void deleteCommentsForUserByDate(int userId, LocalDate selectedDate) throws DaoException, ConnectionPoolException {
+    public void deleteCommentsForUserByDate(int userId, LocalDate selectedDate) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -119,7 +119,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
@@ -133,7 +133,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
     }
 
     @Override
-    public void insert(UserComment userComment) throws DaoException, ConnectionPoolException {
+    public void insert(UserComment userComment) throws DaoException{
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -148,12 +148,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void delete(int id) throws DaoException, ConnectionPoolException {
+    public void delete(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -164,12 +164,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void update(UserComment userComment) throws DaoException, ConnectionPoolException {
+    public void update(UserComment userComment) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -184,12 +184,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public UserComment findById(int id) throws DaoException, ConnectionPoolException {
+    public UserComment findById(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -210,12 +210,12 @@ public class UserCommentDaoImpl implements UserCommentDao {
                 throw new DaoException("No comment with such id");
             }
 
-        } catch (SQLException | ServiceException e) {
+        } catch (SQLException e){
             throw new DaoException(e);
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
     private User findUserById(int userId) throws ServiceException {

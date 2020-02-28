@@ -36,7 +36,7 @@ public interface UserService {
 
     void deleteUser(int userId) throws ServiceException;
 
-    void update(User user);
+    void update(User user) throws ServiceException;
 
 
 }

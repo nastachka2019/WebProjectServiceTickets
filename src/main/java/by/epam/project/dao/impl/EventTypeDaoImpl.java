@@ -25,7 +25,7 @@ public class EventTypeDaoImpl implements EventTypeDao {
     private static final String SQL_FIND_BY_ID = "SELECT event_type_id, event_type FROM event_type WHERE event_type_id=?";
 
     @Override
-    public int findIdByEventType(String eventType) throws DaoException, ConnectionPoolException {
+    public int findIdByEventType(String eventType) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -43,12 +43,12 @@ public class EventTypeDaoImpl implements EventTypeDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void insert(EventType eventType) throws DaoException, ConnectionPoolException {
+    public void insert(EventType eventType) throws DaoException{
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -59,12 +59,12 @@ public class EventTypeDaoImpl implements EventTypeDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void delete(int id) throws DaoException, ConnectionPoolException {
+    public void delete(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -76,12 +76,12 @@ public class EventTypeDaoImpl implements EventTypeDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void update(EventType eventType) throws DaoException, ConnectionPoolException {
+    public void update(EventType eventType) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -93,13 +93,13 @@ public class EventTypeDaoImpl implements EventTypeDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
 
     }
 
     @Override
-    public EventType findById(int id) throws DaoException, ConnectionPoolException {
+    public EventType findById(int id) throws DaoException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -121,7 +121,7 @@ public class EventTypeDaoImpl implements EventTypeDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 }

@@ -45,7 +45,7 @@ public class ActivityDaoImpl implements ActivityDao {
     private static final String SQL_FIND_MAX_PRICE = "SELECT MAX(price) FROM activity";
 
     @Override
-    public List<Activity> takeAllEvents() throws DaoException, ConnectionPoolException {
+    public List<Activity> takeAllEvents() throws DaoException{
 
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -72,13 +72,13 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+           closeConnection(connection);
         }
 
     }
 
     @Override
-    public List<Activity> findByNameOrWordInNameWithLimit(String nameOrWordInName, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findByNameOrWordInNameWithLimit(String nameOrWordInName, int startIndex, int endIndex) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -111,12 +111,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findByNameOrWordInName(String nameOrWordInName) throws DaoException, ConnectionPoolException {
+    public List<Activity> findByNameOrWordInName(String nameOrWordInName) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -146,12 +146,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventByLimit(int startIndex, int endIndex) throws DaoException{
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -180,12 +180,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilterWithLimit(String nameOrWordInName, int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -221,12 +221,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilter(String nameOrWordInName, int minPrice, int maxPrice) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -260,12 +260,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws DaoException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -296,12 +296,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws DaoException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -331,12 +331,12 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException {
+    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
@@ -366,16 +366,16 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public int findMinPrice() throws DaoException, ConnectionPoolException {
+    public int findMinPrice() throws DaoException {
         return findMinOrMax(SQL_FIND_MIN_PRICE);
     }
 
-    public int findMinOrMax(String sqlQuery) throws DaoException, ConnectionPoolException {
+    public int findMinOrMax(String sqlQuery) throws DaoException {
         Statement statement = null;
         ResultSet resultSet = null;
 
@@ -396,17 +396,17 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(statement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public int findMaxPrice() throws DaoException, ConnectionPoolException {
+    public int findMaxPrice() throws DaoException {
         return findMinOrMax(SQL_FIND_MAX_PRICE);
     }
 
     @Override
-    public void insert(Activity event) throws DaoException, ConnectionPoolException {
+    public void insert(Activity event) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -423,12 +423,12 @@ public class ActivityDaoImpl implements ActivityDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void delete(int id) throws DaoException, ConnectionPoolException {
+    public void delete(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -440,12 +440,12 @@ public class ActivityDaoImpl implements ActivityDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public void update(Activity event) throws DaoException, ConnectionPoolException {
+    public void update(Activity event) throws DaoException{
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -463,12 +463,12 @@ public class ActivityDaoImpl implements ActivityDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 
     @Override
-    public Activity findById(int id) throws DaoException, ConnectionPoolException {
+    public Activity findById(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         ResultSet resultSet = null;
@@ -496,7 +496,7 @@ public class ActivityDaoImpl implements ActivityDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-            ConnectionPool.INSTANCE.releaseConnection(connection);
+            closeConnection(connection);
         }
     }
 }

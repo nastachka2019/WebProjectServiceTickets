@@ -15,17 +15,17 @@ import java.util.Set;
 
 public interface TicketDao extends BasicDao<Ticket> {
 
-    void updateQuantity(int ticketId, int quantity) throws DaoException, ConnectionPoolException;
+    void updateQuantity(int ticketId, int quantity) throws DaoException;
 
-    Set<String> findDatesByUserId(int userId) throws DaoException, ConnectionPoolException;
+    Set<String> findDatesByUserId(int userId) throws DaoException;
 
-    List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws DaoException, ConnectionPoolException;
+    List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws DaoException;
 
 //    Ticket findTicketByUserIdTicketDateEventTypeEventId(Ticket ticket) throws DaoException, ConnectionPoolException;
 
-    void deleteTicketByUserId(int userId) throws DaoException, ConnectionPoolException;
+    void deleteTicketByUserId(int userId) throws DaoException;
 
-    int totalPriceByUserId(int userId) throws DaoException,ConnectionPoolException;
+    int totalPriceByUserId(int userId) throws DaoException;
 
 
 }

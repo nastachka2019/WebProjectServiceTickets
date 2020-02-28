@@ -14,13 +14,13 @@ import java.util.List;
  */
 
 public interface UserCommentDao extends BasicDao<UserComment> {
-    List<UserComment> findComments(int userId, String ticketDate) throws DaoException, ConnectionPoolException;
+    List<UserComment> findComments(int userId, String ticketDate) throws DaoException;
 
-    void deleteCommentsForUser(int userId) throws DaoException, ConnectionPoolException;
+    void deleteCommentsForUser(int userId) throws DaoException;
 
-    void deleteCommentsByCommentator(int commentatorId) throws DaoException, ConnectionPoolException;
+    void deleteCommentsByCommentator(int commentatorId) throws DaoException;
 
-    void deleteCommentsForUserByDate(int userId, LocalDate selectedDate) throws DaoException, ConnectionPoolException;
+    void deleteCommentsForUserByDate(int userId, LocalDate selectedDate) throws DaoException;
 
 }
 

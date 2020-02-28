@@ -15,20 +15,20 @@ import java.util.List;
 
 public interface UserDao extends BasicDao<User> {   //слой для взаимодейств. с бд
 
-    List<User> takeAllUsers() throws DaoException, ConnectionPoolException;
+    List<User> takeAllUsers() throws DaoException;
 
-    List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws DaoException, ConnectionPoolException;
+    List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws DaoException;
 
-    List<User> findByLoginAndPass(String login, String password) throws DaoException, ConnectionPoolException;
+    List<User> findByLoginAndPass(String login, String password) throws DaoException;
 
-    List<User> findByEmailAndPass(String email, String password) throws DaoException, ConnectionPoolException;
+    List<User> findByEmailAndPass(String email, String password) throws DaoException;
 
-    void updateUserRole(int userId, String userRole) throws DaoException, ConnectionPoolException;      //обновить
+    void updateUserRole(int userId, String userRole) throws DaoException;      //обновить
 
-    boolean containsEmail(String email) throws DaoException, ConnectionPoolException;
+    boolean containsEmail(String email) throws DaoException;
 
-    boolean containsLogin(String login) throws DaoException, ConnectionPoolException;
+    boolean containsLogin(String login) throws DaoException;
 
-    UserRole takeUserRole(int userId) throws DaoException, ConnectionPoolException;
+    UserRole takeUserRole(int userId) throws DaoException;
 }
 

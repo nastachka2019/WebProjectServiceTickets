@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     public List<User> takeAllUsers() throws ServiceException {
         try {
             return userDao.takeAllUsers();
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     public List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws ServiceException {
         try {
             return userDao.takeAllUsersWithLimit(startIndex, endIndex);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     public List<User> findByLoginAndPass(String login, String password) throws ServiceException {
         try {
             return userDao.findByLoginAndPass(login, password);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
     public List<User> findByEmailAndPass(String email, String password) throws ServiceException {
         try {
             return userDao.findByEmailAndPass(email, password);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
     public void updateUserRole(int userId, String userRole) throws ServiceException {
         try {
             userDao.updateUserRole(userId, userRole);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
     public boolean containsEmail(String email) throws ServiceException {
         try {
             return userDao.containsEmail(email);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService {
     public boolean containsLogin(String login) throws ServiceException {
         try {
             return userDao.containsLogin(login);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
     public UserRole takeUserRole(int userId) throws ServiceException {
         try {
             return userDao.takeUserRole(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -102,7 +102,7 @@ public class UserServiceImpl implements UserService {
     public User findUserById(int userId) throws ServiceException {
         try {
             return userDao.findById(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -111,7 +111,7 @@ public class UserServiceImpl implements UserService {
     public void insertUser(User user) throws ServiceException {
         try {
             userDao.insert(user);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(int userId) throws ServiceException {
         try {
             userDao.delete(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -129,7 +129,7 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
         try {
             userDao.update(user);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             e.printStackTrace();
         }
     }

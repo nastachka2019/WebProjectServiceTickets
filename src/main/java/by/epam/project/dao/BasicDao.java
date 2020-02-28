@@ -1,10 +1,12 @@
 package by.epam.project.dao;
 
+import by.epam.project.connection.ConnectionPool;
 import by.epam.project.entity.Entity;
 import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,7 +26,7 @@ public interface BasicDao<T extends Entity> {
 
     T findById(int id) throws DaoException, ConnectionPoolException;
 
-    default void closeResultSet(ResultSet resultSet) throws DaoException { //метод закрытия экземпляра ResultSet
+    default void closeResultSet(ResultSet resultSet) { //метод закрытия экземпляра ResultSet
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -41,6 +43,16 @@ public interface BasicDao<T extends Entity> {
             } catch (SQLException e) {
                 LogManager.getLogger().error(e.getMessage(), e);
             }
+        }
+    }
+   default void closeConnection (Connection connection) throws DaoException {
+        ConnectionPool connectionPool = ConnectionPool.INSTANCE;
+        try {
+            if (connection != null) {
+                connectionPool.releaseConnection(connection);
+            }
+        } catch (ConnectionPoolException e) {
+            throw new DaoException();
         }
     }
 }

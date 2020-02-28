@@ -30,7 +30,7 @@ public class TicketServiceImpl implements TicketService {
     public void updateQuantity(int ticketId, int quantity) throws ServiceException {
         try {
             ticketDao.updateQuantity(ticketId, quantity);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -39,7 +39,7 @@ public class TicketServiceImpl implements TicketService {
     public Set<String> findDatesByUserId(int userId) throws ServiceException {
         try {
             return ticketDao.findDatesByUserId(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -48,7 +48,7 @@ public class TicketServiceImpl implements TicketService {
     public List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws ServiceException {
         try {
             return ticketDao.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, eventType);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -57,7 +57,7 @@ public class TicketServiceImpl implements TicketService {
 //    public Ticket findTicketByUserIdTicketDateEventTypeEventId(Ticket ticket) throws ServiceException {
 //        try {
 //            return ticketDao.findTicketByUserIdTicketDateEventTypeEventId(ticket);
-//        } catch (DaoException | ConnectionPoolException e) {
+//        } catch (DaoException  e) {
 //            throw new ServiceException(e);
 //        }
 //    }
@@ -66,7 +66,7 @@ public class TicketServiceImpl implements TicketService {
     public void deleteTicketByUserId(int userId) throws ServiceException {
         try {
             ticketDao.deleteTicketByUserId(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -75,7 +75,7 @@ public class TicketServiceImpl implements TicketService {
     public void insertTicket(Ticket ticket) throws ServiceException {
         try {
             ticketDao.insert(ticket);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -84,7 +84,7 @@ public class TicketServiceImpl implements TicketService {
     public void deleteTicket(int ticketId) throws ServiceException {
         try {
             ticketDao.delete(ticketId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException  e) {
             throw new ServiceException(e);
         }
     }
@@ -93,7 +93,7 @@ public class TicketServiceImpl implements TicketService {
     public int totalPriceByUserId(int userId) throws ServiceException {
         try {
             return ticketDao.totalPriceByUserId(userId);
-        } catch (DaoException | ConnectionPoolException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
