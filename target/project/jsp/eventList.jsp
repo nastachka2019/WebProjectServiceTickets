@@ -193,8 +193,8 @@
 
                                                 <div class="col-xs-6 col-sm-4 col-lg-3 ex2">
                                                     <form method="get" action="show_event_details">
-                                                        <input type="hidden" name="eventId"
-                                                               value="${event.eventId}">
+<%--                                                        <input type="hidden" name="eventId"--%>
+<%--                                                               value="${event.eventId}">--%>
 
                                                         <img src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
                                                              alt=""
