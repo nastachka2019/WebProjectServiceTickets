@@ -19,9 +19,7 @@
 //        DELETE_TICKET,DELETE_COMMENT, COMMENT, ADD_TICKET,  USER_LIST,SHOW_USER_DETAILS, DELETE_USER, CHANGE_USER_ROLE
 //    }
 //    private static Map<CommandType, Command> commandMap;
-//    private static CommandManager instance;
-//    private static ReentrantLock lock = new ReentrantLock();
-//    private static AtomicBoolean create = new AtomicBoolean(false);
+//
 //
 //    static {
 //        commandMap = new HashMap<>();
@@ -50,39 +48,8 @@
 //        commandMap.put(CommandType.CHANGE_USER_ROLE, new ChangeUserRoleCommand());
 //
 //    }
-//    public static CommandManager getInstance() {
-//        if (!create.get()) {
-//            try {
-//                lock.lock();
-//                if (instance == null) {
-//                    instance = new CommandManager();
-//                    create.set(true);
-//                }
-//            } finally {
-//                lock.unlock();
-//            }
-//        }
-//        return instance;
-//    }
-//
-//    public Command receiveCommand(String commandType) {
-//        Command command = null;
-//
-//        try {
-//            if(commandType!=null){
-//                command = commandMap.get(CommandType.valueOf(commandType.toUpperCase()));
-//            } else {
-//               logger.error("commandType is null. Error!!!");
-//            }
-//        } catch (IllegalArgumentException e) {
-//         logger.error(e.getMessage(), e);
-//        }
-//
-//        return command;
-//    }
-//
-//    public Command receiveCommand(CommandType commandType) { //factory method
+//    public static Command getCommand(String commandName) {
+//        CommandType commandType = CommandType.valueOf(commandName.toUpperCase());
 //        return commandMap.get(commandType);
 //    }
-//
 //}

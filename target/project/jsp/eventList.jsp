@@ -106,65 +106,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <!--Proteins-->
-<%--                                    <li>--%>
-<%--                                        <label class="font-weight-bold" for="sortProt"><fmt:message--%>
-<%--                                                key="product.proteins"/></label>--%>
-<%--                                        <div class="form-row" id="sortProt">--%>
-<%--                                            <div class="form-group col-md-6">--%>
-<%--                                                <label><fmt:message key="products.filter.min"/></label>--%>
-<%--                                                <input name="minProteins" value="${minProteins}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control" placeholder="${minProteins}" required>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="form-group col-md-6 text-right">--%>
-<%--                                                <label><fmt:message key="products.filter.max"/></label>--%>
-<%--                                                <input name="maxProteins" value="${maxProteins}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control" placeholder="${maxProteins}" required>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </li>--%>
-                                    <!--Lipids-->
-<%--                                    <li>--%>
-<%--                                        <label class="font-weight-bold" for="sortLip"><fmt:message--%>
-<%--                                                key="product.lipids"/></label>--%>
-<%--                                        <div class="form-row" id="sortLip">--%>
-<%--                                            <div class="form-group col-md-6">--%>
-<%--                                                <label><fmt:message key="products.filter.min"/></label>--%>
-<%--                                                <input name="minLipids" value="${minLipids}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control"--%>
-<%--                                                       placeholder="${minLipids}" required>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="form-group col-md-6 text-right">--%>
-<%--                                                <label><fmt:message key="products.filter.max"/></label>--%>
-<%--                                                <input name="maxLipids" value="${maxLipids}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control"--%>
-<%--                                                       placeholder="${maxLipids}" required>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </li>--%>
-                                    <!--Carbohydrates-->
-<%--                                    <li>--%>
-<%--                                        <label class="font-weight-bold" for="sortCarb"><fmt:message--%>
-<%--                                                key="product.carbohydrates"/></label>--%>
-<%--                                        <div class="form-row" id="sortCarb">--%>
-<%--                                            <div class="form-group col-md-6">--%>
-<%--                                                <label><fmt:message key="products.filter.min"/></label>--%>
-<%--                                                <input name="minCarbohydrates" value="${minCarbohydrates}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control" placeholder="${minCarbohydrates}" required>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="form-group col-md-6 text-right">--%>
-<%--                                                <label><fmt:message key="products.filter.max"/></label>--%>
-<%--                                                <input name="maxCarbohydrates" value="${maxCarbohydrates}"--%>
-<%--                                                       type="number" min="0" max="999999"--%>
-<%--                                                       class="form-control" placeholder="${maxCarbohydrates}" required>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </li>--%>
+
                                     <li>
                                         <button class="btn btn-success btn-circle text-uppercase" type="submit">
                                             <fmt:message key="events.filter.apply"/>
@@ -193,8 +135,8 @@
 
                                                 <div class="col-xs-6 col-sm-4 col-lg-3 ex2">
                                                     <form method="get" action="show_event_details">
-<%--                                                        <input type="hidden" name="eventId"--%>
-<%--                                                               value="${event.eventId}">--%>
+                                                        <input type="hidden" name="eventId"
+                                                               value="${event.eventId}">
 
                                                         <img src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
                                                              alt=""
