@@ -52,12 +52,12 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String page;
-
+String commandName=request.getParameter(COMMAND);
         CommandMap commandMap = CommandMap.getInstance();
         try {
             if (request.getParameter(COMMAND) != null) {
-              logger.info("Request. Parameter = " + request.getParameter(COMMAND));
-                Command command = commandMap.receiveCommand(request.getParameter(COMMAND));
+              logger.info("Request. Parameter = " + commandName);
+                Command command = commandMap.receiveCommand(commandName);
                 page = command.execute(request, response);
 
             } else if (request.getAttribute(COMMAND) != null) {
