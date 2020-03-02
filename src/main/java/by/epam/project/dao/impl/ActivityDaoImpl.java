@@ -23,8 +23,7 @@ import java.util.List;
 public class ActivityDaoImpl implements ActivityDao {
 
     private static final String SQL_TAKE_ALL_EVENTS = "SELECT id, name, image_url, description, address, data, price FROM activity";
-    private static final String SQL_FIND_BY_NAME_OR_WORD_IN_NAME_WITH_LIMIT = "SELECT id, name, image_url, description, address, data, price" +
-            " FROM activity WHERE name LIKE ? OR name LIKE ? OR name LIKE ? OR name LIKE ? LIMIT ?,?";  //LIMIT - ограничиваем кол-во показов. т.е. напр. из 20 строк покажет только
+    private static final String SQL_FIND_BY_NAME_OR_WORD_IN_NAME_WITH_LIMIT = "SELECT * FROM activity WHERE name LIKE ? OR name LIKE ? OR name LIKE ? OR name LIKE ? LIMIT ?,?";  //LIMIT - ограничиваем кол-во показов. т.е. напр. из 20 строк покажет только
     private static final String SQL_FIND_BY_NAME_OR_WORD_IN_NAME = "SELECT  id, name, image_url, description, address, data, price" +
             " FROM activity WHERE name LIKE ? OR name LIKE ? OR name LIKE ? OR name LIKE ?";
     private static final String SQL_DELETE_EVENT = "DELETE FROM activity WHERE id=?";
