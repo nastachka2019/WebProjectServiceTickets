@@ -29,7 +29,7 @@ public interface TicketService {
 
     void deleteTicket(int ticketId) throws ServiceException;
 
-    int totalPriceByUserId(int userId)  throws ServiceException;
+    int totalPriceByUserIdAndTicketDate(int userId, String ticketDate)  throws ServiceException;
 
 
 }

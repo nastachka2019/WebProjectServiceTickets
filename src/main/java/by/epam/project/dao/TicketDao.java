@@ -25,7 +25,7 @@ public interface TicketDao extends BasicDao<Ticket> {
 
     void deleteTicketByUserId(int userId) throws DaoException;
 
-    int totalPriceByUserId(int userId) throws DaoException;
+    int totalPriceByUserIdAndTicketDate(int userId,String ticketDate) throws DaoException;
 
 
 }

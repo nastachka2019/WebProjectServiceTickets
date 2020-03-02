@@ -42,9 +42,9 @@ public class TicketDaoImpl implements TicketDao {
             " FROM ticket WHERE user_id=? AND event_id=? AND date=? AND event_type_id=?";
     private static final String SQL_FIND_TICKET_BY_ID = "SELECT id, user_id, event_id, quantity. event_type_id, date" +
             " FROM ticket WHERE id=?";
-    private static final String SQL_COUNT_TOTAL_PRICE_BY_USER =
-            "SELECT (price * quantity) FROM activity INNER JOIN ticket ON activity.id=ticket.event_id GROUP BY user_id";
-
+    private static final String SQL_COUNT_TOTAL_PRICE_BY_USER_AND_TICKET_DATE =
+            "SELECT  (price * quantity) FROM activity INNER JOIN  (SELECT event_id, quantity FROM ticket WHERE user_id=? AND date=?) ticket_id_table" +
+            " ON activity.id=ticket_id_table.event_id";
     @Override
     public void updateQuantity(int ticketId, int quantity) throws DaoException {
         PreparedStatement preparedStatement = null;
@@ -186,16 +186,18 @@ public class TicketDaoImpl implements TicketDao {
     }
 
     @Override
-    public int totalPriceByUserId(int userId) throws DaoException {
-        return totalValueByUserId(userId,  SQL_COUNT_TOTAL_PRICE_BY_USER);
+    public int totalPriceByUserIdAndTicketDate(int userId, String ticketDate) throws DaoException {
+        return totalValueByUserId(userId, ticketDate, SQL_COUNT_TOTAL_PRICE_BY_USER_AND_TICKET_DATE);
     }
-    private int totalValueByUserId(int userId,  String sqlQuery) throws DaoException {
+
+    private int totalValueByUserId(int userId, String ticketDate, String sqlQuery) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
             preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setInt(1, userId);
+            preparedStatement.setString(2,ticketDate);
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {

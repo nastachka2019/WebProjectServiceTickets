@@ -90,9 +90,9 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public int totalPriceByUserId(int userId) throws ServiceException {
+    public int totalPriceByUserIdAndTicketDate(int userId, String ticketDate) throws ServiceException {
         try {
-            return ticketDao.totalPriceByUserId(userId);
+            return ticketDao.totalPriceByUserIdAndTicketDate(userId, ticketDate);
         } catch (DaoException e) {
             throw new ServiceException(e);
         }

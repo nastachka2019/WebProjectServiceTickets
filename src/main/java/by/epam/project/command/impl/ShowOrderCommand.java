@@ -91,7 +91,7 @@ try{
 
             int totalPrice = 0;
             try {
-                totalPrice = ticketService.totalPriceByUserId(userId);
+                totalPrice = ticketService.totalPriceByUserIdAndTicketDate(userId,ticketDate);
             } catch (ServiceException e) {
                 e.printStackTrace();
             }
