@@ -36,7 +36,7 @@ public class TicketDaoImpl implements TicketDao {
     private static final String SQL_DELETE_TICKET_BY_USER_ID = "DELETE FROM ticket WHERE id=?";
     private static final String SQL_FIND_DATE_BY_USER_ID = "SELECT date FROM ticket WHERE id = ?";
     private static final String SQL_FIND_TICKET_BY_USER_ID_AND_TICKET_DATE_AND_EVENT_TYPE =
-            "SELECT ticket.id, ticket.user_id, ticket.event_id,ticket.quantity, ticket.event_type_id, ticket.date FROM ticket INNER JOIN event_type ON ticket.event_type_id= event_type.event_type_id" +
+            "SELECT ticket.id, ticket.user_id, ticket.event_id,ticket.quantity, ticket.event_type_id, ticket.date FROM ticket INNER JOIN event_type ON ticket.event_type_id= event_type.id" +
                     " WHERE user_id=? AND date=? AND event_type=?";
     private static final String SQL_FIND_TICKET_BY_USER_ID_TICKET_DATE_EVENT_TYPE_EVENT_ID = "SELECT ticket_id, user_id, event_id, quantity, event_type_id, date" +
             " FROM ticket WHERE user_id=? AND event_id=? AND date=? AND event_type_id=?";

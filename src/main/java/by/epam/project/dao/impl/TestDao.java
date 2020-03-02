@@ -23,8 +23,10 @@ public class TestDao {
 ActivityService activityService=new ActivityServiceImpl();
       //  System.out.println(activityService.findEventByLimit(1,3));
         UserService userService= new UserServiceImpl();
-       System.out.println(userService.findByLoginAndPass("Katyaaa", "Katya12345"));
+       //System.out.println(userService.findByLoginAndPass("Katyaaa", "Katya12345"));
+        //System.out.println(userService.findUserById(2));
         TicketService ticketService=new TicketServiceImpl();
+        System.out.println(ticketService.findTicketByUserIdAndTicketDateAndEventType(3,"2020-04-21","Opera"));
 
 
 
