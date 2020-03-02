@@ -54,7 +54,7 @@ try{
         request.setAttribute(USER_LIST, userList);
 
         request.setAttribute(INDEX_OF_PAGE, indexOfPage);
-        request.setAttribute(USER_LIST_SIZE, userService.takeAllUsers().size());
+        request.setAttribute(USER_LIST_SIZE, userService.takeAllUsers().size());  //кол-во юзеров
         request.setAttribute(COMMAND_VALUE, USER_LIST_COMMAND);
         request.setAttribute(USERS_PER_PAGE, NUMBER_USERS_PER_PAGE);
 } catch (ServiceException e) {

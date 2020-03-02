@@ -27,12 +27,12 @@ public class UserDaoImpl implements UserDao {
     private static final String SQL_TAKE_ALL_USERS = "SELECT id, user_role, user_name, user_surname,email, login, password, phone, date_of_birth FROM user";
     private static final String SQL_FIND_USER_BY_ID = "SELECT id, user_role, user_name, user_surname, email, login, password, phone, date_of_birth FROM user WHERE id=?";
     private static final String SQL_FIND_USER_BY_LOGIN_AND_PASS = "SELECT id, user_role, user_name, user_surname,email, login, password, phone, date_of_birth" +
-            " FROM user WHERE user_name = ? AND password = ? ";
+            " FROM user WHERE login = ? AND password = ? ";
     private static final String SQL_FIND_USER_BY_EMAIL = "SELECT id, user_role, user_name, user_surname,email, login, password, phone, date_of_birth" +
             " FROM user WHERE email = ?";
     private static final String SQL_FIND_USER_BY_EMAIL_AND_PASS = "SELECT id,user_role, user_name, user_surname,email, login, password, phone, date_of_birth" +
             " FROM user WHERE email = ? AND password = ? ";
-    private static final String SQL_FIND_BY_LOGIN = "SELECT password FROM user WHERE user_name = ?";  //если забыл пароль
+    private static final String SQL_FIND_BY_LOGIN = "SELECT password FROM user WHERE login = ?";  //если забыл пароль
     private static final String SQL_FIND_BY_EMAIl = "SELECT password FROM user WHERE email = ?";
     private static final String SQL_FIND_USER_BY_LOGIN = "SELECT user_id,user_role, user_name, user_surname,email, login, password, phone, date_of_birth" +
             " FROM user WHERE login = ?";
