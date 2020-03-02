@@ -75,18 +75,18 @@ public class EventListCommand implements Command {
             }
         } else {
             if (request.getParameter(NAME_OR_WORD_IN_NAME) != null
-                    && request.getParameter(ACTIVITY_ADDRESS) != null
-                    && request.getParameter(ACTIVITY_NAME) != null
+//                    && request.getParameter(ACTIVITY_ADDRESS) != null
+//                    && request.getParameter(ACTIVITY_NAME) != null
                     && request.getParameter(MIN_PRICE) != null
                     && request.getParameter(MAX_PRICE) != null) {
                 String nameOrWordInName = request.getParameter(NAME_OR_WORD_IN_NAME);
-                String strAddress = request.getParameter(ACTIVITY_ADDRESS);
-                String strName = request.getParameter(ACTIVITY_NAME);
+//                String strAddress = request.getParameter(ACTIVITY_ADDRESS);
+//                String strName = request.getParameter(ACTIVITY_NAME);
                 String strMaxPrice = request.getParameter(MAX_PRICE);
                 String strMinPrice = request.getParameter(MIN_PRICE);
                 EventValidator eventValidator = new EventValidator();
 
-                if (eventValidator.validateData(nameOrWordInName, strAddress, strName, strMaxPrice, strMinPrice)) {
+                if (eventValidator.validateData(nameOrWordInName, strMaxPrice, strMinPrice)) {
                     int minPrice = 0;
 
                     try {
@@ -150,8 +150,8 @@ public class EventListCommand implements Command {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        request.setAttribute(ACTIVITY_NAME, activity.getName());
-        request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
+//        request.setAttribute(ACTIVITY_NAME, activity.getName());
+//        request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
     }
 }
 

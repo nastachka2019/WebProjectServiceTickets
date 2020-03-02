@@ -45,18 +45,18 @@ public class ShowEventDetailsCommand implements Command {
             if (matcher.matches()) {
                 int eventId = Integer.parseInt(request.getParameter(EVENT_ID));
                 ActivityService activityService=new ActivityServiceImpl();
-                Activity activity = null;
+                Activity event= null;
                 try {
-                    activity = activityService.findByEventId(eventId);
+                    event= activityService.findByEventId(eventId);
                 } catch (ServiceException e) {
                     e.printStackTrace();
                 }
-                if (activity == null) {
+                if (event == null) {
                     request.setAttribute(ERROR, "Product with such id not found");
                     request.setAttribute(STATUS_CODE, 404);
                     page = PathForJsp.ERROR.getUrl();
                 } else {
-                    request.setAttribute(EVENT, activity);
+                    request.setAttribute(EVENT, event);
                     request.setAttribute(QUANTITY, startQuantity);
                     page = PathForJsp.EVENT.getUrl();
                 }

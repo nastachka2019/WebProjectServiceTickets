@@ -1,9 +1,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  <%--jstl tag--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="/jsp/error.jsp" %>
 
 
-<%--@elvariable id="locale" type="by.epam.project"--%>
 <c:set var="locale"
        value="${not empty locale ? locale : 'en'}"
        scope="session"/>
@@ -63,7 +62,7 @@
 
 
 
-            <!-- Users -->
+<%--          Users--%>
             <c:if test="${User.userRole.name() == 'ADMINISTRATOR'}">
                 <li class="nav-item">
                     <form id="usersFormId" method="post" action="user_list">
@@ -96,9 +95,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-primary pull-right"
                          aria-labelledby="navbarDropdownMenuLink">
-                        <form id="dietFormId" method="post" action="order">
+                        <form id="orderFormId" method="post" action="order">
                             <input type="hidden" name="command" value="order">
-                            <a class="dropdown-item" onclick="document.getElementById('dietFormId').submit();">
+                            <a class="dropdown-item" onclick="document.getElementById('orderFormId').submit();">
                                 <fmt:message key="header.profile.order"/>
                             </a>
                         </form>
