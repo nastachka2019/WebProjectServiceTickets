@@ -27,7 +27,7 @@ public class DeleteTicketCommand implements Command {
     private static final String ORDER_PATH = "/order";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         int ticketId = Integer.parseInt(request.getParameter(TICKET_ID));
         int totalEvents = Integer.parseInt(request.getParameter(TOTAL_ACTIVIES));

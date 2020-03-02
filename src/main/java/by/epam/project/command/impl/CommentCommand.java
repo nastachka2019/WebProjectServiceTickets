@@ -31,7 +31,7 @@ public class CommentCommand implements Command {
     private static final String REGEX_COMMENT = "^.{1,200}$";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         User user = (User) request.getSession().getAttribute(USER);
         String selectedDate = request.getParameter(TICKET_DATE);

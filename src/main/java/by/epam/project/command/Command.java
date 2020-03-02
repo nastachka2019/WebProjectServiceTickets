@@ -13,8 +13,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public interface Command {
+    /**
+     * @param request это входящий запрос
+     */
 
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException, ServiceException;
+    String execute(HttpServletRequest request) throws CommandException;
 
 }
 

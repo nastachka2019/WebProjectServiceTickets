@@ -18,7 +18,7 @@ public class VisitSignInCommand implements Command {
     private static final String ERROR = "error";
 
     @Override
-    public String execute(HttpServletRequest request,  HttpServletResponse response)  {
+    public String execute(HttpServletRequest request)  {
         if (request.getSession().getAttribute(ERROR) != null) {
             request.setAttribute(ERROR, request.getSession().getAttribute(ERROR));
             request.getSession().setAttribute(ERROR, null);

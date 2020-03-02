@@ -40,7 +40,7 @@ public class EventListCommand implements Command {
     private static final String STATUS_CODE = "statusCode";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         int indexOfPage;
         if (request.getParameter(INDEX_OF_PAGE) != null) {
@@ -94,8 +94,8 @@ public class EventListCommand implements Command {
 
 
                         int maxPrice = eventService.checkPrice(Integer.parseInt(strMaxPrice));
-                        String eventName = strName;
-                        String eventAddress = strAddress;
+//                        String eventName = strName;
+//                        String eventAddress = strAddress;
 
 
                         if (minPrice > maxPrice) {
@@ -110,8 +110,8 @@ public class EventListCommand implements Command {
                         request.setAttribute(NAME_OR_WORD_IN_NAME, nameOrWordInName);
                         request.setAttribute(MIN_PRICE, minPrice);
                         request.setAttribute(MAX_PRICE, maxPrice);
-                        request.setAttribute(ACTIVITY_NAME, eventName);
-                        request.setAttribute(ACTIVITY_ADDRESS, eventAddress);
+//                        request.setAttribute(ACTIVITY_NAME, eventName);
+//                        request.setAttribute(ACTIVITY_ADDRESS, eventAddress);
                     } catch (ServiceException e) {
                         e.printStackTrace();
                     }

@@ -58,12 +58,12 @@ String commandName=request.getParameter(COMMAND);
             if (request.getParameter(COMMAND) != null) {
               logger.info("Request. Parameter = " + commandName);
                 Command command = commandMap.receiveCommand(commandName);
-                page = command.execute(request, response);
+                page = command.execute(request);
 
             } else if (request.getAttribute(COMMAND) != null) {
              logger.info("Request through filter. Attribute = " + request.getAttribute(COMMAND));
                 Command command = commandMap.receiveCommand((String) request.getAttribute(COMMAND));
-                page = command.execute(request, response);
+                page = command.execute(request);
 
             } else {
               logger.error("Command not received");
@@ -71,7 +71,7 @@ String commandName=request.getParameter(COMMAND);
                 request.setAttribute(STATUS_CODE, 404);
                 page = PathForJsp.ERROR.getUrl();
             }
-        } catch (ServiceException | CommandException e) {
+        } catch (CommandException e) {
          logger.error(e.getMessage(), e);
             request.setAttribute(ERROR, e.getMessage());
             request.setAttribute(STATUS_CODE, 500);

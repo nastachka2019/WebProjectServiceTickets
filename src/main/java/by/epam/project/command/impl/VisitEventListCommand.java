@@ -36,7 +36,7 @@ public class VisitEventListCommand implements Command {
     private static final String MAX_PRICE = "maxPrice";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         if (request.getSession().getAttribute(ERROR) != null) {
             request.setAttribute(ERROR, request.getSession().getAttribute(ERROR));

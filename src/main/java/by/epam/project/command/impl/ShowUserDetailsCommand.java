@@ -27,7 +27,7 @@ public class ShowUserDetailsCommand implements Command {
     private static final String REGEX_ID = "^[1-9]\\d*$";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         if(request.getParameter(USER_ID) != null) {
 

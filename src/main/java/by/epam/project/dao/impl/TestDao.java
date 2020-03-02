@@ -22,14 +22,17 @@ public class TestDao {
 //      Activity activity= new Activity(1, "Queen's concert", null, "Concert of the legendary Queen","Minsk, Pobeditelej str., Prime Hall",LocalDate.of(2020,03,21),"2s-100s" );
 ActivityService activityService=new ActivityServiceImpl();
         //System.out.println(activityService.findByNameOrWordInNameWithLimit("s%", 0,8));
-        System.out.println(activityService.findByNameOrWordInName("sw%"));
+       // System.out.println(activityService.findByNameOrWordInName("sw%"));
     //    System.out.println(activityService.findByEventId(5));
       //  System.out.println(activityService.findEventByLimit(1,3));
+        EventTypeService eventTypeService=new EventTypeServiceImpl();
+        System.out.println(eventTypeService.findIdByEventType("concert"));
         UserService userService= new UserServiceImpl();
       //  System.out.println(userService.containsLogin("Arkadiy12"));
        //System.out.println(userService.findByLoginAndPass("Katyaaa", "Katya12345"));
         //System.out.println(userService.findUserById(2));
         TicketService ticketService=new TicketServiceImpl();
+        System.out.println(ticketService.findDatesByUserId(5));
       //  System.out.println(ticketService.findTicketByUserIdAndTicketDateAndEventType(3,"2020-04-21","Opera"));
    //     System.out.println(ticketService.totalPriceByUserIdAndTicketDate(2,"2020-03-19"));
 

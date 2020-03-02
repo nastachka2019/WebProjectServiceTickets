@@ -29,7 +29,7 @@ public class ShowEventDetailsCommand implements Command {
     private static final String REGEX_ID = "^[1-9]\\d*$";
 
     @Override
-    public String execute(HttpServletRequest request,HttpServletResponse response) throws ServiceException {
+    public String execute(HttpServletRequest request) {
 
         if (request.getSession().getAttribute(OK) != null) {
             request.setAttribute(OK, request.getSession().getAttribute(OK));
@@ -45,8 +45,13 @@ public class ShowEventDetailsCommand implements Command {
             if (matcher.matches()) {
                 int eventId = Integer.parseInt(request.getParameter(EVENT_ID));
                 ActivityService activityService=new ActivityServiceImpl();
-                Activity activity = activityService.findByEventId(eventId);
-                   if (activity == null) {
+                Activity activity = null;
+                try {
+                    activity = activityService.findByEventId(eventId);
+                } catch (ServiceException e) {
+                    e.printStackTrace();
+                }
+                if (activity == null) {
                     request.setAttribute(ERROR, "Product with such id not found");
                     request.setAttribute(STATUS_CODE, 404);
                     page = PathForJsp.ERROR.getUrl();

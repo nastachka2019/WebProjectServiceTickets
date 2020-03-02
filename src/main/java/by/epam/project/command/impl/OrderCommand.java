@@ -26,7 +26,7 @@ public class OrderCommand implements Command {
     private final static String NO_ORDER = "noOrder";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         User user = (User) request.getSession().getAttribute(USER);
         int userId = user.getUserId();

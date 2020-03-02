@@ -28,7 +28,7 @@ public class UserListCommand implements Command {
     private static final String GREATER_THAN_ONE_ADMIN = "greaterThanOneAdmin";
 
     @Override
-    public String execute(HttpServletRequest request,HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         int indexOfPage;
         if (request.getParameter(INDEX_OF_PAGE) != null) {

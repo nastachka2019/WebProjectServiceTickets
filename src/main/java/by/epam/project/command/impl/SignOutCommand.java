@@ -20,7 +20,7 @@ public class SignOutCommand implements Command {
     private static final String RESPONSE = "response";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
 
         logger.info("User " + ((User)request.getSession().getAttribute(USER)).getLogin() + " signed out.");
         request.getSession().setAttribute(USER, null);

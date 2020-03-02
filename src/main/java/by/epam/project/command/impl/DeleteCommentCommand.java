@@ -19,7 +19,7 @@ public class DeleteCommentCommand implements Command {
     private static final String RESPONSE = "response";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response)  {
+    public String execute(HttpServletRequest request)  {
 
         int commentId = Integer.parseInt(request.getParameter(COMMENT_ID));
 

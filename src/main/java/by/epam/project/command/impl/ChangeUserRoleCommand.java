@@ -21,7 +21,7 @@ public class ChangeUserRoleCommand implements Command {
     private static final String RESPONSE = "response";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) {
         int userId = Integer.parseInt(request.getParameter(USER_ID));
         String userRole = request.getParameter(USER_ROLE);
         UserService userService = new UserServiceImpl();

@@ -36,8 +36,7 @@ public class SearchCommand implements Command {
 
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
-
+    public String execute(HttpServletRequest request) throws CommandException {
         int indexOfPage;
         if (request.getParameter(INDEX_OF_PAGE) != null) {
             Pattern pattern = Pattern.compile(REGEX_INDEX);
@@ -96,7 +95,7 @@ public class SearchCommand implements Command {
                 request.setAttribute(COMMAND_VALUE, SEARCH_COMMAND);
 
             }
-            return new EventListCommand().execute(request, response);
+            return new EventListCommand().execute(request);
 
         } else {
             request.setAttribute(ERROR, "Error request");

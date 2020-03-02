@@ -5,6 +5,7 @@ import by.epam.project.command.PathForJsp;
 import by.epam.project.entity.Ticket;
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserComment;
+import by.epam.project.exception.CommandException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.TicketService;
 import by.epam.project.service.UserCommentService;
@@ -47,7 +48,7 @@ public class ShowOrderCommand implements Command {
     private static final String TOTAL_PRICE = "totalPrice";
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request) throws CommandException {
 
         if (request.getParameter(TICKET_DATE) != null) {
             String ticketDate = request.getParameter(TICKET_DATE);
@@ -111,7 +112,7 @@ try{
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-            return new OrderCommand().execute(request, response);
+            return new OrderCommand().execute(request);
         } else {
             request.setAttribute(ERROR, "Error request");
             request.setAttribute(STATUS_CODE, 404);
