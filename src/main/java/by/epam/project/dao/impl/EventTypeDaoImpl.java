@@ -18,11 +18,11 @@ import java.sql.SQLException;
  */
 
 public class EventTypeDaoImpl implements EventTypeDao {
-    private static final String SQL_FIND_BY_EVENT_TYPE = "SELECT event_type_id, event_type FROM event_type WHERE event_type = ?";
+    private static final String SQL_FIND_BY_EVENT_TYPE = "SELECT id, event_type FROM event_type WHERE event_type = ?";
     private static final String SQL_INSERT = "INSERT INTO event_type (event_type) VALUES (?)";
-    private static final String SQL_UPDATE = "UPDATE event_type SET event_type=? WHERE event_type_id=?";
-    private static final String SQL_DELETE = "DELETE FROM event_type WHERE event_type_id=?";
-    private static final String SQL_FIND_BY_ID = "SELECT event_type_id, event_type FROM event_type WHERE event_type_id=?";
+    private static final String SQL_UPDATE = "UPDATE event_type SET event_type=? WHERE id=?";
+    private static final String SQL_DELETE = "DELETE FROM event_type WHERE id=?";
+    private static final String SQL_FIND_BY_ID = "SELECT id, event_type FROM event_type WHERE id=?";
 
     @Override
     public int findIdByEventType(String eventType) throws DaoException {

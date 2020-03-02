@@ -31,19 +31,19 @@ import java.util.TreeSet;
 public class TicketDaoImpl implements TicketDao {
     private static final String SQL_INSERT = "INSERT INTO ticket (user_id, event_id, quantity, event_type_id, date) VALUES (?, ?, ?, ?, ?)";
     private static final String SQL_DELETE_TICKET = "DELETE FROM ticket WHERE id=?";
-    private static final String SQL_UPDATE_TICKET = "UPDATE ticket SET user_id=?, event_id=?, quantity=?, event_type_id=?, date=? WHERE ticket_id=?";
-    private static final String SQL_UPDATE_QUANTITY = "UPDATE ticket SET quantity=? WHERE ticket_id=?";
-    private static final String SQL_DELETE_TICKET_BY_USER_ID = "DELETE FROM ticket WHERE user_id=?";
-    private static final String SQL_FIND_DATE_BY_USER_ID = "SELECT date FROM ticket WHERE user_id = ?";
+    private static final String SQL_UPDATE_TICKET = "UPDATE ticket SET user_id=?, event_id=?, quantity=?, event_type_id=?, date=? WHERE id=?";
+    private static final String SQL_UPDATE_QUANTITY = "UPDATE ticket SET quantity=? WHERE id=?";
+    private static final String SQL_DELETE_TICKET_BY_USER_ID = "DELETE FROM ticket WHERE id=?";
+    private static final String SQL_FIND_DATE_BY_USER_ID = "SELECT date FROM ticket WHERE id = ?";
     private static final String SQL_FIND_TICKET_BY_USER_ID_AND_TICKET_DATE_AND_EVENT_TYPE =
-            "SELECT ticket.ticket_id, ticket.user_id, ticket.event_id,ticket.quantity, ticket.event_type_id, ticket.date FROM ticket INNER JOIN event_type ON ticket.event_type_id= event_type.event_type_id" +
+            "SELECT ticket.id, ticket.user_id, ticket.event_id,ticket.quantity, ticket.event_type_id, ticket.date FROM ticket INNER JOIN event_type ON ticket.event_type_id= event_type.event_type_id" +
                     " WHERE user_id=? AND date=? AND event_type=?";
     private static final String SQL_FIND_TICKET_BY_USER_ID_TICKET_DATE_EVENT_TYPE_EVENT_ID = "SELECT ticket_id, user_id, event_id, quantity, event_type_id, date" +
             " FROM ticket WHERE user_id=? AND event_id=? AND date=? AND event_type_id=?";
-    private static final String SQL_FIND_TICKET_BY_ID = "SELECT ticket_id, user_id, event_id, quantity. event_type_id, date" +
-            " FROM ticket WHERE ticket_id=?";
+    private static final String SQL_FIND_TICKET_BY_ID = "SELECT id, user_id, event_id, quantity. event_type_id, date" +
+            " FROM ticket WHERE id=?";
     private static final String SQL_COUNT_TOTAL_PRICE_BY_USER =
-            "SELECT (price * quantity) FROM activity INNER JOIN ticket ON activity.activity_id=ticket.event_id GROUP BY user_id";
+            "SELECT (price * quantity) FROM activity INNER JOIN ticket ON activity.id=ticket.event_id GROUP BY user_id";
 
     @Override
     public void updateQuantity(int ticketId, int quantity) throws DaoException {

@@ -28,13 +28,13 @@ import java.util.List;
 public class UserCommentDaoImpl implements UserCommentDao {
     private static final String SQL_INSERT_COMMENT = "INSERT into user_comment (dateComment, ticketDate, user_id, comment,commentator_id)" +
             " VALUES (?,?,?,?,?)";
-    private static final String SQL_DELETE_COMMENT = "DELETE FROM user_comment WHERE comment_id=?";
-    private static final String SQL_FIND_COMMENTS = "SELECT comment_id, dateComment, ticketDate, user_id, comment,commentator_id" +
+    private static final String SQL_DELETE_COMMENT = "DELETE FROM user_comment WHERE id=?";
+    private static final String SQL_FIND_COMMENTS = "SELECT id, dateComment, ticketDate, user_id, comment,commentator_id" +
             " FROM user_comment WHERE user_id=? AND ticketDate=?";
     private static final String SQL_UPDATE = "UPDATE user_comment SET user_id=?, dateComment=?, ticketDate=?, user_id=?, comment=?,commentator_id=?" +
-            " WHERE comment_id=?";
-    private static final String SQL_FIND_COMMENT_BY_ID = "SELECT comment_id, dateComment, ticketDate, user_id, comment,commentator_id" +
-                    " FROM user_comment WHERE comment_id=?";
+            " WHERE id=?";
+    private static final String SQL_FIND_COMMENT_BY_ID = "SELECT id, dateComment, ticketDate, user_id, comment,commentator_id" +
+                    " FROM user_comment WHERE id=?";
     private static final String SQL_DELETE_COMMENTS_FOR_USER_BY_DATE = "DELETE FROM user_comment WHERE user_id=? AND dateComment=?";
     private static final String SQL_DELETE_COMMENTS_FOR_USER = "DELETE FROM user_comment WHERE user_id=?";
     private static final String SQL_DELETE_COMMENTS_BY_COMMENTATOR = "DELETE FROM user_comment WHERE commentator_id=?";
