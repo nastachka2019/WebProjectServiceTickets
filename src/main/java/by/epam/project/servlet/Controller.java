@@ -55,7 +55,7 @@ public class Controller extends HttpServlet {
 String commandName=request.getParameter(COMMAND);
         CommandMap commandMap = CommandMap.getInstance();
         try {
-            if (request.getParameter(COMMAND) != null) {
+            if (commandName != null) {
               logger.info("Request. Parameter = " + commandName);
                 Command command = commandMap.receiveCommand(commandName);
                 page = command.execute(request);
@@ -86,7 +86,6 @@ String commandName=request.getParameter(COMMAND);
                 dispatcher.forward(request, response);
             }
         }
-
     }
 
     @Override
