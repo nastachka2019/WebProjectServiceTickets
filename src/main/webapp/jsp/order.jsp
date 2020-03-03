@@ -3,10 +3,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="ctg" uri="customtags" %>
 
-
+<c:set var="locale"
+       value="${not empty locale ? locale : 'en'}"
+       scope="session"/>
 
 <fmt:setLocale value="${locale}" scope="session"/>
-<fmt:setBundle basename="local.text"/>
+<fmt:setBundle basename="local.ticket"/>
 
 <html>
 <head>
@@ -76,17 +78,17 @@
 
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Event type</th>
-                    <th scope="col">Event</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Event type : </th>
+                    <th scope="col">Event: </th>
+                    <th scope="col">Name: </th>
+                    <th scope="col">Description: </th>
+                    <th scope="col">Address:</th>
+                    <th scope="col">Date: </th>
+                    <th scope="col">Price: </th>
                     <th scope="col"><fmt:message key="event.quantity"/></th> <!--Quantity column -->
                     <c:if test="${not ord}">
                         <th scope="col"></th>
-                        <!--Delete column -->
+
                     </c:if>
                 </tr>
                 </thead>
@@ -113,7 +115,7 @@
                             <td>
                                 <form method="post" action="update_quantity_in_order">
                                     <input type="hidden" name="command" value="update_quantity_in_order">
-                                    <input type="hidden" name="ticketId" value="${queen.ticketId}">
+                                    <input type="hidden" name="ticketId" value="${ticket.ticketId}">
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -121,7 +123,7 @@
                                                             key="event.quantity"/></span>
                                         </div>
                                         <input type="number" min="1" max="999"
-                                               name="quantity" value="${queen.quantity}"
+                                               name="quantity" value="${ticket.quantity}"
                                                class="form-control" aria-label="Sizing example input"
                                                aria-describedby="inputGroup-sizing-default">
                                         <span style="color:red;">${errorQuantity}</span>
@@ -143,7 +145,7 @@
                             <td>
                                 <form method="post" action="delete_ticket">
                                     <input type="hidden" name="command" value="delete_ticket">
-                                    <input type="hidden" name="ticketlId" value="${queen.ticketId}">
+                                    <input type="hidden" name="ticketlId" value="${ticket.ticketId}">
                                     <input type="hidden" name="totalEvents" value="${totalEvents}">
                                     <input type="hidden" name="selected_date" value="${selected_date}">
                                     <button type="submit" class="btn btn-danger">
@@ -153,127 +155,9 @@
                             </td>
 
                         </tr>
+
                     </c:forEach>
                 </c:if>
-
-<%--                <!--Lunch -->--%>
-<%--                <c:if test="${not empty lunchMeals}">--%>
-<%--                    <tr>--%>
-<%--                        <th rowspan="${lunchMeals.size() + 1}" scope="rowgroup"><fmt:message key="product.lunch"/></th>--%>
-<%--                    </tr>--%>
-<%--                    <c:forEach var="lunchMeal" items="${lunchMeals}">--%>
-<%--                        <tr>--%>
-<%--                            <th scope="row"><img--%>
-<%--                                    src="${pageContext.request.contextPath}/images/products/${lunchMeal.product.imageURL}"--%>
-<%--                                    width="70" height="80"></th>--%>
-<%--                            <td>${lunchMeal.product.name}</td>--%>
-<%--                            <td>${lunchMeal.product.description}</td>--%>
-<%--                            <td>${lunchMeal.product.calories}</td>--%>
-<%--                            <td>${lunchMeal.product.proteins}</td>--%>
-<%--                            <td>${lunchMeal.product.lipids}</td>--%>
-<%--                            <td>${lunchMeal.product.carbohydrates}</td>--%>
-<%--                            <td>--%>
-<%--                                <form method="post" action="update_quantity_in_diet">--%>
-<%--                                    <input type="hidden" name="command" value="update_quantity_in_diet">--%>
-<%--                                    <input type="hidden" name="mealId" value="${lunchMeal.mealId}">--%>
-
-<%--                                    <div class="input-group mb-3">--%>
-<%--                                        <div class="input-group-prepend">--%>
-<%--                                <span class="input-group-text" id="inputGroup-sizing-default"--%>
-<%--                                      style="width: 100px;"><fmt:message--%>
-<%--                                        key="product.quantity"/></span>--%>
-<%--                                        </div>--%>
-<%--                                        <input type="number" min="1" max="999"--%>
-<%--                                               name="quantity" value="${lunchMeal.quantity}"--%>
-<%--                                               class="form-control" aria-label="Sizing example input"--%>
-<%--                                               aria-describedby="inputGroup-sizing-default"--%>
-<%--                                        >--%>
-<%--                                        <span style="color:red;">${errorQuantity}</span>--%>
-<%--                                    </div>--%>
-
-<%--                                    <!--Update button -->--%>
-<%--                                    <div class="form-group">--%>
-<%--                                        <div class="col-xs-12">--%>
-<%--                                            <br>--%>
-<%--                                            <button type="submit" class="btn btn-success"><fmt:message--%>
-<%--                                                    key="profile.button.update"/></button>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </form>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <form method="post" action="delete_meal">--%>
-<%--                                    <input type="hidden" name="command" value="delete_meal">--%>
-<%--                                    <input type="hidden" name="mealId" value="${lunchMeal.mealId}">--%>
-<%--                                    <input type="hidden" name="totalProducts" value="${totalProducts}">--%>
-<%--                                    <input type="hidden" name="selected_date" value="${selected_date}">--%>
-<%--                                    <button type="submit" class="btn btn-danger"><fmt:message--%>
-<%--                                            key="profile.button.delete"/></button>--%>
-<%--                                </form>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                    </c:forEach>--%>
-<%--                </c:if>--%>
-
-<%--                <!--Dinner -->--%>
-<%--                <c:if test="${not empty dinnerMeals}">--%>
-<%--                    <tr>--%>
-<%--                        <th rowspan="${dinnerMeals.size() + 1}" scope="rowgroup"><fmt:message--%>
-<%--                                key="product.dinner"/></th>--%>
-<%--                    </tr>--%>
-<%--                    <c:forEach var="dinnerMeal" items="${dinnerMeals}">--%>
-<%--                        <tr>--%>
-<%--                            <th scope="row"><img--%>
-<%--                                    src="${pageContext.request.contextPath}/images/products/${dinnerMeal.product.imageURL}"--%>
-<%--                                    width="70" height="80"></th>--%>
-<%--                            <td>${dinnerMeal.product.name}</td>--%>
-<%--                            <td>${dinnerMeal.product.description}</td>--%>
-<%--                            <td>${dinnerMeal.product.calories}</td>--%>
-<%--                            <td>${dinnerMeal.product.proteins}</td>--%>
-<%--                            <td>${dinnerMeal.product.lipids}</td>--%>
-<%--                            <td>${dinnerMeal.product.carbohydrates}</td>--%>
-<%--                            <td>--%>
-<%--                                <form method="post" action="update_quantity_in_diet">--%>
-<%--                                    <input type="hidden" name="command" value="update_quantity_in_diet">--%>
-<%--                                    <input type="hidden" name="mealId" value="${dinnerMeal.mealId}">--%>
-
-<%--                                    <div class="input-group mb-3">--%>
-<%--                                        <div class="input-group-prepend">--%>
-<%--                                                    <span class="input-group-text" style="width: 100px;"><fmt:message--%>
-<%--                                                            key="product.quantity"/></span>--%>
-<%--                                        </div>--%>
-<%--                                        <input type="number"--%>
-<%--                                               name="quantity" value="${dinnerMeal.quantity}"--%>
-<%--                                               min="1" max="999"--%>
-<%--                                               class="form-control" aria-label="Sizing example input"--%>
-<%--                                               aria-describedby="inputGroup-sizing-default">--%>
-<%--                                        <span style="color:red;">${errorQuantity}</span>--%>
-<%--                                    </div>--%>
-
-<%--                                    <!--Update button -->--%>
-<%--                                    <div class="form-group">--%>
-<%--                                        <div class="col-xs-12">--%>
-<%--                                            <br>--%>
-<%--                                            <button type="submit" class="btn btn-success"><fmt:message--%>
-<%--                                                    key="profile.button.update"/></button>--%>
-
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </form>--%>
-<%--                            </td>--%>
-<%--                            <td>--%>
-<%--                                <form method="post" action="delete_meal">--%>
-<%--                                    <input type="hidden" name="command" value="delete_meal">--%>
-<%--                                    <input type="hidden" name="mealId" value="${dinnerMeal.mealId}">--%>
-<%--                                    <input type="hidden" name="totalProducts" value="${totalProducts}">--%>
-<%--                                    <input type="hidden" name="selected_date" value="${selected_date}">--%>
-<%--                                    <button type="submit" class="btn btn-danger"><fmt:message--%>
-<%--                                            key="profile.button.delete"/></button>--%>
-<%--                                </form>--%>
-<%--                            </td>--%>
-<%--                        </tr>--%>
-<%--                    </c:forEach>--%>
-<%--                </c:if>--%>
 
                 <tr class="table-success">
                     <th><fmt:message key="profile.total"/></th>
@@ -282,8 +166,7 @@
                     <td></td>
                     <td>${totalPrice}</td>
 
-                    <td></td> <!--Quantity column -->
-                    <td></td> <!--Delete column -->
+
                 </tr>
 
                 </tbody>
@@ -325,7 +208,7 @@
                                                             <input type="hidden" name="command" value="delete_comment">
                                                             <input type="hidden" name="commentId"
                                                                    value="${userComment.commentId}">
-                                                            <input type="hidden" name="mealDate"
+                                                            <input type="hidden" name="ticketDate"
                                                                    value="${selected_date}">
 
 
@@ -362,7 +245,7 @@
                                     <form method="post" action="comment" class="form-horizontal" id="commentForm"
                                           role="form">
                                         <input type="hidden" name="command" value="comment">
-                                        <input type="hidden" name="mealDate" value="${selected_date}">
+                                        <input type="hidden" name="ticketDate" value="${selected_date}">
 
 
                                         <div class="form-group">
