@@ -45,6 +45,15 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
+    public List<Ticket> findTicketByUserId(int userId) throws ServiceException {
+        try {
+            return ticketDao.findTicketByUserId(userId);
+        } catch (DaoException  e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
     public List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws ServiceException {
         try {
             return ticketDao.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, eventType);

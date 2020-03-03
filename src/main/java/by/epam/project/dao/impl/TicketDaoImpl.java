@@ -38,8 +38,8 @@ public class TicketDaoImpl implements TicketDao {
     private static final String SQL_FIND_TICKET_BY_USER_ID_AND_TICKET_DATE_AND_EVENT_TYPE =
             "SELECT ticket.id, ticket.user_id, ticket.event_id,ticket.quantity, ticket.event_type_id, ticket.date FROM ticket INNER JOIN event_type ON ticket.event_type_id= event_type.id" +
                     " WHERE user_id=? AND date=? AND event_type=?";
-    private static final String SQL_FIND_TICKET_BY_USER_ID_TICKET_DATE_EVENT_TYPE_EVENT_ID = "SELECT ticket_id, user_id, event_id, quantity, event_type_id, date" +
-            " FROM ticket WHERE user_id=? AND event_id=? AND date=? AND event_type_id=?";
+    private static final String SQL_FIND_TICKET_BY_USER_ID = "SELECT id, user_id, event_id, quantity, event_type_id, date" +
+            " FROM ticket WHERE user_id=? ";
     private static final String SQL_FIND_TICKET_BY_ID = "SELECT id, user_id, event_id, quantity. event_type_id, date" +
             " FROM ticket WHERE id=?";
     private static final String SQL_COUNT_TOTAL_PRICE_BY_USER_AND_TICKET_DATE =
@@ -120,6 +120,38 @@ public class TicketDaoImpl implements TicketDao {
                         .setEvent(findEventById(resultSet.getInt(3)))
                         .setQuantity(resultSet.getInt(4))
                         .setEventType(findEventTypeById(resultSet.getInt(5)))
+                        .build());
+            }
+            return ticketList;
+
+        } catch (SQLException | ServiceException e) {
+            throw new DaoException(e);
+        } finally {
+            closeResultSet(resultSet);
+            closePreparedStatement(preparedStatement);
+            closeConnection(connection);
+        }
+    }
+
+    @Override
+    public List<Ticket> findTicketByUserId(int userId) throws DaoException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        List<Ticket> ticketList = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_TICKET_BY_USER_ID);
+            preparedStatement.setInt(1, userId);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                ticketList.add(new Ticket.Builder()
+                        .setTicketId(resultSet.getInt(1))
+                        .setUser(findUserById(resultSet.getInt(2)))
+                        .setEvent(findEventById(resultSet.getInt(3)))
+                        .setQuantity(resultSet.getInt(4))
+                        .setEventType(findEventTypeById(resultSet.getInt(5)))
+                        .setDate(resultSet.getDate(6).toLocalDate())
                         .build());
             }
             return ticketList;

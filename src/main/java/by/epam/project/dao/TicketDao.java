@@ -20,7 +20,7 @@ public interface TicketDao extends BasicDao<Ticket> {
     Set<String> findDatesByUserId(int userId) throws DaoException;
 
     List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws DaoException;
-
+List <Ticket> findTicketByUserId (int userId) throws DaoException;
 //    Ticket findTicketByUserIdTicketDateEventTypeEventId(Ticket ticket) throws DaoException, ConnectionPoolException;
 
     void deleteTicketByUserId(int userId) throws DaoException;

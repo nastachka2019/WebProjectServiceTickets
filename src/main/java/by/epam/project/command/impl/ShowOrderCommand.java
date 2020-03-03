@@ -61,35 +61,39 @@ public class ShowOrderCommand implements Command {
             int userId = user.getUserId();
 try{
             TicketService ticketService = new TicketServiceImpl();
-            List<Ticket> concertOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CONCERT);
-            List<Ticket> exhibitionOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, EXHIBITION);
-            List<Ticket> theatreOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, THEATRE);
-            List<Ticket> operaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, OPERA);
-            List<Ticket> balletOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, BALLET);
-            List<Ticket> cinemaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CINEMA);
-            List<Ticket> sportOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, SPORT);
+//            List<Ticket> concertOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CONCERT);
+//            List<Ticket> exhibitionOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, EXHIBITION);
+//            List<Ticket> theatreOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, THEATRE);
+//            List<Ticket> operaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, OPERA);
+//            List<Ticket> balletOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, BALLET);
+//            List<Ticket> cinemaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CINEMA);
+//            List<Ticket> sportOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, SPORT);
+    List<Ticket> order=ticketService.findTicketByUserId(userId);
 
-            if (!concertOrder.isEmpty()) {
-                request.setAttribute(CONCERT_ORDER, concertOrder);
-            }
-            if (!exhibitionOrder.isEmpty()) {
-                request.setAttribute(EXHIBITION_ORDER, exhibitionOrder);
-            }
-            if (!theatreOrder.isEmpty()) {
-                request.setAttribute(THEATRE_ORDER, theatreOrder);
-            }
-            if (!operaOrder.isEmpty()) {
-                request.setAttribute(OPERA_ORDER, operaOrder);
-            }
-            if (!balletOrder.isEmpty()) {
-                request.setAttribute(BALLET_ORDER, balletOrder);
-            }
-            if (!cinemaOrder.isEmpty()) {
-                request.setAttribute(CINEMA_ORDER, cinemaOrder);
-            }
-            if (!sportOrder.isEmpty()) {
-                request.setAttribute(SPORT_ORDER, sportOrder);
-            }
+//            if (!concertOrder.isEmpty()) {
+//                request.setAttribute(CONCERT_ORDER, concertOrder);
+//            }
+//            if (!exhibitionOrder.isEmpty()) {
+//                request.setAttribute(EXHIBITION_ORDER, exhibitionOrder);
+//            }
+//            if (!theatreOrder.isEmpty()) {
+//                request.setAttribute(THEATRE_ORDER, theatreOrder);
+//            }
+//            if (!operaOrder.isEmpty()) {
+//                request.setAttribute(OPERA_ORDER, operaOrder);
+//            }
+//            if (!balletOrder.isEmpty()) {
+//                request.setAttribute(BALLET_ORDER, balletOrder);
+//            }
+//            if (!cinemaOrder.isEmpty()) {
+//                request.setAttribute(CINEMA_ORDER, cinemaOrder);
+//            }
+//            if (!sportOrder.isEmpty()) {
+//                request.setAttribute(SPORT_ORDER, sportOrder);
+//            }
+    if (!order.isEmpty()){
+        request.setAttribute(ORDER,order);
+    }
 
             int totalPrice = 0;
             try {
@@ -109,7 +113,7 @@ try{
             request.setAttribute(SHOW_ORDER, true);
             request.setAttribute(TICKET_DATE, ticketDate);
             request.setAttribute(TOTAL_PRICE, totalPrice);
-            request.setAttribute(TOTAL_ACTIVITIES, concertOrder.size() + operaOrder.size() + sportOrder.size() + theatreOrder.size() + cinemaOrder.size() + balletOrder.size() + exhibitionOrder.size());
+            request.setAttribute(TOTAL_ACTIVITIES, order.size());
         } catch (ServiceException e) {
             e.printStackTrace();
         }

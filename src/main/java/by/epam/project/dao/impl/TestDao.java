@@ -32,7 +32,7 @@ ActivityService activityService=new ActivityServiceImpl();
        //System.out.println(userService.findByLoginAndPass("Katyaaa", "Katya12345"));
         //System.out.println(userService.findUserById(2));
         TicketService ticketService=new TicketServiceImpl();
-        System.out.println(ticketService.findDatesByUserId(5));
+        System.out.println(ticketService.findTicketByUserId(2));
       //  System.out.println(ticketService.findTicketByUserIdAndTicketDateAndEventType(3,"2020-04-21","Opera"));
    //     System.out.println(ticketService.totalPriceByUserIdAndTicketDate(2,"2020-03-19"));
 UserCommentService userCommentService=new UserCommentServiceImpl();
