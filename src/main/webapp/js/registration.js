@@ -17,11 +17,7 @@ $(function(){
             {
                 password: "required",
                 dateOfBirth: "required",
-                weight: {
-                    required:true,
-                    number:true
-                },
-                height:  {
+                phone: {
                     required:true,
                     number:true
                 },

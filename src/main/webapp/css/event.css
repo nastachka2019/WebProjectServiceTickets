@@ -131,7 +131,7 @@ img {
     text-align: center;
     line-height: 2em; }
 .not-available:before {
-    font-family: fontawesome;
+    font-family: fontawesome, serif;
     content: "\f00d";
     color: #fff; }
 
@@ -167,5 +167,3 @@ img {
         -webkit-transform: scale(1);
         transform: scale(1); } }
 
-
-/*# sourceMappingURL=style.css.map */

@@ -34,12 +34,12 @@ public class ShowOrderCommand implements Command {
     private static final String CINEMA = "cinema";
     private static final String SPORT = "sport";
     private static final String EXHIBITION_ORDER = "football";
-    private static final String CONCERT_ORDER = "queen";
-    private static final String THEATRE_ORDER = "aivengo";
-    private static final String OPERA_ORDER = "rigoletto";
-    private static final String BALLET_ORDER = "swan";
-    private static final String CINEMA_ORDER = "movie";
-    private static final String SPORT_ORDER = "hockey";
+    private static final String CONCERT_ORDER = "concertOrder";
+    private static final String THEATRE_ORDER = "theatreOrder";
+    private static final String OPERA_ORDER = "operaOrder";
+    private static final String BALLET_ORDER = "balletOrder";
+    private static final String CINEMA_ORDER = "cinemaOrder";
+    private static final String SPORT_ORDER = "sportOrder";
     private static final String USER_COMMENT_LIST = "userCommentList";
     private static final String ERROR = "error";
     private static final String STATUS_CODE = "statusCode";
@@ -48,7 +48,7 @@ public class ShowOrderCommand implements Command {
     private static final String TOTAL_PRICE = "totalPrice";
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {
+    public String execute(HttpServletRequest request) {
 
         if (request.getParameter(TICKET_DATE) != null) {
             String ticketDate = request.getParameter(TICKET_DATE);

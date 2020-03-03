@@ -29,8 +29,8 @@ import java.util.regex.Pattern;
 public class AddTicketCommand implements Command {
     private static final String USER = "User";
     private static final String ACTIVITY_ID = "eventId";
-    private static final String TICKET_DATE = "ticketDate";
-    private static final String EVENT_TYPE="eventType";
+   private static final String TICKET_DATE = "ticketDate";
+  private static final String EVENT_TYPE="eventType";
     private static final String QUANTITY = "quantity";
     private static final String ERROR = "error";
     private static final String STATUS_CODE = "statusCode";
@@ -43,8 +43,8 @@ public class AddTicketCommand implements Command {
 
         User user = (User) request.getSession().getAttribute(USER);
         int eventId = Integer.parseInt(request.getParameter(ACTIVITY_ID));
-        String ticketDate = request.getParameter(TICKET_DATE);
-        String stringEventType = request.getParameter(EVENT_TYPE);
+    String ticketDate = request.getParameter(TICKET_DATE);
+       String stringEventType = request.getParameter(EVENT_TYPE);
 
         Pattern pattern = Pattern.compile(REGEX_QUANTITY);
         Matcher matcher = pattern.matcher(request.getParameter(QUANTITY));
@@ -58,14 +58,14 @@ public class AddTicketCommand implements Command {
                 TicketService ticketService= new TicketServiceImpl();
                 EventTypeService eventTypeService=new EventTypeServiceImpl();
 
-                int idEventType = eventTypeService.findIdByEventType(stringEventType);
+              int idEventType = eventTypeService.findIdByEventType(stringEventType);
                 Ticket ticket=new Ticket.Builder()
                         .setUser(user)
                         .setEvent(event)
-                        .setDate(LocalDate.parse(ticketDate))
+                  .setDate(LocalDate.parse(ticketDate))
                         .setEventType(new EventType.Builder()
-                                .setEventTypeId(idEventType)
-                                .setEventTypeValue(stringEventType)
+                             .setEventTypeId(idEventType)
+                         .setEventTypeValue(stringEventType)
                                 .build())
                         .setQuantity(quantity)
                         .build();

@@ -35,7 +35,7 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap-social.css" rel="stylesheet">
 
-<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/event.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/event.css">
 
 
 </head>
@@ -43,11 +43,11 @@
 
 <jsp:include page="header.jsp"/>
 
-<%--<c:if test="${ok != null}">--%>
-<%--    <div class="alert alert-success block1" role="alert">--%>
-<%--            ${ok}--%>
-<%--    </div>--%>
-<%--</c:if>--%>
+<c:if test="${ok != null}">
+    <div class="alert alert-success block1" role="alert">
+            ${ok}
+    </div>
+</c:if>
 
 <div id="page-container">
     <div id="content-wrap">
@@ -57,16 +57,16 @@
                     <div class="wrapper row">
                         <div class="preview col-md-4">
 
-<%--                            <div class="preview-pic tab-content">--%>
-<%--                                <div class="tab-pane active" id="pic-1"><img--%>
-<%--                                        src="${pageContext.request.contextPath}/images/events/${activity.imageURL}"--%>
-<%--                                        width="200"--%>
-<%--                                        height="250"/></div>--%>
-<%--                            </div>--%>
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active" id="pic-1"><img
+                                        src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
+                                        width="200"
+                                        height="250"/></div>
+                            </div>
 
                         </div>
                         <div class="details col-md-6" style="padding-left: 80px;">
-                            <h3 class="event-title">${activity.name}</h3>
+                            <h3 class="event-title">${event.name}</h3>
 
                             <p class="event-description">${event.description}</p>
                             <h5 class="sizes"><fmt:message key="event.name"/>
@@ -90,30 +90,30 @@
 
                                 <c:otherwise>
                                     <form method="post" action="add_ticket" class="form-horizontal">
-                                        <input type="hidden" name="command" value="add_meal">
+                                        <input type="hidden" name="command" value="add_ticket">
                                         <input type="hidden" name="eventId" value="${event.eventId}">
 
-                                        <label>
-                                            <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"
-                                                   id="dateOfBirth"
-                                                   class="form-control" required>
-                                        </label>
+<%--                                        <label>--%>
+<%--                                            <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"--%>
+<%--                                                   id="dateOfBirth"--%>
+<%--                                                   class="form-control" required>--%>
+<%--                                        </label>--%>
 
-                                        <label>
-                                            <select class="custom-select" name="eventType" required>
-                                                <option ${eventType=="concert"?"selected":""} value="concert">
-                                                    <fmt:message
-                                                            key="event.concert"/>
-                                                </option>
-                                                <!-- value отправляется на сервер-->
-                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message
-                                                        key="event_type.ballet"/>
-                                                </option>
-                                                <option ${eventType=="sport"?"selected":""} value="sport"><fmt:message
-                                                        key="event_type.sport"/>
-                                                </option>
-                                            </select>
-                                        </label>
+<%--                                        <label>--%>
+<%--                                            <select class="custom-select" name="eventType" required>--%>
+<%--                                                <option ${eventType=="concert"?"selected":""} value="concert">--%>
+<%--                                                    <fmt:message--%>
+<%--                                                            key="event.concert"/>--%>
+<%--                                                </option>--%>
+<%--                                                <!-- value отправляется на сервер-->--%>
+<%--                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message--%>
+<%--                                                        key="event_type.ballet"/>--%>
+<%--                                                </option>--%>
+<%--                                                <option ${eventType=="sport"?"selected":""} value="sport"><fmt:message--%>
+<%--                                                        key="event_type.sport"/>--%>
+<%--                                                </option>--%>
+<%--                                            </select>--%>
+<%--                                        </label>--%>
 
                                         <!--Quantity -->
                                         <div class="input-group mb-3">

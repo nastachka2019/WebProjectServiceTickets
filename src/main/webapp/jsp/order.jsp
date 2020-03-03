@@ -78,14 +78,14 @@
 
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Event type : </th>
-                    <th scope="col">Event: </th>
-                    <th scope="col">Name: </th>
-                    <th scope="col">Description: </th>
-                    <th scope="col">Address:</th>
-                    <th scope="col">Date: </th>
-                    <th scope="col">Price: </th>
-                    <th scope="col"><fmt:message key="event.quantity"/></th> <!--Quantity column -->
+                    <th scope="col">Event type</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"><fmt:message key="event.quantity"/></th>
                     <c:if test="${not ord}">
                         <th scope="col"></th>
 
@@ -102,20 +102,20 @@
                     </tr>
                     <c:forEach var="concertOrder" items="${concertOrders}">
                         <tr>
-                            <th scope="row"><img
-                                    src="${pageContext.request.contextPath}/images/events/concert.jpg"
-                                    width="70"
-                                    height="80"></th>
-                            <td scope="row">${queen.activity.name}</td>
-                            <td>${queen.activity.description}</td>
-                            <td>${queen.activity.address}</td>
-                            <td>${queen.activity.data}</td>
-                            <td>${queen.activity.queen.activity.data}</td>
-                            <td>$queen.activity.price}</td>
+                            <th scope="row">
+                                <img   src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
+                                    width="200"
+                                    height="250"></th>
+                            <td scope="row">${concertOrder.event.name}</td>
+                            <td>${concertOrder.event.description}</td>
+                            <td>${concertOrder.event.address}</td>
+                            <td>${concertOrder.event.data}</td>
+                            <td>${concertOrder.event.data}</td>
+                            <td>${concertOrder.event.price}</td>
                             <td>
                                 <form method="post" action="update_quantity_in_order">
                                     <input type="hidden" name="command" value="update_quantity_in_order">
-                                    <input type="hidden" name="ticketId" value="${ticket.ticketId}">
+                                    <input type="hidden" name="ticketId" value="${concertOrder.ticketId}">
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -123,7 +123,7 @@
                                                             key="event.quantity"/></span>
                                         </div>
                                         <input type="number" min="1" max="999"
-                                               name="quantity" value="${ticket.quantity}"
+                                               name="quantity" value="${concertOrder.quantity}"
                                                class="form-control" aria-label="Sizing example input"
                                                aria-describedby="inputGroup-sizing-default">
                                         <span style="color:red;">${errorQuantity}</span>
@@ -145,7 +145,7 @@
                             <td>
                                 <form method="post" action="delete_ticket">
                                     <input type="hidden" name="command" value="delete_ticket">
-                                    <input type="hidden" name="ticketlId" value="${ticket.ticketId}">
+                                    <input type="hidden" name="ticketId" value="${ticket.ticketId}">
                                     <input type="hidden" name="totalEvents" value="${totalEvents}">
                                     <input type="hidden" name="selected_date" value="${selected_date}">
                                     <button type="submit" class="btn btn-danger">
@@ -223,7 +223,7 @@
                                                         <div>
                                                             <h4 class="media-heading text-uppercase"
                                                                 style="display:inline-block">
-                                                                    ${userComment.commentator.firstName} ${userComment.commentator.surname}
+                                                                    ${userComment.commentator.name} ${userComment.commentator.surname}
                                                             </h4>
                                                             <span class="float-right"
                                                                   style="display:inline-block">${userComment.dateOfComment}</span>
