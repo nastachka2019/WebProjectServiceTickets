@@ -93,27 +93,40 @@
                                         <input type="hidden" name="command" value="add_ticket">
                                         <input type="hidden" name="eventId" value="${event.eventId}">
 
-<%--                                        <label>--%>
-<%--                                            <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"--%>
-<%--                                                   id="dateOfBirth"--%>
-<%--                                                   class="form-control" required>--%>
-<%--                                        </label>--%>
+                                        <label>
+                                            <p style="color: red"><fmt:message key="ticket.select_date_office"/></p>
+                                            <input type="date" name="ticketDate" value="${ticketDate}" maxlength="20"
+                                                   id="dateOfBirth"
+                                                   class="form-control" required>
+                                        </label>
 
-<%--                                        <label>--%>
-<%--                                            <select class="custom-select" name="eventType" required>--%>
-<%--                                                <option ${eventType=="concert"?"selected":""} value="concert">--%>
-<%--                                                    <fmt:message--%>
-<%--                                                            key="event.concert"/>--%>
-<%--                                                </option>--%>
-<%--                                                <!-- value отправляется на сервер-->--%>
-<%--                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message--%>
-<%--                                                        key="event_type.ballet"/>--%>
-<%--                                                </option>--%>
-<%--                                                <option ${eventType=="sport"?"selected":""} value="sport"><fmt:message--%>
-<%--                                                        key="event_type.sport"/>--%>
-<%--                                                </option>--%>
-<%--                                            </select>--%>
-<%--                                        </label>--%>
+                                        <label>
+                                            <select class="custom-select" name="eventType" required>
+                                                <option ${eventType=="concert"?"selected":""} value="concert">
+                                                    <fmt:message
+                                                            key="event.concert"/>
+                                                </option>
+                                                <!-- value отправляется на сервер-->
+                                                <option ${eventType=="ballet"?"selected":""} value="ballet"><fmt:message
+                                                        key="event_type.ballet"/>
+                                                </option>
+                                                <option ${eventType=="sport"?"selected":""} value="sport"><fmt:message
+                                                        key="event_type.sport"/>
+                                                </option>
+                                                <option ${eventType=="cinema"?"selected":""} value="cinema"><fmt:message
+                                                        key="event_type.cinema"/>
+                                                </option>
+                                                <option ${eventType=="opera"?"selected":""} value="opera"><fmt:message
+                                                        key="event_type.opera"/>
+                                                </option>
+                                                <option ${eventType=="theatre"?"selected":""} value="theatre"><fmt:message
+                                                        key="event_type.theater"/>
+                                                </option>
+                                                <option ${eventType=="exhibition"?"selected":""} value="exhibition"><fmt:message
+                                                        key="event_type.exhibitions"/>
+                                                </option>
+                                            </select>
+                                        </label>
 
                                         <!--Quantity -->
                                         <div class="input-group mb-3">

@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="ctg" uri="customtags" %>
 
+
 <c:set var="locale"
        value="${not empty locale ? locale : 'en'}"
        scope="session"/>
@@ -86,7 +87,7 @@
                     <th scope="col">Date</th>
                     <th scope="col">Price</th>
                     <th scope="col"><fmt:message key="event.quantity"/></th>
-                    <c:if test="${not ord}">
+<%--                    <c:if test="${not ord}">--%>
                         <th scope="col"></th>
 
                     </c:if>
@@ -275,7 +276,7 @@
                     </div>
                 </div>
             </div>
-        </c:if>
+<%--        </c:if>--%>
     </div>
     <jsp:include page="footer.jsp"/>
 

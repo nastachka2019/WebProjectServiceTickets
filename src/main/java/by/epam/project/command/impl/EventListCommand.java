@@ -47,7 +47,7 @@ public class EventListCommand implements Command {
             Pattern pattern = Pattern.compile(REGEX_INDEX);
             Matcher matcher = pattern.matcher(request.getParameter(INDEX_OF_PAGE));
 
-            if (matcher.matches()) {
+            if(matcher.matches()){
                 indexOfPage = Integer.parseInt(request.getParameter(INDEX_OF_PAGE));
             } else {
                 request.setAttribute(ERROR, "Error request");
@@ -57,6 +57,7 @@ public class EventListCommand implements Command {
         } else {
             indexOfPage = 1;
         }
+
 
         ActivityService eventService = new ActivityServiceImpl();
 
@@ -75,13 +76,13 @@ public class EventListCommand implements Command {
             }
         } else {
             if (request.getParameter(NAME_OR_WORD_IN_NAME) != null
-//                    && request.getParameter(ACTIVITY_ADDRESS) != null
-//                    && request.getParameter(ACTIVITY_NAME) != null
+                    && request.getParameter(ACTIVITY_ADDRESS) != null
+                    && request.getParameter(ACTIVITY_NAME) != null
                     && request.getParameter(MIN_PRICE) != null
                     && request.getParameter(MAX_PRICE) != null) {
                 String nameOrWordInName = request.getParameter(NAME_OR_WORD_IN_NAME);
-//                String strAddress = request.getParameter(ACTIVITY_ADDRESS);
-//                String strName = request.getParameter(ACTIVITY_NAME);
+                String strAddress = request.getParameter(ACTIVITY_ADDRESS);
+               String strName = request.getParameter(ACTIVITY_NAME);
                 String strMaxPrice = request.getParameter(MAX_PRICE);
                 String strMinPrice = request.getParameter(MIN_PRICE);
                 EventValidator eventValidator = new EventValidator();
@@ -94,8 +95,8 @@ public class EventListCommand implements Command {
 
 
                         int maxPrice = eventService.checkPrice(Integer.parseInt(strMaxPrice));
-//                        String eventName = strName;
-//                        String eventAddress = strAddress;
+                        String eventName = strName;
+                       String eventAddress = strAddress;
 
 
                         if (minPrice > maxPrice) {
@@ -110,8 +111,8 @@ public class EventListCommand implements Command {
                         request.setAttribute(NAME_OR_WORD_IN_NAME, nameOrWordInName);
                         request.setAttribute(MIN_PRICE, minPrice);
                         request.setAttribute(MAX_PRICE, maxPrice);
-//                        request.setAttribute(ACTIVITY_NAME, eventName);
-//                        request.setAttribute(ACTIVITY_ADDRESS, eventAddress);
+                       request.setAttribute(ACTIVITY_NAME, eventName);
+                        request.setAttribute(ACTIVITY_ADDRESS, eventAddress);
                     } catch (ServiceException e) {
                         e.printStackTrace();
                     }
@@ -150,8 +151,8 @@ public class EventListCommand implements Command {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-//        request.setAttribute(ACTIVITY_NAME, activity.getName());
-//        request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
+       request.setAttribute(ACTIVITY_NAME, activity.getName());
+        request.setAttribute(ACTIVITY_ADDRESS, activity.getAddress());
     }
 }
 

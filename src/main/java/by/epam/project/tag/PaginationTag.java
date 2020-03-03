@@ -54,10 +54,10 @@ public class PaginationTag extends TagSupport {
 
                 if (commandValue.equals("search")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
-                } else if (commandValue.equals("product_list")) {
+                } else if (commandValue.equals("event_list")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
                     out.write("<input type=\"hidden\" name=\"eventName\" value=\"" + eventName + "\">");
-                    out.write("<input type=\"hidden\" name=\"eventAdress\" value=\"" + eventAddress + "\">");
+                    out.write("<input type=\"hidden\" name=\"eventAddress\" value=\"" + eventAddress + "\">");
                     out.write("<input type=\"hidden\" name=\"minPrice\" value=\"" + minPrice + "\">");
                     out.write("<input type=\"hidden\" name=\"maxPrice\" value=\"" + maxPrice + "\">");
 
@@ -77,7 +77,7 @@ public class PaginationTag extends TagSupport {
 
                 if (commandValue.equals("search")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
-                } else if (commandValue.equals("product_list")) {
+                } else if (commandValue.equals("event_list")) {
                     out.write("<input type=\"hidden\" name=\"nameOrWordInName\" value=\"" + nameOrWordInName + "\">");
                     out.write("<input type=\"hidden\" name=\"eventName\" value=\"" + eventName+ "\">");
                     out.write("<input type=\"hidden\" name=\"eventAddress\" value=\"" + eventAddress + "\">");

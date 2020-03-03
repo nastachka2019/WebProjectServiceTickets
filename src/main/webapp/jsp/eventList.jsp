@@ -163,19 +163,16 @@
         </div>
 
         <c:if test="${searchError == null}">
-            <ctg:pagination objectsPerPage="${productsPerPage}"
+            <ctg:pagination objectsPerPage="${eventsPerPage}"
                             commandValue="${commandValue}"
                             indexOfPage="${indexOfPage}"
-                            numberOfObjects="${producEventSize}"
+                            numberOfObjects="${eventListSize}"
                             locale="${locale}"
                             nameOrWordInName="${nameOrWordInName}"
                             minPrice="${minPrice}"
-                            maxPrice="${maxPrice}"/>
-<%--                            eventAddress="${eventAddress}"--%>
-<%--                            eventName="${eventName}"--%>
-
-
-
+                            maxPrice="${maxPrice}"
+                            eventAddress="${eventAddress}"
+                           eventName="${eventName}"/>
         </c:if>
 
     </div>
