@@ -113,7 +113,7 @@
                             <td>
                                 <form method="post" action="update_quantity_in_order">
                                     <input type="hidden" name="command" value="update_quantity_in_order">
-                                    <input type="hidden" name="mealId" value="${queen.ticketId}">
+                                    <input type="hidden" name="ticketId" value="${queen.ticketId}">
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">

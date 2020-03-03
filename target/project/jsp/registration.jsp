@@ -176,6 +176,7 @@
                     <div class="col-sm-11 col-sm-offset-3">
                         <span class="help-block">*<fmt:message key="registration.required_fields"/></span>
                     </div>
+
                 </div>
                 <button type="submit" class="btn btn-primary btn-block"><fmt:message
                         key="registration.button.register"/></button>

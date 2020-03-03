@@ -30,7 +30,7 @@ public class SearchCommand implements Command {
     private static final String COMMAND_VALUE = "commandValue";
     private static final String SEARCH_COMMAND = "search";
     private static final String INDEX_OF_PAGE = "indexOfPage";
-    private static final String PRODUCT_LIST_SIZE = "eventListSize";
+    private static final String EVENT_LIST_SIZE = "eventListSize";
 
     private static final String REGEX_INDEX = "^[1-9]\\d{0,5}$";
 
@@ -73,7 +73,7 @@ public class SearchCommand implements Command {
                         events = eventService.findEventByLimit(
                                 (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
                                 indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
-                        request.setAttribute(PRODUCT_LIST_SIZE, eventService.takeAllEvents().size());
+                        request.setAttribute(EVENT_LIST_SIZE, eventService.takeAllEvents().size());
                     } catch (ServiceException e) {
                         e.printStackTrace();
                     }
@@ -84,7 +84,7 @@ public class SearchCommand implements Command {
                                 (indexOfPage - 1) * NUMBER_ACTIVITIES_PER_PAGE,
                                 indexOfPage * NUMBER_ACTIVITIES_PER_PAGE);
 
-                        request.setAttribute(PRODUCT_LIST_SIZE, eventService.findByNameOrWordInName(nameOrWordInName).size());
+                        request.setAttribute(EVENT_LIST_SIZE, eventService.findByNameOrWordInName(nameOrWordInName).size());
                     } catch (ServiceException e) {
                         e.printStackTrace();
                     }

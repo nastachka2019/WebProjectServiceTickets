@@ -68,7 +68,7 @@
                 <aside class="col-12 col-md-2 p-0">
                     <nav class="navbar navbar-expand navbar-dark flex-md-column flex-row align-items-start">
                         <div class="collapse navbar-collapse">
-                            <form method="post" action="event_list">
+                            <form method="get" action="event_list">
 
                                 <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                     <li>
@@ -136,7 +136,7 @@
                                                        items="${events}">
 
                                                 <div class="col-xs-6 col-sm-4 col-lg-3 ex2">
-                                                    <form method="post" action="show_event_details">
+                                                    <form method="get" action="show_event_details">
                                                         <input type="hidden" name="eventId"
                                                                value="${event.eventId}">
 

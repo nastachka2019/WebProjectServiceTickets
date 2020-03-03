@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>${activity.activityName}</title>
+    <title>${activity.name}</title>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -35,7 +35,7 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap-social.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/event.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/event.css">--%>
 
 
 </head>
@@ -43,11 +43,11 @@
 
 <jsp:include page="header.jsp"/>
 
-<c:if test="${ok != null}">
-    <div class="alert alert-success block1" role="alert">
-            ${ok}
-    </div>
-</c:if>
+<%--<c:if test="${ok != null}">--%>
+<%--    <div class="alert alert-success block1" role="alert">--%>
+<%--            ${ok}--%>
+<%--    </div>--%>
+<%--</c:if>--%>
 
 <div id="page-container">
     <div id="content-wrap">
@@ -57,26 +57,26 @@
                     <div class="wrapper row">
                         <div class="preview col-md-4">
 
-                            <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img
-                                        src="${pageContext.request.contextPath}/images/events/${event.imageURL}"
-                                        width="200"
-                                        height="250"/></div>
-                            </div>
+<%--                            <div class="preview-pic tab-content">--%>
+<%--                                <div class="tab-pane active" id="pic-1"><img--%>
+<%--                                        src="${pageContext.request.contextPath}/images/events/${activity.imageURL}"--%>
+<%--                                        width="200"--%>
+<%--                                        height="250"/></div>--%>
+<%--                            </div>--%>
 
                         </div>
                         <div class="details col-md-6" style="padding-left: 80px;">
-                            <h3 class="event-title">${event.name}</h3>
+                            <h3 class="event-title">${activity.name}</h3>
 
                             <p class="event-description">${event.description}</p>
                             <h5 class="sizes"><fmt:message key="event.name"/>
                                 <span class="size" data-toggle="tooltip" title="small">${event.name}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.address"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.adress}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.address}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.date"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.data}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.date}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.price"/>
                                 <span class="size" data-toggle="tooltip" title="small">${event.price}</span>

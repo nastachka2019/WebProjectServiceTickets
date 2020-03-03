@@ -66,17 +66,17 @@
 
                         </div>
                         <div class="details col-md-6" style="padding-left: 80px;">
-<%--                            <h3 class="event-title">${activity.name}</h3>--%>
+                            <h3 class="event-title">${activity.name}</h3>
 
                             <p class="event-description">${event.description}</p>
-<%--                            <h5 class="sizes"><fmt:message key="event.name"/>--%>
-<%--                                <span class="size" data-toggle="tooltip" title="small">${event.name}</span>--%>
-<%--                            </h5>--%>
+                            <h5 class="sizes"><fmt:message key="event.name"/>
+                                <span class="size" data-toggle="tooltip" title="small">${event.name}</span>
+                            </h5>
                             <h5 class="sizes"><fmt:message key="event.address"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.adress}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.address}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.date"/>
-                                <span class="size" data-toggle="tooltip" title="small">${event.data}</span>
+                                <span class="size" data-toggle="tooltip" title="small">${event.date}</span>
                             </h5>
                             <h5 class="sizes"><fmt:message key="event.price"/>
                                 <span class="size" data-toggle="tooltip" title="small">${event.price}</span>

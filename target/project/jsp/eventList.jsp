@@ -107,6 +107,8 @@
                                         </div>
                                     </li>
 
+
+
                                     <li>
                                         <button class="btn btn-success btn-circle text-uppercase" type="submit">
                                             <fmt:message key="events.filter.apply"/>
@@ -168,12 +170,12 @@
                             locale="${locale}"
                             nameOrWordInName="${nameOrWordInName}"
                             minPrice="${minPrice}"
-                            maxPrice="${maxPrice}"
-                            eventAddress="${eventAddress}"
-                            eventName="${eventName}"
+                            maxPrice="${maxPrice}"/>
+<%--                            eventAddress="${eventAddress}"--%>
+<%--                            eventName="${eventName}"--%>
 
 
-            />
+
         </c:if>
 
     </div>
