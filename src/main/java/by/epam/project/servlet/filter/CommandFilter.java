@@ -32,7 +32,10 @@ public class CommandFilter implements Filter {
         commands.put("/order", "order");
         commands.put("/show_order", "show_order");
         commands.put("/show_event_details", "show_event_details");
-
+        commands.put("/comment","comment");
+        commands.put("/delete_comment", "delete_comment");
+        commands.put("/add_comment", "add_comment");
+        commands.put("/add_order", "add_order");
     }
 
     public void init(FilterConfig config)  {

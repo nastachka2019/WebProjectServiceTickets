@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 public class CommentCommand implements Command {
     private static final String USER = "User";
     private static final String TICKET_DATE = "ticketDate";
-    private static final String USER_ID = "userId";
+    private static final String USER_ID_FOR_ADMIN = "userIdForAdmin";
     private static final String COMMENT = "comment";
     private static final String RESPONSE = "response";
     private static final String ERROR = "error";
@@ -42,8 +42,8 @@ public class CommentCommand implements Command {
 
         if(matcher.matches()) {
             int userId;
-            if (!request.getParameter(USER_ID).isEmpty()) {
-                userId = Integer.parseInt(request.getParameter(USER_ID));
+            if (!request.getParameter(USER_ID_FOR_ADMIN).isEmpty()) {
+                userId = Integer.parseInt(request.getParameter(USER_ID_FOR_ADMIN));
             } else {
                 userId = user.getUserId();
             }

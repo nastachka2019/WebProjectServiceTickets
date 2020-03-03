@@ -35,7 +35,8 @@ ActivityService activityService=new ActivityServiceImpl();
         System.out.println(ticketService.findDatesByUserId(5));
       //  System.out.println(ticketService.findTicketByUserIdAndTicketDateAndEventType(3,"2020-04-21","Opera"));
    //     System.out.println(ticketService.totalPriceByUserIdAndTicketDate(2,"2020-03-19"));
-
+UserCommentService userCommentService=new UserCommentServiceImpl();
+      //  System.out.println(userCommentService.insertComment(new UserComment.Builder().setTicketDate(LocalDate.of(2020,01,01)).setUserId(2).setCommentator(new User.Builder().setUserId(2).build()).setComment("Cool! Amazing!").build()));
 
 
 //        System.out.println(userCommentDao.findComments(2,"2020-03-25"));

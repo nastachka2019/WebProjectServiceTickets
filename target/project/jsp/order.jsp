@@ -211,6 +211,9 @@
                                                                    value="${userComment.commentId}">
                                                             <input type="hidden" name="ticketDate"
                                                                    value="${selected_date}">
+                                                            <input type="hidden" name="userIdForAdmin"
+                                                                   value="${userIdForAdmin}">
+
 
 
                                                             <button type="submit" class="close float-right"

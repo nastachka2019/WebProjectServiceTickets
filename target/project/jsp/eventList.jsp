@@ -173,9 +173,6 @@
                             maxPrice="${maxPrice}"
                             eventAddress="${eventAddress}"
                            eventName="${eventName}"/>
-
-
-
         </c:if>
 
     </div>
