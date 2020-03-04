@@ -102,7 +102,7 @@ try{
             request.setAttribute(SHOW_ORDER, true);
             request.setAttribute(TICKET_DATE, ticketDate);
             request.setAttribute(TOTAL_PRICE, totalPrice);
-            request.setAttribute(TOTAL_ACTIVITIES, order.size());
+    request.setAttribute(TOTAL_ACTIVITIES, concertOrder.size() + balletOrder.size() + operaOrder.size()+sportOrder.size()+exhibitionOrder.size()+theatreOrder.size()+cinemaOrder.size());
         } catch (ServiceException e) {
             e.printStackTrace();
         }
