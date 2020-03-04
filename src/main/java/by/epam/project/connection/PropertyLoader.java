@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 /**
- * Класс для загрузки пропертей
+ * Class for download of properties
  *
  * @author Shpakova A.
  */

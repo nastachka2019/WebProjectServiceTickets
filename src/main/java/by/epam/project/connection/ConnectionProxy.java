@@ -20,7 +20,7 @@ public class ConnectionProxy implements Connection {
     private Connection connection;
     private static final Logger logger = LogManager.getLogger();
 
-    ConnectionProxy(Connection connection) {
+    ConnectionProxy(Connection connection) {   //пакетная видимость, т.е. из дао уже не создастся коннекшн
         this.connection = connection;
     }
 

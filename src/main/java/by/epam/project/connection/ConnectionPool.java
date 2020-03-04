@@ -14,7 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 
 /**
- * Этот класс используется для хранения, отдачи и получения соединений
+ *Class is used to store, give and receive back connections.
  *
  * @author Shpakova A.
  */
@@ -60,16 +60,20 @@ public enum ConnectionPool {
       ConnectionProxy connection = null;
         try {
             connection = freeConnections.take();
-            givenConnections.offer(connection);
+            givenConnections.offer(connection);      //взятый коннекшн перемещаем вво вторую очередь
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("Failed connection ", e);
         }
         return connection;
     }
+    /**
+     * Method: release connection
+     *
+     */
 
-    public void releaseConnection(Connection connection) throws ConnectionPoolException {
-        if (connection.getClass() == ConnectionProxy.class) {
+    public void releaseConnection(Connection connection) throws ConnectionPoolException {   //освобождаем коннекшн
+        if (connection.getClass() == ConnectionProxy.class) {      //сравниваем,нам возвращается наш коннекшн(прокси) или "дикий"
             givenConnections.remove(connection);
             freeConnections.offer((ConnectionProxy) connection);
         } else {
@@ -79,7 +83,10 @@ public enum ConnectionPool {
     public int checkPoolSize(){
         return freeConnections.size() + givenConnections.size();
     }
-
+    /**
+     * Method: destroy connection pool
+     *
+     */
     public void destroyPool()  {
         for (int i = 0; i < POOL_SIZE; i++) {
             try {
@@ -93,7 +100,7 @@ public enum ConnectionPool {
     }
 
     private void deregisterDrivers() {
-        Enumeration<Driver> drivers = DriverManager.getDrivers();
+        Enumeration<Driver> drivers = DriverManager.getDrivers();     //получаем ссылки на все драйвера
         while (drivers.hasMoreElements()) {
             Driver driver = drivers.nextElement();
             try {
