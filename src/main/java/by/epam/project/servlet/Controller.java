@@ -24,7 +24,7 @@ import java.io.IOException;
 
 
 @WebServlet(urlPatterns = {"/registration", "/sign_in", "/sign_out", "/settings", "/search",  //команды в commandtype
-        "/add_order","/event_list", "/delete_ticket","/update_quantity_in_order", "/order","/show_order","/visit_event_list",
+        "/add_order","/event_list", "/delete_ticket","/update_quantity_in_ticket", "/order","/show_order","/visit_event_list",
         "/translate","/show_information_about_event","/show_user_details","/user_list",
         "/delete_user","/delete_comment","/add_ticket", "/comment","/show_event_details","/add_comment","/show-event_list","/change_user_role"})
 public class Controller extends HttpServlet {

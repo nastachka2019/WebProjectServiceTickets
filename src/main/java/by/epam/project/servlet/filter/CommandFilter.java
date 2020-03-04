@@ -36,6 +36,7 @@ public class CommandFilter implements Filter {
         commands.put("/delete_comment", "delete_comment");
         commands.put("/add_comment", "add_comment");
         commands.put("/add_order", "add_order");
+        commands.put("/update_quantity_in_ticket", "update_quantity_in_ticket");
     }
 
     public void init(FilterConfig config)  {

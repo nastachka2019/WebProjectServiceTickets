@@ -108,11 +108,11 @@
                                     src="${pageContext.request.contextPath}/images/events/exhibition.jpg"
                                     width="70"
                                     height="80"></th>
-                            <td scope="row">${scienceFair.activity.name}</td>
-                            <td>${scienceFair.activity.description}</td>
-                            <td>${scienceFair.activity.address}</td>
-                            <td>${scienceFair.activity.data}</td>
-                            <td>${scienceFair.activity.price}</td>
+                            <td scope="row">${event.name}</td>
+                            <td>${event.description}</td>
+                            <td>${event.address}</td>
+                            <td>${event.data}</td>
+                            <td>${event.price}</td>
                             <td>
                                 <form method="post" action="update_quantity_in_order">
                                     <input type="hidden" name="command" value="update_quantity_in_order">
@@ -169,14 +169,14 @@
                             <th scope="row"><img
                                     src="${pageContext.request.contextPath}/images/events/queen.jpg"
                                     width="70" height="80"></th>
-                            <td>${queensConcert.activity.name}</td>
-                            <td>${queensConcert.activity.description}</td>
-                            <td>${queensConcert.activity.address}</td>
-                            <td>${queensConcert.activity.data}</td>
-                            <td>${queensConcert.activity.price}</td>
+                            <td>kkkkk</td>
+                            <td>ddddddd</td>
+                            <td>dddddddddd</td>
+                            <td>ddddddddd</td>
+                            <td>dddddddddd</td>
                             <td>
-                                <form method="post" action="update_quantity_in_order">
-                                    <input type="hidden" name="command" value="update_quantity_in_order">
+                                <form method="post" action="update_quantity_in_ticket">
+                                    <input type="hidden" name="command" value="update_quantity_in_ticket">
                                     <input type="hidden" name="ticketId" value="${concertOrder.ticketId}">
 
                                     <div class="input-group mb-3">
