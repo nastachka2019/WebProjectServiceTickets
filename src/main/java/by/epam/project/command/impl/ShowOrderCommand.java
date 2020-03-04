@@ -33,14 +33,13 @@ public class ShowOrderCommand implements Command {
     private static final String BALLET = "ballet";
     private static final String CINEMA = "cinema";
     private static final String SPORT = "sport";
-//    private static final String EXHIBITION_ORDER = "football";
-//    private static final String CONCERT_ORDER = "concertOrder";
-//    private static final String THEATRE_ORDER = "theatreOrder";
-//    private static final String OPERA_ORDER = "operaOrder";
-//    private static final String BALLET_ORDER = "balletOrder";
-//    private static final String CINEMA_ORDER = "cinemaOrder";
-//    private static final String SPORT_ORDER = "sportOrder";
-    private static final String ORDER="order";
+    private static final String EXHIBITION_ORDER = "exhibitionOrder";
+    private static final String CONCERT_ORDER = "concertOrder";
+    private static final String THEATRE_ORDER = "theatreOrder";
+    private static final String OPERA_ORDER = "operaOrder";
+    private static final String BALLET_ORDER = "balletOrder";
+    private static final String CINEMA_ORDER = "cinemaOrder";
+    private static final String SPORT_ORDER = "sportOrder";
     private static final String USER_COMMENT_LIST = "userCommentList";
     private static final String ERROR = "error";
     private static final String STATUS_CODE = "statusCode";
@@ -61,54 +60,44 @@ public class ShowOrderCommand implements Command {
             int userId = user.getUserId();
 try{
             TicketService ticketService = new TicketServiceImpl();
-//            List<Ticket> concertOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CONCERT);
-//            List<Ticket> exhibitionOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, EXHIBITION);
-//            List<Ticket> theatreOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, THEATRE);
-//            List<Ticket> operaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, OPERA);
-//            List<Ticket> balletOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, BALLET);
-//            List<Ticket> cinemaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CINEMA);
-//            List<Ticket> sportOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, SPORT);
-    List<Ticket> order=ticketService.findTicketByUserId(userId);
+            List<Ticket> concertOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CONCERT);
+            List<Ticket> exhibitionOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, EXHIBITION);
+            List<Ticket> theatreOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, THEATRE);
+            List<Ticket> operaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, OPERA);
+            List<Ticket> balletOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, BALLET);
+            List<Ticket> cinemaOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, CINEMA);
+            List<Ticket> sportOrder = ticketService.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, SPORT);
+  //  List<Ticket> order=ticketService.findTicketByUserId(userId);
 
-//            if (!concertOrder.isEmpty()) {
-//                request.setAttribute(CONCERT_ORDER, concertOrder);
-//            }
-//            if (!exhibitionOrder.isEmpty()) {
-//                request.setAttribute(EXHIBITION_ORDER, exhibitionOrder);
-//            }
-//            if (!theatreOrder.isEmpty()) {
-//                request.setAttribute(THEATRE_ORDER, theatreOrder);
-//            }
-//            if (!operaOrder.isEmpty()) {
-//                request.setAttribute(OPERA_ORDER, operaOrder);
-//            }
-//            if (!balletOrder.isEmpty()) {
-//                request.setAttribute(BALLET_ORDER, balletOrder);
-//            }
-//            if (!cinemaOrder.isEmpty()) {
-//                request.setAttribute(CINEMA_ORDER, cinemaOrder);
-//            }
-//            if (!sportOrder.isEmpty()) {
-//                request.setAttribute(SPORT_ORDER, sportOrder);
-//            }
-    if (!order.isEmpty()){
-        request.setAttribute(ORDER,order);
-    }
-
-            int totalPrice = 0;
-            try {
-                totalPrice = ticketService.totalPriceByUserIdAndTicketDate(userId,ticketDate);
-            } catch (ServiceException e) {
-                e.printStackTrace();
+            if (!concertOrder.isEmpty()) {
+                request.setAttribute(CONCERT_ORDER, concertOrder);
             }
+            if (!exhibitionOrder.isEmpty()) {
+                request.setAttribute(EXHIBITION_ORDER, exhibitionOrder);
+            }
+            if (!theatreOrder.isEmpty()) {
+                request.setAttribute(THEATRE_ORDER, theatreOrder);
+            }
+            if (!operaOrder.isEmpty()) {
+                request.setAttribute(OPERA_ORDER, operaOrder);
+            }
+            if (!balletOrder.isEmpty()) {
+                request.setAttribute(BALLET_ORDER, balletOrder);
+            }
+            if (!cinemaOrder.isEmpty()) {
+                request.setAttribute(CINEMA_ORDER, cinemaOrder);
+            }
+            if (!sportOrder.isEmpty()) {
+                request.setAttribute(SPORT_ORDER, sportOrder);
+            }
+//    if (!order.isEmpty()){
+//        request.setAttribute(ORDER,order);
+//    }
 
+    int  totalPrice = ticketService.totalPriceByUserIdAndTicketDate(userId,ticketDate);
             UserCommentService userCommentService = new UserCommentServiceImpl();
-            List<UserComment> userCommentList = null;
-
-                userCommentList = userCommentService.findComments(userId, ticketDate);
-
+            List<UserComment>   userCommentList = userCommentService.findComments(userId, ticketDate);
             Collections.reverse(userCommentList);
-
             request.setAttribute(USER_COMMENT_LIST, userCommentList);
             request.setAttribute(SHOW_ORDER, true);
             request.setAttribute(TICKET_DATE, ticketDate);
