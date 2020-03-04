@@ -2,7 +2,6 @@ package by.epam.project.dao;
 
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserRole;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 
 import java.util.List;
