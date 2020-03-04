@@ -5,7 +5,6 @@ import by.epam.project.dao.UserCommentDao;
 
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserComment;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Класс реализует интерфейс UserCommentDao
+ * Class for actions with {@link UserComment} according DAO and database data
  *
  * @author Shpakova A.
  */
@@ -34,7 +33,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
     private static final String SQL_UPDATE = "UPDATE user_comment SET user_id=?, dateComment=?, ticketDate=?, user_id=?, comment=?,commentator_id=?" +
             " WHERE id=?";
     private static final String SQL_FIND_COMMENT_BY_ID = "SELECT id, dateComment, ticketDate, user_id, comment,commentator_id" +
-                    " FROM user_comment WHERE id=?";
+            " FROM user_comment WHERE id=?";
     private static final String SQL_DELETE_COMMENTS_FOR_USER_BY_DATE = "DELETE FROM user_comment WHERE user_id=? AND dateComment=?";
     private static final String SQL_DELETE_COMMENTS_FOR_USER = "DELETE FROM user_comment WHERE user_id=?";
     private static final String SQL_DELETE_COMMENTS_BY_COMMENTATOR = "DELETE FROM user_comment WHERE commentator_id=?";
@@ -70,7 +69,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-           closeConnection(connection);
+            closeConnection(connection);
         }
     }
 
@@ -133,7 +132,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
     }
 
     @Override
-    public void insert(UserComment userComment) throws DaoException{
+    public void insert(UserComment userComment) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -210,7 +209,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
                 throw new DaoException("No comment with such id");
             }
 
-        } catch (SQLException | ServiceException e){
+        } catch (SQLException | ServiceException e) {
             throw new DaoException(e);
         } finally {
             closeResultSet(resultSet);
@@ -218,6 +217,7 @@ public class UserCommentDaoImpl implements UserCommentDao {
             closeConnection(connection);
         }
     }
+
     private User findUserById(int userId) throws ServiceException {
         UserService userService = new UserServiceImpl();
         return userService.findUserById(userId);

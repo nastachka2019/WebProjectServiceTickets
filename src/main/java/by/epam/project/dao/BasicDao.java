@@ -12,20 +12,49 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Описание общих методов, которые будут использоваться при взаимодействии с бд
+ * Description of common methods that will be used when interacting with the database
  *
  * @author Shpakova A.
  */
 
 public interface BasicDao<T extends Entity> {
-    void insert(T entity) throws DaoException;    //вставка по ключу
 
+    /**
+     * Method: insert in database row with parameters
+     *
+     * @throws DaoException object
+     */
+    void insert(T entity) throws DaoException;
+
+    /**
+     * Method: update database's row  by id
+     *
+     * @throws DaoException object
+     */
     void delete(int id) throws DaoException;  //удаление по ключу
 
-    void update(T entity) throws DaoException; //обновить по ключу
+    /**
+     * Method: delete from database object by id
+     *
+     * @throws DaoException object
+     */
 
+    void update(T entity) throws DaoException;
+
+    /**
+     * Method: find object by id in database table depending on method's realization
+     * and create suitable object.
+     *
+     * @return found object
+     * @throws DaoException object
+     */
     T findById(int id) throws DaoException;
 
+    /**
+     * Method: close Statement
+     *
+     * @param resultSet ResultSet
+     */
     default void closeResultSet(ResultSet resultSet) { //метод закрытия экземпляра ResultSet
         if (resultSet != null) {
             try {
@@ -36,7 +65,12 @@ public interface BasicDao<T extends Entity> {
         }
     }
 
-    default void closePreparedStatement(Statement statement) {      //метод закрытия экземпляра PrepareStatement
+    /**
+     * Method: close Statement
+     *
+     * @param statement Statement
+     */
+    default void closePreparedStatement(Statement statement) {
         if (statement != null) {
             try {
                 statement.close();
@@ -45,7 +79,11 @@ public interface BasicDao<T extends Entity> {
             }
         }
     }
-   default void closeConnection (Connection connection) throws DaoException {
+
+    /**
+     * Method: Returning a Connection instance to the connection pool
+     */
+    default void closeConnection(Connection connection) throws DaoException {
         ConnectionPool connectionPool = ConnectionPool.INSTANCE;
         try {
             if (connection != null) {

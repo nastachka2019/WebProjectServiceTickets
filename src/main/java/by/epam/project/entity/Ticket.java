@@ -3,7 +3,7 @@ package by.epam.project.entity;
 import java.time.LocalDate;
 
 /**
- * Класс-сущность для  Ticket
+ *  Class for storing of ticket's data
  *
  * @author Shpakova A.
  */

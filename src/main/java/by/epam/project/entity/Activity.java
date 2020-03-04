@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Класс-сущность для  Event
+ * Class for storing of activity's data
  *
  * @author Shpakova A.
  */
@@ -23,12 +23,12 @@ public class Activity extends Entity {
 
     public Activity(int eventId, String name, String imageURL, String description, String address, LocalDate date, BigDecimal price) {
         this.eventId = eventId;
-      this.name=name;
-      this.imageURL=imageURL;
-      this.description=description;
-      this.address=address;
-      this.date=date;
-      this.price=price;
+        this.name = name;
+        this.imageURL = imageURL;
+        this.description = description;
+        this.address = address;
+        this.date = date;
+        this.price = price;
     }
 
     public int getEventId() {
@@ -89,44 +89,45 @@ public class Activity extends Entity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o){
+        if (this == o) {
             return true;
         }
-        if (o==null || o.getClass()!=this.getClass()){
-            return  false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
         }
         Activity event = (Activity) o;
         return eventId == event.eventId &&
-                (name== event.name|| (name!=null && name.equals(event.getName()))) &&
-                (imageURL== event.imageURL|| (imageURL!=null && imageURL.equals(event.getImageURL()))) &&
-                (description== event.description|| (description!=null && description.equals(event.getDescription()))) &&
-                (address== event.address|| (address!=null && address.equals(event.getAddress()))) &&
-                (date== event.date|| (date!=null && date.equals(event.getDate()))) &&
-                (price== event.price|| (price!=null && price.equals(event.getPrice())));
+                (name == event.name || (name != null && name.equals(event.getName()))) &&
+                (imageURL == event.imageURL || (imageURL != null && imageURL.equals(event.getImageURL()))) &&
+                (description == event.description || (description != null && description.equals(event.getDescription()))) &&
+                (address == event.address || (address != null && address.equals(event.getAddress()))) &&
+                (date == event.date || (date != null && date.equals(event.getDate()))) &&
+                (price == event.price || (price != null && price.equals(event.getPrice())));
 
     }
 
     @Override
     public int hashCode() {
-        final  int prime =31;
-        int result =1;
-        result=prime*result+((name==null)?0:name.hashCode());
-        result=prime*result+((imageURL==null)?0:imageURL.hashCode());
-        result=prime*result+((description==null)?0:description.hashCode());
-        result=prime*result+((address==null)?0:address.hashCode());
-        result=prime*result+((date==null)?0:date.hashCode());
-        result=prime*result+((price==null)?0:price.hashCode());
-        result=prime*result+eventId;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((imageURL == null) ? 0 : imageURL.hashCode());
+        result = prime * result + ((description == null) ? 0 : description.hashCode());
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
+        result = prime * result + ((date == null) ? 0 : date.hashCode());
+        result = prime * result + ((price == null) ? 0 : price.hashCode());
+        result = prime * result + eventId;
         return result;
     }
 
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("Event {" + "eventId=" + " " + eventId+ ", eventName=" + " " + name + ", eventDescription=" + " " + description
-           + ", eventAddress=" + address + ", eventDate=" +" " + date + ", price=" + price + "}");  // в строковом представлении
+        str.append("Event {" + "eventId=" + " " + eventId + ", eventName=" + " " + name + ", eventDescription=" + " " + description
+                + ", eventAddress=" + address + ", eventDate=" + " " + date + ", price=" + price + "}");  // в строковом представлении
         return str.toString();
     }
+
     public static class Builder {                    //dao
         private Activity event;
 
@@ -134,33 +135,38 @@ public class Activity extends Entity {
             event = new Activity();
         }
 
-        public Builder setEventId(int eventId){
-            event.eventId=eventId;
+        public Builder setEventId(int eventId) {
+            event.eventId = eventId;
             return this;
         }
 
-        public Builder setName(String name){
-           event.name=name;
+        public Builder setName(String name) {
+            event.name = name;
             return this;
         }
-        public Builder setImageURL(String imageURL){
-          event.imageURL=imageURL;
+
+        public Builder setImageURL(String imageURL) {
+            event.imageURL = imageURL;
             return this;
         }
-        public Builder setDescription(String description){
-            event.description=description;
+
+        public Builder setDescription(String description) {
+            event.description = description;
             return this;
         }
-        public Builder setAddress(String address){
-            event.address=address;
+
+        public Builder setAddress(String address) {
+            event.address = address;
             return this;
         }
-        public Builder setDate(LocalDate date){
-            event.date=date;
+
+        public Builder setDate(LocalDate date) {
+            event.date = date;
             return this;
         }
-        public Builder setPrice (BigDecimal price){
-            event.price=price;
+
+        public Builder setPrice(BigDecimal price) {
+            event.price = price;
             return this;
         }
 

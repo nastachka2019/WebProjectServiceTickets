@@ -3,7 +3,6 @@ package by.epam.project.dao.impl;
 import by.epam.project.connection.ConnectionPool;
 import by.epam.project.dao.EventTypeDao;
 import by.epam.project.entity.EventType;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 
 import java.sql.Connection;
@@ -12,10 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Класс реализует интерфейс EventTypeDao
+ * Class for actions with {@link EventType} according DAO and database data
  *
  * @author Shpakova A.
  */
+
 
 public class EventTypeDaoImpl implements EventTypeDao {
     private static final String SQL_FIND_BY_EVENT_TYPE = "SELECT id, event_type FROM event_type WHERE event_type = ?";
@@ -48,7 +48,7 @@ public class EventTypeDaoImpl implements EventTypeDao {
     }
 
     @Override
-    public void insert(EventType eventType) throws DaoException{
+    public void insert(EventType eventType) throws DaoException {
         PreparedStatement preparedStatement = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
@@ -99,13 +99,13 @@ public class EventTypeDaoImpl implements EventTypeDao {
     }
 
     @Override
-    public EventType findById(int id) throws DaoException{
+    public EventType findById(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_BY_ID);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return new EventType.Builder()

@@ -23,10 +23,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Класс реализует интерфейс TicketDao
+ * Class for actions with {@link Ticket} according DAO and database data
  *
  * @author Shpakova A.
  */
+
 
 public class TicketDaoImpl implements TicketDao {
     private static final String SQL_INSERT = "INSERT INTO ticket (user_id, event_id, quantity, event_type_id, date) VALUES (?, ?, ?, ?, ?)";
@@ -44,7 +45,8 @@ public class TicketDaoImpl implements TicketDao {
             " FROM ticket WHERE id=?";
     private static final String SQL_COUNT_TOTAL_PRICE_BY_USER_AND_TICKET_DATE =
             "SELECT  (price * quantity) FROM activity INNER JOIN  (SELECT event_id, quantity FROM ticket WHERE user_id=? AND date=?) ticket_id_table" +
-            " ON activity.id=ticket_id_table.event_id";
+                    " ON activity.id=ticket_id_table.event_id";
+
     @Override
     public void updateQuantity(int ticketId, int quantity) throws DaoException {
         PreparedStatement preparedStatement = null;
@@ -81,7 +83,7 @@ public class TicketDaoImpl implements TicketDao {
         } finally {
             closeResultSet(resultSet);
             closePreparedStatement(preparedStatement);
-          closeConnection(connection);
+            closeConnection(connection);
         }
     }
 
@@ -165,42 +167,6 @@ public class TicketDaoImpl implements TicketDao {
         }
     }
 
-//    @Override
-//    public Ticket findTicketByUserIdTicketDateEventTypeEventId(Ticket ticket) throws DaoException, ConnectionPoolException {
-//        PreparedStatement preparedStatement = null;
-//        ResultSet resultSet = null;
-//        Connection connection = ConnectionPool.INSTANCE.getConnection();
-//        try {
-//            preparedStatement = connection.prepareStatement(SQL_FIND_TICKET_BY_USER_ID_TICKET_DATE_EVENT_TYPE_EVENT_ID);
-//            preparedStatement.setInt(1, ticket.getUser().getUserId());
-//            preparedStatement.setInt(2, ticket.getEvent().getEventId());
-//            preparedStatement.setInt(3, ticket.getEventType().getEventTypeId());
-//            preparedStatement.setDate(4, Date.valueOf(ticket.getDate()));
-//            resultSet = preparedStatement.executeQuery();
-//
-//            if (resultSet.next()) {
-//                return new Ticket.Builder()
-//                        .setTicketId(resultSet.getInt(1))
-//                        .setUser(findUserById(resultSet.getInt(2)))
-//                        .setEvent(findEventById(resultSet.getInt(3)))
-//                        .setQuantity(resultSet.getInt(4))
-//                        .setEventType(findEventTypeById(resultSet.getInt(5)))
-//                        .setDate(resultSet.getDate(6).toLocalDate())
-//                        .setQuantity(resultSet.getInt(6))
-//                        .build();
-//            }
-//            return ticket;
-//
-//        } catch (SQLException | ServiceException e) {
-//            throw new DaoException(e);
-//        } finally {
-//            closeResultSet(resultSet);
-//            closePreparedStatement(preparedStatement);
-//            ConnectionPool.INSTANCE.releaseConnection(connection);
-//        }
-//
-//    }
-
     @Override
     public void deleteTicketByUserId(int userId) throws DaoException {
         PreparedStatement preparedStatement = null;
@@ -229,7 +195,7 @@ public class TicketDaoImpl implements TicketDao {
         try {
             preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setInt(1, userId);
-            preparedStatement.setString(2,ticketDate);
+            preparedStatement.setString(2, ticketDate);
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
@@ -304,13 +270,13 @@ public class TicketDaoImpl implements TicketDao {
     }
 
     @Override
-    public Ticket findById(int id) throws DaoException{
+    public Ticket findById(int id) throws DaoException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_TICKET_BY_ID);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return new Ticket.Builder()

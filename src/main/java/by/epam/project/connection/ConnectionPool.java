@@ -14,7 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 
 /**
- *Class is used to store, give and receive back connections.
+ * Class is used to store, give and receive back connections.
  *
  * @author Shpakova A.
  */
@@ -27,37 +27,37 @@ public enum ConnectionPool {
     private Properties properties;
     private PropertyLoader propertyLoader;
     private final String PATH_CONFIG = "database.properties";
-    private final  static  String URL = "url";
+    private final static String URL = "url";
     private final int POOL_SIZE;
 
-   ConnectionPool() {
+    ConnectionPool() {
         propertyLoader = new PropertyLoader();
-        properties = propertyLoader.setProperty (PATH_CONFIG);
+        properties = propertyLoader.setProperty(PATH_CONFIG);
         try {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         } catch (SQLException e) {
-            logger.fatal( "Failed to register driver");
+            logger.fatal("Failed to register driver");
             throw new RuntimeException();
         }
-        POOL_SIZE =Integer.parseInt(properties.getProperty("poolSize"));
+        POOL_SIZE = Integer.parseInt(properties.getProperty("poolSize"));
         freeConnections = new LinkedBlockingDeque<>(POOL_SIZE);           //заполняем очередь соединениями
-        ConnectionProxy connectionProxy=null;
-        for (int i = 0; i < POOL_SIZE; i++){
+        ConnectionProxy connectionProxy = null;
+        for (int i = 0; i < POOL_SIZE; i++) {
             try {
                 connectionProxy = new ConnectionProxy(DriverManager.getConnection(properties.getProperty(URL), properties));
                 freeConnections.offer(connectionProxy);
             } catch (SQLException e) {
-                logger.error("Error initializing connection pool",e);
+                logger.error("Error initializing connection pool", e);
             }
         }
         givenConnections = new ArrayDeque<>();
     }
+
     /**
      * Method: extract connection
-     *
      */
     public ConnectionProxy getConnection() {
-      ConnectionProxy connection = null;
+        ConnectionProxy connection = null;
         try {
             connection = freeConnections.take();
             givenConnections.offer(connection);      //взятый коннекшн перемещаем вво вторую очередь
@@ -67,9 +67,9 @@ public enum ConnectionPool {
         }
         return connection;
     }
+
     /**
      * Method: release connection
-     *
      */
 
     public void releaseConnection(Connection connection) throws ConnectionPoolException {   //освобождаем коннекшн
@@ -80,20 +80,21 @@ public enum ConnectionPool {
             throw new ConnectionPoolException();
         }
     }
-    public int checkPoolSize(){
+
+    public int checkPoolSize() {
         return freeConnections.size() + givenConnections.size();
     }
+
     /**
      * Method: destroy connection pool
-     *
      */
-    public void destroyPool()  {
+    public void destroyPool() {
         for (int i = 0; i < POOL_SIZE; i++) {
             try {
                 freeConnections.take().realClose();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                logger.error( "Failed of close connections ", e);
+                logger.error("Failed of close connections ", e);
             }
         }
         deregisterDrivers();
@@ -106,10 +107,10 @@ public enum ConnectionPool {
             try {
                 DriverManager.deregisterDriver(driver);
             } catch (SQLException e) {
-                logger.error( "Exception in deregistration of drivers", e);
+                logger.error("Exception in deregistration of drivers", e);
             }
         }
-        logger.error( "Finish deregistration of drivers");
-   }
+        logger.error("Finish deregistration of drivers");
+    }
 
 }

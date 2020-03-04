@@ -1,8 +1,9 @@
 package by.epam.project.entity;
 
 import java.io.Serializable;
+
 /**
- * Базовый класс для всех сущностей
+ * This class is base class for all instances
  *
  * @author Shpakova A.
  */

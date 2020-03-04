@@ -1,20 +1,21 @@
 package by.epam.project.entity;
+
 /**
- * Класс-сущность для  EventType
+ * Class for storing of event type's data
  *
  * @author Shpakova A.
  */
 
 public class EventType extends Entity {
     private int eventTypeId;
-  private String eventTypeValue;          // concert, theatre, sport, etc
+    private String eventTypeValue;          // concert, theatre, sport, etc
 
     public EventType() {
     }
 
     public EventType(int eventTypeId, String eventTypeValue) {
         this.eventTypeId = eventTypeId;
-   this.eventTypeValue=eventTypeValue;
+        this.eventTypeValue = eventTypeValue;
 
     }
 
@@ -23,7 +24,7 @@ public class EventType extends Entity {
     }
 
     public void setEventTypeId(int eventTypeId) {
-        this.eventTypeId=eventTypeId;
+        this.eventTypeId = eventTypeId;
     }
 
     public String getEventTypeValue() {
@@ -43,7 +44,7 @@ public class EventType extends Entity {
             return false;
         }
         EventType eventType = (EventType) o;
-        return eventTypeId== eventType.eventTypeId &&
+        return eventTypeId == eventType.eventTypeId &&
                 (eventTypeValue == eventType.eventTypeValue || (eventTypeValue != null && eventTypeValue.equals(eventType.getEventTypeValue())));
 
 
@@ -61,7 +62,7 @@ public class EventType extends Entity {
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("EventType {" + "eventTypeId=" + " " + eventTypeId + ", eventTypeValue=" + " " + eventTypeValue +"}");  // в строковом представлении
+        str.append("EventType {" + "eventTypeId=" + " " + eventTypeId + ", eventTypeValue=" + " " + eventTypeValue + "}");  // в строковом представлении
         return str.toString();
     }
 
@@ -73,12 +74,13 @@ public class EventType extends Entity {
             eventType = new EventType();
         }
 
-        public Builder setEventTypeId(int eventTypeId){
-            eventType.eventTypeId=eventTypeId;
+        public Builder setEventTypeId(int eventTypeId) {
+            eventType.eventTypeId = eventTypeId;
             return this;
         }
-        public Builder setEventTypeValue(String eventTypeValue){
-            eventType.eventTypeValue=eventTypeValue;
+
+        public Builder setEventTypeValue(String eventTypeValue) {
+            eventType.eventTypeValue = eventTypeValue;
             return this;
         }
 

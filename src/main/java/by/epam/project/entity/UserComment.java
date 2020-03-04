@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * Класс-сущность для  UserComment
+ * Class for storing of user comment's data
  *
  * @author Shpakova A.
  */

@@ -3,7 +3,7 @@ package by.epam.project.entity;
 import java.time.LocalDate;
 
 /**
- * Класс-сущность для  User
+ * Class for storing of user's data
  *
  * @author Shpakova A.
  */

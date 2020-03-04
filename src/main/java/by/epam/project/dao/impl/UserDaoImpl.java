@@ -4,7 +4,6 @@ import by.epam.project.connection.ConnectionPool;
 import by.epam.project.dao.UserDao;
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserRole;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 
 import java.sql.*;
@@ -14,10 +13,11 @@ import java.util.List;
 import static java.sql.Types.NULL;
 
 /**
- * Класс реализует интерфейс UserDao
+ * Class for actions with {@link User} according DAO and database data
  *
  * @author Shpakova A.
  */
+
 
 public class UserDaoImpl implements UserDao {
 
@@ -65,7 +65,7 @@ public class UserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             closePreparedStatement(preparedStatement);
-        closeConnection(connection);
+            closeConnection(connection);
         }
     }
 
@@ -75,7 +75,7 @@ public class UserDaoImpl implements UserDao {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_USER);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new DaoException(e);
@@ -86,7 +86,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(User user) throws DaoException{
+    public void update(User user) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -113,7 +113,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User findById(int id) throws DaoException{
+    public User findById(int id) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -146,7 +146,7 @@ public class UserDaoImpl implements UserDao {
             closePreparedStatement(preparedStatement);
             closeConnection(connection);
         }
-        }
+    }
 
 
     @Override
@@ -154,7 +154,7 @@ public class UserDaoImpl implements UserDao {
         return dbContains(login, SQL_FIND_USER_BY_LOGIN);
     }
 
-    private boolean dbContains(String value, String sqlQuery) throws DaoException{ //для команды изменения пользовательских пар-ов
+    private boolean dbContains(String value, String sqlQuery) throws DaoException { //для команды изменения пользовательских пар-ов
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -178,7 +178,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> takeAllUsers() throws DaoException{
+    public List<User> takeAllUsers() throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -264,7 +264,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void updateUserRole(int userId, String userRole) throws DaoException{
+    public void updateUserRole(int userId, String userRole) throws DaoException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         try {
@@ -328,7 +328,7 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    private List<User> findParams(String value1, String value2, String dataSql, String dataSql2) throws DaoException{ //по нескольким параметроам можем получить инфу о юзерах(find by email and password)
+    private List<User> findParams(String value1, String value2, String dataSql, String dataSql2) throws DaoException { //по нескольким параметроам можем получить инфу о юзерах(find by email and password)
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
 /**
  * Class for download of properties
  *
@@ -15,6 +16,10 @@ import java.util.Properties;
 class PropertyLoader {
 
     private static final Logger logger = LogManager.getLogger();
+
+    /**
+     * Method:download and read resources
+     */
 
     Properties setProperty(String fileName) {
         Properties properties = new Properties();
