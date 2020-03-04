@@ -1,5 +1,6 @@
 package by.epam.project.dao;
 
+import by.epam.project.entity.Ticket;
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserRole;
 import by.epam.project.exception.DaoException;
@@ -7,7 +8,7 @@ import by.epam.project.exception.DaoException;
 import java.util.List;
 
 /**
- * Класс представляет собой слой для взаимодействия с базой данных User
+ * Interface for actions with {@link User} according DAO and database data
  *
  * @author Shpakova A.
  */
