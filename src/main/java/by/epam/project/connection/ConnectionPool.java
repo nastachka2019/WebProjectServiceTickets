@@ -4,10 +4,7 @@ import by.epam.project.exception.ConnectionPoolException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayDeque;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -25,7 +22,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 public enum ConnectionPool {
     INSTANCE;
     private BlockingQueue<ConnectionProxy> freeConnections;
-    private Queue<ConnectionProxy> givenConnections;
+    private Queue<ConnectionProxy> givenConnections;         //для контроля целостности пулла
     private final Logger logger = LogManager.getLogger();
     private Properties properties;
     private PropertyLoader propertyLoader;
@@ -43,7 +40,7 @@ public enum ConnectionPool {
             throw new RuntimeException();
         }
         POOL_SIZE =Integer.parseInt(properties.getProperty("poolSize"));
-        freeConnections = new LinkedBlockingDeque<>(POOL_SIZE);
+        freeConnections = new LinkedBlockingDeque<>(POOL_SIZE);           //заполняем очередь соединениями
         ConnectionProxy connectionProxy=null;
         for (int i = 0; i < POOL_SIZE; i++){
             try {
@@ -55,7 +52,10 @@ public enum ConnectionPool {
         }
         givenConnections = new ArrayDeque<>();
     }
-
+    /**
+     * Method: extract connection
+     *
+     */
     public ConnectionProxy getConnection() {
       ConnectionProxy connection = null;
         try {
@@ -80,7 +80,7 @@ public enum ConnectionPool {
         return freeConnections.size() + givenConnections.size();
     }
 
-    public void destroyPool() throws InterruptedException {
+    public void destroyPool()  {
         for (int i = 0; i < POOL_SIZE; i++) {
             try {
                 freeConnections.take().realClose();

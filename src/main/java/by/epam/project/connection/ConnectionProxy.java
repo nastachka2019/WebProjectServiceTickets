@@ -10,13 +10,13 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 /**
- * ConnectionProxy для контроля возможности создания своих собственных соединений
+ * Class for creating wrapper connections on connections to
+ * control the possibility of creating your own connections
  *
  * @author Shpakova A.
  */
 
 public class ConnectionProxy implements Connection {
-
     private Connection connection;
     private static final Logger logger = LogManager.getLogger();
 
@@ -24,11 +24,22 @@ public class ConnectionProxy implements Connection {
         this.connection = connection;
     }
 
+    /**
+     * Method: create the Statement instance
+     *
+     * @return instance of {@link Statement}
+     */
     @Override
     public Statement createStatement() throws SQLException {
         return connection.createStatement();
     }
 
+    /**
+     * Method: prepare Statement for executing
+     *
+     * @param sql is String value of SQL query
+     * @return instance of {@link PreparedStatement}
+     */
     @Override
     public PreparedStatement prepareStatement(String sql) throws SQLException {
         return connection.prepareStatement(sql);
@@ -64,13 +75,16 @@ public class ConnectionProxy implements Connection {
         connection.rollback();
     }
 
+    /**
+     * Method: Connection return to pool
+     */
     @Override
-    public void close()  {
+    public void close() {
         try {
-          ConnectionPool.INSTANCE.releaseConnection(this);
-            logger.info( "Connection taken back");
+            ConnectionPool.INSTANCE.releaseConnection(this);
+            logger.info("Connection taken back");
         } catch (ConnectionPoolException e) {
-            logger.error( "Failed of close pool connections ", e);
+            logger.error("Failed of close pool connections ", e);
         }
     }
 
@@ -78,7 +92,7 @@ public class ConnectionProxy implements Connection {
         try {
             connection.close();
         } catch (SQLException e) {
-            logger.error( e.getMessage(), e);
+            logger.error(e.getMessage(), e);
         }
     }
 
