@@ -34,7 +34,7 @@ public class SearchCommand implements Command {
 
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {
+    public String execute(HttpServletRequest request) {
         int indexOfPage;
         if (request.getParameter(INDEX_OF_PAGE) != null) {
             Pattern pattern = Pattern.compile(REGEX_INDEX);

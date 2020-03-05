@@ -96,21 +96,7 @@ public class ActivityServiceImpl implements ActivityService {
             throw new ServiceException(e);
         }
     }
-//
-//    @Override
-//    public List<Activity> findEventsByFilterWithoutSearchParamWithLimit(int minPrice, int maxPrice, int startIndex, int endIndex) throws ServiceException {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Activity> findEventsByFilterWithoutSearchParam(int minPrice, int maxPrice) throws ServiceException {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Activity> findEventsByLimit(int startIndex, int endIndex) throws ServiceException {
-//        return null;
-//    }
+
 
     @Override
     public int findMinPrice() throws ServiceException {
