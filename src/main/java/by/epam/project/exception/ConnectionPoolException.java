@@ -1,6 +1,7 @@
 package by.epam.project.exception;
+
 /**
- * ConnectionPoolException используется, когда исключение призошло в ConnectionPool
+ * This class uses when exception is happen in ConnectionPool class
  *
  * @author Shpakova A.
  */

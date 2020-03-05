@@ -1,6 +1,6 @@
 package by.epam.project.exception;
 /**
- * CommandException используется, когда исключение призошло в Command
+ * This class uses when exception is happen in Command class
  *
  * @author Shpakova A.
  */
