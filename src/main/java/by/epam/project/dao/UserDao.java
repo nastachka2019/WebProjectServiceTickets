@@ -8,15 +8,23 @@ import by.epam.project.exception.DaoException;
 import java.util.List;
 
 /**
- * Interface for actions with {@link User} according DAO and database data
+ * Interface for actions with {@link Ticket} according DAO and database data
  *
  * @author Shpakova A.
  */
 
-public interface UserDao extends BasicDao<User> {   //слой для взаимодейств. с бд
-
+public interface UserDao extends BasicDao<User> {
+    /**
+     * Method: show all registered users
+     *
+     * @return list of users
+     */
     List<User> takeAllUsers() throws DaoException;
-
+    /**
+     * Method: update quantity of ticket when we do order
+     *
+     * @return quantity of tickets
+     */
     List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws DaoException;
 
     List<User> findByLoginAndPass(String login, String password) throws DaoException;
