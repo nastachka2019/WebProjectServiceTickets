@@ -49,42 +49,40 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String page;
-String commandName=request.getParameter(COMMAND);
+        String commandName = request.getParameter(COMMAND);
         CommandMap commandMap = CommandMap.getInstance();
         try {
             if (commandName != null) {
-              logger.info("Request. Parameter = " + commandName);
+                logger.info("Request. Parameter = " + commandName);
                 Command command = commandMap.receiveCommand(commandName); //определение команды, пришедшей из jsp
                 page = command.execute(request);  //вызов реализ-го метода execute  и передача пар-ров классу обработчику конкретн. команды
 
             } else if (request.getAttribute(COMMAND) != null) {
-             logger.info("Request through filter. Attribute = " + request.getAttribute(COMMAND));
+                logger.info("Request through filter. Attribute = " + request.getAttribute(COMMAND));
                 Command command = commandMap.receiveCommand((String) request.getAttribute(COMMAND));
                 page = command.execute(request);
 
             } else {
-              logger.error("Command not received");
+                logger.error("Command not received");
                 request.setAttribute(ERROR, "Command not received");
                 request.setAttribute(STATUS_CODE, 404);
                 page = PathForJsp.ERROR.getUrl();
             }
-        } catch (CommandException e) {
-         logger.error(e.getMessage(), e);
-            request.setAttribute(ERROR, e.getMessage());
-            request.setAttribute(STATUS_CODE, 500);
-            page =PathForJsp.ERROR.getUrl();
-        }
 
-        if (page != null) {     //м-д возвр-ет стр. ответа
-            if (request.getAttribute(RESPONSE) != null && (boolean) request.getAttribute(RESPONSE)) {
-                response.sendRedirect(page);
-            } else {
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-                dispatcher.forward(request, response);
+            if (page != null) {     //м-д возвр-ет стр. ответа
+                if (request.getAttribute(RESPONSE) != null && (boolean) request.getAttribute(RESPONSE)) {
+                    response.sendRedirect(page);
+                } else {
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+                    dispatcher.forward(request, response);
+                }
             }
+        } catch (IOException e) {          //TODO
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
         }
     }
-
     @Override
     public void destroy() {
         ConnectionPool.INSTANCE.destroyPool();
