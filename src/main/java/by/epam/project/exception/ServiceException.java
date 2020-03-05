@@ -1,6 +1,6 @@
 package by.epam.project.exception;
 /**
- * ServiceException используется, когда исключение призошло в Service
+ * This class uses when exception is happen in Service classes
  *
  * @author Shpakova A.
  */

@@ -2,10 +2,7 @@ package by.epam.project.servlet;
 
 import by.epam.project.command.*;
 import by.epam.project.connection.ConnectionPool;
-import by.epam.project.exception.CommandException;
 
-import by.epam.project.exception.ConnectionPoolException;
-import by.epam.project.exception.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

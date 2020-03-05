@@ -3,14 +3,12 @@ package by.epam.project.command.impl;
 import by.epam.project.command.Command;
 import by.epam.project.command.PathForJsp;
 import by.epam.project.entity.Activity;
-import by.epam.project.exception.CommandException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.ActivityService;
 import by.epam.project.service.impl.ActivityServiceImpl;
 import by.epam.project.validator.EventValidator;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

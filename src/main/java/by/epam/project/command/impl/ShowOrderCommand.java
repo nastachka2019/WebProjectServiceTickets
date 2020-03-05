@@ -5,7 +5,6 @@ import by.epam.project.command.PathForJsp;
 import by.epam.project.entity.Ticket;
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserComment;
-import by.epam.project.exception.CommandException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.TicketService;
 import by.epam.project.service.UserCommentService;
@@ -13,7 +12,6 @@ import by.epam.project.service.impl.TicketServiceImpl;
 import by.epam.project.service.impl.UserCommentServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.List;
 

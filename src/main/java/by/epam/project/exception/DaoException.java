@@ -1,7 +1,7 @@
 package by.epam.project.exception;
 
 /**
- * DaoException используется, когда исключение призошло в Dao
+ * This class uses when exception is happen in Dao classes
  *
  * @author Shpakova A.
  */
