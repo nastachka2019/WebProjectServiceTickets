@@ -13,7 +13,7 @@ public interface Command {
      * @param request это входящий запрос
      */
 
-    String execute(HttpServletRequest request) throws CommandException;
+    String execute(HttpServletRequest request) ;
 
 }
 
