@@ -31,7 +31,7 @@ public class AuthorizationFilter implements Filter {
 
     private static final String USER = "User";
 
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig){
 
     }
 

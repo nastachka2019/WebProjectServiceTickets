@@ -57,8 +57,8 @@ String commandName=request.getParameter(COMMAND);
         try {
             if (commandName != null) {
               logger.info("Request. Parameter = " + commandName);
-                Command command = commandMap.receiveCommand(commandName);
-                page = command.execute(request);
+                Command command = commandMap.receiveCommand(commandName); //определение команды, пришедшей из jsp
+                page = command.execute(request);  //вызов реализ-го метода execute  и передача пар-ров классу обработчику конкретн. команды
 
             } else if (request.getAttribute(COMMAND) != null) {
              logger.info("Request through filter. Attribute = " + request.getAttribute(COMMAND));
@@ -78,7 +78,7 @@ String commandName=request.getParameter(COMMAND);
             page =PathForJsp.ERROR.getUrl();
         }
 
-        if (page != null) {
+        if (page != null) {     //м-д возвр-ет стр. ответа
             if (request.getAttribute(RESPONSE) != null && (boolean) request.getAttribute(RESPONSE)) {
                 response.sendRedirect(page);
             } else {
