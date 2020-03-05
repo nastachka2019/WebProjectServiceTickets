@@ -90,10 +90,6 @@ String commandName=request.getParameter(COMMAND);
 
     @Override
     public void destroy() {
-        try {
-            ConnectionPool.INSTANCE.destroyPool();
-        } catch (InterruptedException e) {
-         logger.error(e.getMessage(), e);
-        }
+        ConnectionPool.INSTANCE.destroyPool();
     }
 }

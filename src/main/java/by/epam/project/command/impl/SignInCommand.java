@@ -39,7 +39,7 @@ public class SignInCommand implements Command {
         if(emailOrUsername!=null && password!=null){
             User user = null;
             try {
-            if (emailOrUsername.contains("@")) {
+            if (emailOrUsername.contains("@")) {       //если содержит,значит вход по емеилу
 
                     if (!userService.findByEmailAndPass(emailOrUsername, password).isEmpty()) {
                         user = userService.findByEmailAndPass(emailOrUsername, password).get(0);
