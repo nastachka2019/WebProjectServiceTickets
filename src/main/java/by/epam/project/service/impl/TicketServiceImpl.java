@@ -3,16 +3,16 @@ package by.epam.project.service.impl;
 import by.epam.project.dao.TicketDao;
 import by.epam.project.dao.impl.TicketDaoImpl;
 import by.epam.project.entity.Ticket;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
+import by.epam.project.service.EventTypeService;
 import by.epam.project.service.TicketService;
 
 import java.util.List;
 import java.util.Set;
 
 /**
- * Класс, реализующий TicketService
+ * This class implements {@link TicketService}
  *
  * @author Shpakova A.
  */
@@ -45,15 +45,6 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public List<Ticket> findTicketByUserId(int userId) throws ServiceException {
-        try {
-            return ticketDao.findTicketByUserId(userId);
-        } catch (DaoException  e) {
-            throw new ServiceException(e);
-        }
-    }
-
-    @Override
     public List<Ticket> findTicketByUserIdAndTicketDateAndEventType(int userId, String ticketDate, String eventType) throws ServiceException {
         try {
             return ticketDao.findTicketByUserIdAndTicketDateAndEventType(userId, ticketDate, eventType);
@@ -62,14 +53,6 @@ public class TicketServiceImpl implements TicketService {
         }
     }
 
-//    @Override
-//    public Ticket findTicketByUserIdTicketDateEventTypeEventId(Ticket ticket) throws ServiceException {
-//        try {
-//            return ticketDao.findTicketByUserIdTicketDateEventTypeEventId(ticket);
-//        } catch (DaoException  e) {
-//            throw new ServiceException(e);
-//        }
-//    }
 
     @Override
     public void deleteTicketByUserId(int userId) throws ServiceException {

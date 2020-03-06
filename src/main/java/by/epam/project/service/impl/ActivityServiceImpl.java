@@ -4,7 +4,7 @@ import by.epam.project.dao.ActivityDao;
 
 import by.epam.project.dao.impl.ActivityDaoImpl;
 import by.epam.project.entity.Activity;
-import by.epam.project.exception.ConnectionPoolException;
+
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.ActivityService;
@@ -12,7 +12,7 @@ import by.epam.project.service.ActivityService;
 import java.util.List;
 
 /**
- * Класс, реализующий ActivityService
+ * This class implements {@link ActivityService}
  *
  * @author Shpakova A.
  */
@@ -29,7 +29,7 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> takeAllEvents() throws ServiceException {
         try {
             return activityDao.takeAllEvents();
-        } catch (DaoException e ) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -79,7 +79,7 @@ public class ActivityServiceImpl implements ActivityService {
                 return activityDao.findEventsByFilterWithLimit(nameOrWordInName,
                         minPrice, maxPrice, startIndex, endIndex);
             }
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -92,7 +92,7 @@ public class ActivityServiceImpl implements ActivityService {
             } else {
                 return activityDao.findEventsByFilter(nameOrWordInName, minPrice, maxPrice);
             }
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -111,7 +111,7 @@ public class ActivityServiceImpl implements ActivityService {
     public int findMaxPrice() throws ServiceException {
         try {
             return activityDao.findMaxPrice();
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -129,7 +129,7 @@ public class ActivityServiceImpl implements ActivityService {
             } else {
                 return minPrice;
             }
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }

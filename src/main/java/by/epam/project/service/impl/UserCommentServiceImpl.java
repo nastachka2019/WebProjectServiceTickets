@@ -3,7 +3,6 @@ package by.epam.project.service.impl;
 import by.epam.project.dao.UserCommentDao;
 import by.epam.project.dao.impl.UserCommentDaoImpl;
 import by.epam.project.entity.UserComment;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.UserCommentService;
@@ -12,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Класс, реализующий UserCommentService
+ * This class implements {@link UserCommentService}
  *
  * @author Shpakova A.
  */
@@ -38,15 +37,6 @@ public class UserCommentServiceImpl implements UserCommentService {
     public void deleteCommentsForUser(int userId) throws ServiceException {
         try {
             userCommentDao.deleteCommentsForUser(userId);
-        } catch (DaoException  e) {
-            throw new ServiceException(e);
-        }
-    }
-
-    @Override
-    public void deleteCommentsByCommentator(int commentatorId) throws ServiceException {
-        try {
-            userCommentDao.deleteCommentsByCommentator(commentatorId);
         } catch (DaoException  e) {
             throw new ServiceException(e);
         }

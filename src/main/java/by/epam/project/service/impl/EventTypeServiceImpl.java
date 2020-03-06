@@ -4,22 +4,23 @@ import by.epam.project.dao.EventTypeDao;
 import by.epam.project.dao.impl.EventTypeDaoImpl;
 
 import by.epam.project.entity.EventType;
-import by.epam.project.exception.ConnectionPoolException;
+
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.EventTypeService;
 
 /**
- * Класс, реализующий EventTypeService
+ * This class implements {@link EventTypeService}
  *
  * @author Shpakova A.
  */
 
 public class EventTypeServiceImpl implements EventTypeService {
+
     private EventTypeDao eventTypeDao;
 
     public EventTypeServiceImpl() {                  //если нужно будет вызвать м-ды из др. классов
-        eventTypeDao= new EventTypeDaoImpl();
+        eventTypeDao = new EventTypeDaoImpl();
     }
 
 
@@ -27,7 +28,7 @@ public class EventTypeServiceImpl implements EventTypeService {
     public int findIdByEventType(String eventType) throws ServiceException {
         try {
             return eventTypeDao.findIdByEventType(eventType);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
