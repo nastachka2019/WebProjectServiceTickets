@@ -5,7 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Класс, реализующий проверку данных при поиске мероприятий (searchcommand)
+ * A class that implements data validation when searching for events
+ * {@link by.epam.project.command.impl.SearchCommand}
  *
  * @author Shpakova A.
  */

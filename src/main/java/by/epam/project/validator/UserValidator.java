@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Класс, реализующий проверку данных юзера
+ * The class that implements user data validation
  *
  * @author Shpakova A.
  */
