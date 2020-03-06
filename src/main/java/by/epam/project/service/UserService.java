@@ -2,18 +2,18 @@ package by.epam.project.service;
 
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserRole;
-import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 
 import java.util.List;
 
 /**
- * Слой для взаимдействия  с UserDao
+ * Interface for {@link by.epam.project.service.impl.UserServiceImpl}
  *
  * @author Shpakova A.
  */
 
 public interface UserService {
+
     List<User> takeAllUsers() throws ServiceException;
 
     List<User> takeAllUsersWithLimit(int startIndex, int endIndex) throws ServiceException;
