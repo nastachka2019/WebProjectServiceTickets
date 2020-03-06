@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 /**
- * Этот класс предоставляет навигационные ссылки для нумерации страниц, то есть ссылки на первую, предыдущую,
- * следующую и последнюю страницы списка с нумерацией страниц
+ * This class provides navigation links for pagination, that is, links to
+ * the first, previous, next and last page of the pagination list
  *
  * @author Shpakova A.
  */
