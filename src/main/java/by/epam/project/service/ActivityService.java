@@ -7,12 +7,13 @@ import by.epam.project.exception.ServiceException;
 import java.util.List;
 
 /**
- * Слой для взаимдействия  с ActivityDao
+ * Interface for {@link by.epam.project.service.impl.ActivityServiceImpl}
  *
  * @author Shpakova A.
  */
 
 public interface ActivityService {
+
     List<Activity> takeAllEvents() throws ServiceException;
 
     List<Activity> findByNameOrWordInNameWithLimit(String nameOrWordInName, int startIndex, int endIndex) throws ServiceException; //для поиска события с ограничение показа на странице
