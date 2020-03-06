@@ -2,8 +2,6 @@ package by.epam.project.service;
 
 import by.epam.project.entity.Activity;
 
-import by.epam.project.exception.ConnectionPoolException;
-import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 
 import java.util.List;
