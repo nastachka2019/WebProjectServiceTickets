@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * Этот фильтр используется для проверки, если тип текущего пользователя изменяется в базе данных.
- * Если тип изменился, текущий тип пользователя заменяется соответствующим
+ * This filter is used to check if the type of the current user is changing in the database.
+ * If the type has changed, the current user type is replaced by the corresponding
  *
  * @author Shpakova A.
  */
@@ -31,7 +31,11 @@ public class AuthorizationFilter implements Filter {
 
     private static final String USER = "User";
 
-    public void init(FilterConfig filterConfig){
+    /**
+     * Method: initializes the filter
+     *
+     */
+    public void init(FilterConfig filterConfig) {
 
     }
 

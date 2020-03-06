@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 /**
- * Этот фильтр используется для ззащиты от XSS-атак.
+ * This filter is used to protect against XSS attacks.
  *
  * @author Shpakova A.
  */
@@ -20,6 +20,7 @@ public class XssProtectFilter implements Filter {
     private static final String STATUS_CODE = "statusCode";
     private static final String JS_SCRIPT_BEGIN_TAG = "<script>";
     private static final String JS_SCRIPT_END_TAG = "</script>";
+
     public void init(FilterConfig config)  {
 
     }

@@ -4,7 +4,6 @@ import by.epam.project.dao.UserDao;
 import by.epam.project.dao.impl.UserDaoImpl;
 import by.epam.project.entity.User;
 import by.epam.project.entity.UserRole;
-import by.epam.project.exception.ConnectionPoolException;
 import by.epam.project.exception.DaoException;
 import by.epam.project.exception.ServiceException;
 import by.epam.project.service.UserService;
@@ -12,7 +11,7 @@ import by.epam.project.service.UserService;
 import java.util.List;
 
 /**
- * Класс, реализующий UserService
+ * This class implements {@link UserService}
  *
  * @author Shpakova A.
  */
@@ -30,7 +29,7 @@ public class UserServiceImpl implements UserService {
     public List<User> takeAllUsers() throws ServiceException {
         try {
             return userDao.takeAllUsers();
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -48,7 +47,7 @@ public class UserServiceImpl implements UserService {
     public List<User> findByLoginAndPass(String login, String password) throws ServiceException {
         try {
             return userDao.findByLoginAndPass(login, password);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -66,7 +65,7 @@ public class UserServiceImpl implements UserService {
     public void updateUserRole(int userId, String userRole) throws ServiceException {
         try {
             userDao.updateUserRole(userId, userRole);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -75,7 +74,7 @@ public class UserServiceImpl implements UserService {
     public boolean containsEmail(String email) throws ServiceException {
         try {
             return userDao.containsEmail(email);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -84,7 +83,7 @@ public class UserServiceImpl implements UserService {
     public boolean containsLogin(String login) throws ServiceException {
         try {
             return userDao.containsLogin(login);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -111,7 +110,7 @@ public class UserServiceImpl implements UserService {
     public void insertUser(User user) throws ServiceException {
         try {
             userDao.insert(user);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -129,7 +128,7 @@ public class UserServiceImpl implements UserService {
     public void update(User user) throws ServiceException {
         try {
             userDao.update(user);
-        } catch (DaoException  e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }

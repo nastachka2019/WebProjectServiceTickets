@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
 /**
- * Этот фильтр используется для изменения кодировки запроса и ответа в кодировку, указанную параметром фильтра.
+ * This filter is used to change the encoding of the request and response to the encoding specified by the filter parameter.
  *
  * @author Shpakova A.
  */
