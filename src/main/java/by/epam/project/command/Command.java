@@ -3,14 +3,14 @@ package by.epam.project.command;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Этот интерфес используется для обработки запроса и ответа
+ * This interface is used to process the request and response.
  *
  * @author Shpakova A.
  */
 
 public interface Command {
     /**
-     * @param request это входящий запрос
+     * @param request is an incoming request.
      */
 
     String execute(HttpServletRequest request) ;
