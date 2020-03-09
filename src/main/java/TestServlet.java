@@ -6,8 +6,9 @@ import java.io.IOException;
 @Deprecated
 public class TestServlet extends HttpServlet {
     @Override
+    
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("hello");
+        resp.getWriter().write("hello  ");
 
     }
 }
