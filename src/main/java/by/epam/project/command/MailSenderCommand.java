@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.Properties;
 
 /**
- * Класс для отправки на емеил пользователя письма об успешной регисрации
+ * Class for sending a successful registration letter to the user’s email
  *
- * @author Шпакова А.
+ * @author Shpakova A.
  */
 
 public class MailSenderCommand extends Thread {
