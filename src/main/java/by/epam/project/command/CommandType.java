@@ -1,10 +1,8 @@
 package by.epam.project.command;
-import by.epam.project.entity.User;
-import by.epam.project.entity.UserComment;
+
 import by.epam.project.entity.UserRole;
 import static by.epam.project.entity.UserRole.*;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLBoundOperation;

@@ -1,7 +1,7 @@
 package by.epam.project.command;
 
 /**
- * Класс, сщдержащий пути к  jsp файлам
+ * This class contain jsp file paths
  *
  * @author Shpakova A.
  */
