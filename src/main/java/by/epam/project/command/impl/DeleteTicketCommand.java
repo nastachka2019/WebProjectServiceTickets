@@ -9,11 +9,10 @@ import by.epam.project.service.impl.TicketServiceImpl;
 import by.epam.project.service.impl.UserCommentServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 
 /**
- * Этот класс используется для удаления билета на мероприятие из заказа
+ *  This class is used to remove a ticket from an order.
  *
  * @author Shpakova A.
  */

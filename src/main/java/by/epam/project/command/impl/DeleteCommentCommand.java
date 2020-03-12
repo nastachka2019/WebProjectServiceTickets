@@ -6,7 +6,7 @@ import by.epam.project.service.UserCommentService;
 import by.epam.project.service.impl.UserCommentServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *  This class is used to delete a comment on an event.
