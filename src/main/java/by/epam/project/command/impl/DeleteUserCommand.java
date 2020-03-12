@@ -11,10 +11,10 @@ import by.epam.project.service.impl.UserCommentServiceImpl;
 import by.epam.project.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 /**
- * Этот класс используется для удаления пользователей администратором
+ *  This class is used to delete users by the administrator.
  *
  * @author Shpakova A.
  */
