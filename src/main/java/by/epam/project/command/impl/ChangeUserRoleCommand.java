@@ -7,10 +7,10 @@ import by.epam.project.service.UserService;
 import by.epam.project.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 /**
- * Этот класс используется для изменения прав пользователя
+ *  This class is used to change user rights.
  *
  * @author Shpakova A.
  */

@@ -15,7 +15,6 @@ import by.epam.project.service.impl.EventTypeServiceImpl;
 import by.epam.project.service.impl.TicketServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
