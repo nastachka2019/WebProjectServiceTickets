@@ -9,13 +9,12 @@ import by.epam.project.service.impl.ActivityServiceImpl;
 import by.epam.project.validator.EventValidator;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Этот класс используется для отображения всех мероприятий
+ *  This class is used to show all events.
  *
  * @author Shpakova A.
  */
