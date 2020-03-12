@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Этот класс используется для заказа билета на мероприятие
+ *  This class is used to book an event ticket.
  *
  * @author Shpakova A.
  */
