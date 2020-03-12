@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Этот класс используется для того,что бы оставлять комментарии о мероприятиях
+ *  This class is used that the user can leave comments about events.
  *
  * @author Shpakova A.
  */
