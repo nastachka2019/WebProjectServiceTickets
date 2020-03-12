@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Этот класс используется для удаления комментария к мероприятию
+ *  This class is used to delete a comment on an event.
  *
  * @author Shpakova A.
  */
