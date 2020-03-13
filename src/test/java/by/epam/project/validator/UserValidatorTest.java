@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import static org.testng.Assert.*;
 
-public class UserValidatorTest {
+public class UserValidatorTest {                                         //positive
     private final String ALPHABETIC_STRING = "^(\\p{IsAlphabetic}+){1,50}$";
     private final String PASSWORD = "(?=.*[\\d])(?=.*[a-z])(?=.*[A-Z]).{5,16}";
     private final String LOGIN = "^[\\w][.\\w]{4,48}[\\w]$";
