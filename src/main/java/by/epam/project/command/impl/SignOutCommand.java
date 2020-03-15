@@ -6,10 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 /**
- * Этот класс используется для выхода из кабинета пользователя
+ *
+ * This class is used to exit the user account.
  *
  * @author Shpakova A.
  */
