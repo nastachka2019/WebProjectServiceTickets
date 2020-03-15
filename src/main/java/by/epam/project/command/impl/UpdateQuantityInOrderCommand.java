@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Этот класс используется для заказа билетов
+ *  This class is used to order tickets.
  *
  * @author Shpakova A.
  */
