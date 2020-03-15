@@ -33,22 +33,4 @@ public class EventTypeServiceImplTest {
         Assert.assertEquals(eventType.getEventTypeValue(), nameEventType);
     }
 
-
-//    @DataProvider(name="findIdByEventTypeTest")
-//    public Object[][] findIdByEventTypeTest() {
-//        return new Object[][]{
-//                {5, "Sport"},
-//
-//        };
-//    }
-//
-//    @Test (dataProvider = "findIdByEventTypeTest")
-//    public void findIdByEventTypeTest( int idEventType, String nameEventValue) throws ServiceException {
-//        ConnectionPool.INSTANCE.getConnection();
-//        EventTypeService eventTypeService=new EventTypeServiceImpl();
-//        EventType eventType;
-//        eventType =eventTypeService.findIdByEventType(nameEventValue);
-//        Assert.assertEquals(eventType.getEventTypeId(),idEventType );
-//
-//    }
 }

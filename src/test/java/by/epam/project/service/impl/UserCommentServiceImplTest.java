@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 
 public class UserCommentServiceImplTest {
     @DataProvider
-    public Object[][] testServiceFindUserCommentsById() { //positive
+    public Object[][] testServiceFindUserCommentsById() {                               //positive
         return new Object[][]{
                 {1,"2020-03-25", "Cool"},
         };
