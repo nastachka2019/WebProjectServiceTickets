@@ -8,13 +8,13 @@ import by.epam.project.service.ActivityService;
 import by.epam.project.service.impl.ActivityServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Этот класс используется для посещения страницы со всеми мероприятиями
+ *  This class is used to visit the page with all events.
  *
  * @author Shpakova A.
  */
