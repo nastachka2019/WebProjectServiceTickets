@@ -8,11 +8,11 @@ import by.epam.project.service.UserService;
 import by.epam.project.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Этот класс используется что бы показать весь список пользователей администратору
+ *
+ * This class is used to show the list of users to the administrator.
  *
  * @author Shpakova A.
  */
