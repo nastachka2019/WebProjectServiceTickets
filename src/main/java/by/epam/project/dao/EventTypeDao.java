@@ -11,6 +11,7 @@ import by.epam.project.exception.DaoException;
  * @author Shpakova A.
  */
 
+
 public interface EventTypeDao extends BasicDao<EventType> {
     /**
      * Method: find id of event type by name of event type
