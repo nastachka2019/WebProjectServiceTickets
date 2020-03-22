@@ -115,7 +115,7 @@ public class Ticket extends Entity {
         return str.toString();
     }
 
-    public static class Builder {                    //dao
+    public static class Builder {                    
         private Ticket ticket;
 
         public Builder() {
