@@ -4,11 +4,15 @@ import by.epam.project.entity.UserRole;
 import static by.epam.project.entity.UserRole.*;
 import java.util.Arrays;
 import java.util.List;
+/**
+ * Class with all commands
+ *
+ * @author Shpakova A.
+ */
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLBoundOperation;
 
 public enum  CommandType {
-    SIGN_IN (ANONYMOUS),   //возвратит только анонима
+    SIGN_IN (ANONYMOUS),
     VISIT_SIGN_IN(ANONYMOUS),
     SEARCH(ADMINISTRATOR,ANONYMOUS,USER),
     EVENT_LIST(ADMINISTRATOR,ANONYMOUS,USER),
