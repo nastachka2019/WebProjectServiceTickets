@@ -18,7 +18,6 @@ public class PaginationTag extends TagSupport {
     private int objectsPerPage;
     private int indexOfPage;
     private int numberOfObjects;
-
     private String locale;
     private String commandValue;
     private String nameOrWordInName;
