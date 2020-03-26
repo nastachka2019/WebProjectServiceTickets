@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
  */
 
 public class PaginationTag extends TagSupport {
-
     private int objectsPerPage;
     private int indexOfPage;
     private int numberOfObjects;
