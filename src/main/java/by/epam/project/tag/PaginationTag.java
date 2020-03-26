@@ -37,6 +37,7 @@ public class PaginationTag extends TagSupport {
 
         JspWriter out = pageContext.getOut();
 
+       
         try {
             out.write("<nav aria-label=\"...\">");
             out.write("<ul class=\"pagination justify-content-center\">");
