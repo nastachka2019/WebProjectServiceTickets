@@ -14,6 +14,7 @@ import by.epam.project.exception.ServiceException;
 public interface EventTypeService {
 
     int findIdByEventType(String eventType) throws ServiceException;
+    
 
     EventType findEventTypeById(int eventTypeId) throws ServiceException;
 }
