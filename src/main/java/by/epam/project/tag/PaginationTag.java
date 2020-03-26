@@ -6,6 +6,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
 /**
  * This class provides navigation links for pagination, that is, links to
  * the first, previous, next and last page of the pagination list
