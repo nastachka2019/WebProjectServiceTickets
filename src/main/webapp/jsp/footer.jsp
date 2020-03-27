@@ -19,7 +19,8 @@
 <footer id="footer" class="page-footer font-small bg-success darken-3">
 
 
-    <div class="footer-copyright text-center py-3">
+   
+  <div class="footer-copyright text-center py-3">
         <fmt:message key="event.footer"/>
     </div>
 
