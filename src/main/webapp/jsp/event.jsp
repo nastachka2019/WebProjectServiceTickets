@@ -13,7 +13,8 @@
 <head>
     <title>${activity.name}</title>
 
-    <!-- SCRIPTS -->
+  
+       <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap tooltips -->
