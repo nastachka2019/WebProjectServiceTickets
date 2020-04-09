@@ -23,4 +23,5 @@ public interface UserCommentService {
     void insertComment(UserComment userComment) throws ServiceException;
 
     void deleteComment(int commentId) throws ServiceException;
+
 }
