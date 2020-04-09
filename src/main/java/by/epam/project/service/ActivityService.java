@@ -36,4 +36,5 @@ public interface ActivityService {
 
     int checkPrice(int minPrice) throws ServiceException;
 
+
 }
