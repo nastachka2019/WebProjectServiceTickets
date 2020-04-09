@@ -14,6 +14,7 @@ import java.util.Set;
  */
 
 public interface TicketService {
+   
     void updateQuantity(int ticketId, int quantity) throws ServiceException;
 
     Set<String> findDatesByUserId(int userId) throws ServiceException;
