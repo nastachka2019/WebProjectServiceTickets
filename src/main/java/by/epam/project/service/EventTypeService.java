@@ -17,6 +17,7 @@ public interface EventTypeService {
     
 
     EventType findEventTypeById(int eventTypeId) throws ServiceException;
+
 }
 
 
