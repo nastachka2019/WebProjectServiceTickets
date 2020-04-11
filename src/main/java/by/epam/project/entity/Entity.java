@@ -8,5 +8,6 @@ import java.io.Serializable;
  * @author Shpakova A.
  */
 
+
 public class Entity implements Serializable, Cloneable {
 }
