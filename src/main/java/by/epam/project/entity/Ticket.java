@@ -21,6 +21,7 @@ public class Ticket extends Entity {
     public Ticket() {
     }
 
+   
     public Ticket(int ticketId, Activity event, EventType eventType, User user, int quantity, LocalDate date) {
         this.ticketId = ticketId;
         this.user = user;
