@@ -21,6 +21,7 @@ public class Activity extends Entity {
     public Activity() {
     }
 
+   
     public Activity(int eventId, String name, String imageURL, String description, String address, LocalDate date, BigDecimal price) {
         this.eventId = eventId;
         this.name = name;
