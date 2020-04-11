@@ -19,6 +19,7 @@ import java.sql.Statement;
 
 public interface BasicDao<T extends Entity> {
 
+   
     /**
      * Method: insert in database row with parameters
      *
